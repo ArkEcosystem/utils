@@ -57,7 +57,7 @@ export function take(values: any[], size: number) {
     return values.slice(0, size);
 }
 
-export function uniq(value: any[]) {
+export function uniq(value: Iterable<string | number>) {
     return [...new Set(value)];
 }
 
