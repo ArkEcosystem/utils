@@ -49,7 +49,7 @@ export function sample(values: any[]) {
 }
 
 export function sumBy(values: Iterable<{}>, column: string) {
-    return fast.reduce(values, (a: { [x: string]: number }, b: { [x: string]: number }) => a[column] + b[column], 0);
+    return fast.reduce(values, (a: number, b: { [x: string]: number }) => a + b[column], 0);
 }
 
 export function compact(values: Iterable<{}>) {
