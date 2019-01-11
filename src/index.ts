@@ -18,7 +18,7 @@ import snakeCase from "lodash/snakeCase";
 import { camelize as camelCase } from "xcase";
 
 export function cloneDeepWith(value: any, customizer: any) {
-    return copy(value).map(customizer);
+    return fast.map(copy(value), customizer);
 }
 
 export function sortBy(values: any, iteratees: any) {
