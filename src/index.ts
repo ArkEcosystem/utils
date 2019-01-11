@@ -15,7 +15,7 @@ import last from "lodash/last";
 import partition from "lodash/partition";
 import shuffle from "lodash/shuffle";
 import snakeCase from "lodash/snakeCase";
-import { camelizeKeys as camelCase } from "xcase";
+import { camelize as camelCase } from "xcase";
 
 export function cloneDeepWith(value: any, transformer: any) {
     return copy(value).map(transformer);
