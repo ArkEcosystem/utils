@@ -49,6 +49,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/tsconfig/-/tsconfig-0.1.1.tgz#c13d7d79ab5a7b02c2374487d0822695a1baa496"
   integrity sha512-n2KZlZ5tD2oc0CUNYtKSRSJr2PC6pqSG9n1JWvY12rU6UjkQ563czDUxCSEGyOEhhogvu8Ad5SonjH7DoBNa7w==
 
+"@types/dottie@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/dottie/-/dottie-2.0.2.tgz#07ba3fe113675659cafd9ed568ccd5a5f11801f1"
+  integrity sha512-vvuPCZxkdL0HNNFt+OJSevMLZo2BAkYxuCxEoOJpCnYtBJCIqVmLWVfKyBfzMGo+wa5IHVLD3f8udQJs7Q9+vw==
+
 "@types/events@*":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"

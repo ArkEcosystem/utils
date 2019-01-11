@@ -17,50 +17,50 @@ import shuffle from "lodash/shuffle";
 import snakeCase from "lodash/snakeCase";
 import { camelizeKeys as camelCase } from "xcase";
 
-export function cloneDeep(value) {
+export function cloneDeep(value: any) {
     return copy(value);
 }
 
-export function cloneDeepWith(value, transformer) {
+export function cloneDeepWith(value: any, transformer: any) {
     return copy(value).map(transformer);
 }
 
-export function sortBy(values, iteratees) {
+export function sortBy(values: any, iteratees: any) {
     return sort(values).asc(iteratees);
 }
 
-export function sortByDesc(values, iteratees) {
+export function sortByDesc(values: any, iteratees: any) {
     return sort(values).desc(iteratees);
 }
 
-export function orderBy(values, iteratees, orders) {
+export function orderBy(values: Iterable<{}>, iteratees: string[], orders: string[]) {
     const columns = [];
-    iteratees.forEach((_, i) => columns.push({ [orders[i]]: iteratees[i] }));
+    fast.forEach(iteratees, (_: string, i: number) => columns.push({ [orders[i]]: iteratees[i] }));
 
     return sort(values).by(columns);
 }
 
-export function pick(value, key) {
-    return fast.map(value, i => i[key]);
+export function pick(values: Iterable<{}>, key: string | number) {
+    return fast.map(values, (i: number) => i[key]);
 }
 
-export function sample(values) {
+export function sample(values: any[]) {
     return values[Math.floor(Math.random() * values.length)];
 }
 
-export function sumBy(values, column) {
-    return fast.reduce(values, (a, b) => a[column] + b[column], 0);
+export function sumBy(values: Iterable<{}>, column: string) {
+    return fast.reduce(values, (a: { [x: string]: number }, b: { [x: string]: number }) => a[column] + b[column], 0);
 }
 
-export function compact(value) {
-    return value.filter(x => !!x);
+export function compact(values: Iterable<{}>) {
+    return fast.filter(values, (i: any) => !!i);
 }
 
-export function take(values, size) {
+export function take(values: any[], size: number) {
     return values.slice(0, size);
 }
 
-export function uniq(value) {
+export function uniq(value: any[]) {
     return [...new Set(value)];
 }
 
