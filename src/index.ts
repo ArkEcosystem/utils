@@ -17,8 +17,8 @@ import shuffle from "lodash/shuffle";
 import snakeCase from "lodash/snakeCase";
 import { camelize as camelCase } from "xcase";
 
-export function cloneDeepWith(value: any, transformer: any) {
-    return copy(value).map(transformer);
+export function cloneDeepWith(value: any, customizer: any) {
+    return copy(value).map(customizer);
 }
 
 export function sortBy(values: any, iteratees: any) {
@@ -42,7 +42,11 @@ export function sample(values: any[]) {
 }
 
 export function sumBy(values: Iterable<{}>, column: string) {
-    return fast.reduce(values, (a: number, b: { [x: string]: number }) => a + b[column], 0);
+    return fast.reduce(
+        values,
+        (accumulator: number, currentValue: { [x: string]: number }) => accumulator + currentValue[column],
+        0,
+    );
 }
 
 export function compact(values: Iterable<{}>) {
