@@ -34,7 +34,7 @@ export function orderBy(values: Iterable<{}>, iteratees: string[], orders: strin
 }
 
 export function pick(values: Iterable<{}>, key: string) {
-    return fast.map(values, (i: number) => i[key]);
+    return fast.map(values, (i: { [x: string]: any }) => i[key]);
 }
 
 export function sample(values: any[]) {
