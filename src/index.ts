@@ -30,12 +30,10 @@ export function sortByDesc(values: any, iteratees: any) {
 }
 
 export function orderBy(values: Iterable<{}>, iteratees: string[], orders: string[]) {
-    const columns = fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] }));
-
-    return sort(values).by(columns);
+    return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 }
 
-export function pick(values: Iterable<{}>, key: string | number) {
+export function pick(values: Iterable<{}>, key: string) {
     return fast.map(values, (i: number) => i[key]);
 }
 
