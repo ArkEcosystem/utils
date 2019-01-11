@@ -17,10 +17,6 @@ import shuffle from "lodash/shuffle";
 import snakeCase from "lodash/snakeCase";
 import { camelizeKeys as camelCase } from "xcase";
 
-export function cloneDeep(value: any) {
-    return copy(value);
-}
-
 export function cloneDeepWith(value: any, transformer: any) {
     return copy(value).map(transformer);
 }
@@ -66,6 +62,9 @@ export function uniq(value: any[]) {
 export function randomString(options?: boolean | hyperid.Options) {
     return hyperid(options)();
 }
+
+// MODULE: FAST-COPY
+export const cloneDeep = copy;
 
 // MODULE: DOTTIE.JS
 export const get = dottie.get;
