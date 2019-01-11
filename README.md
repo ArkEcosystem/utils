@@ -1,6 +1,6 @@
-# Fast Utilities
+# Utilities
 
-> Fast Implementations of commonly used functions in JavaScript and TypeScript.
+> Performance oriented implementations of commonly used functions in TypeScript.
 
 ## Security
 

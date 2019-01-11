@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test-node10:
-    working_directory: ~/fast-utils
+    working_directory: ~/utils
     docker:
       - image: 'circleci/node:10-browsers'
     steps:
@@ -24,7 +24,7 @@ jobs:
           name: Codecov
           command: ./node_modules/.bin/codecov
   test-node11:
-    working_directory: ~/fast-utils
+    working_directory: ~/utils
     docker:
       - image: 'circleci/node:11-browsers'
     steps:

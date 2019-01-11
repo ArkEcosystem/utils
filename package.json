@@ -1,6 +1,6 @@
 {
-    "name": "@arkecosystem/fast-utils",
-    "description": "Fast utilities for Ark projects",
+    "name": "@arkecosystem/utils",
+    "description": "Performance oriented implementations of commonly used functions in TypeScript.",
     "version": "0.1.0",
     "contributors": [
         "Brian Faust <brian@ark.io>",
