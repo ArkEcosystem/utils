@@ -22,11 +22,11 @@
         "docs": "./node_modules/typedoc/bin/typedoc src --out docs",
         "lint": "./node_modules/tslint/bin/tslint -c ./tslint.json 'src/**/*.ts' '__tests__/**/*.ts' --fix",
         "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./src/**/*.{ts,js,json,md}\"",
-        "test": "cross-env jest --runInBand --forceExit",
-        "test:coverage": "cross-env jest --coverage --runInBand --forceExit",
-        "test:debug": "cross-env node --inspect-brk ./node_modules/.bin/jest --runInBand",
-        "test:watch": "cross-env jest --runInBand --watch",
-        "test:watch:all": "cross-env jest --runInBand --watchAll"
+        "test": "cross-env jest",
+        "test:coverage": "cross-env jest --coverage",
+        "test:debug": "cross-env node --inspect-brk ./node_modules/.bin/jest",
+        "test:watch": "cross-env jest --watch",
+        "test:watch:all": "cross-env jest --watchAll"
     },
     "dependencies": {
         "@flatten/array": "^1.1.7",
