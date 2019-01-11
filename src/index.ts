@@ -64,7 +64,7 @@ export function uniq(value: any[]) {
     return [...new Set(value)];
 }
 
-export function randomString(options: {}) {
+export function randomString(options?: boolean | hyperid.Options) {
     return hyperid(options)();
 }
 
