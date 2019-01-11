@@ -64,6 +64,10 @@ export function uniq(value: any[]) {
     return [...new Set(value)];
 }
 
+export function randomString(options: {}) {
+    return hyperid(options)();
+}
+
 // MODULE: DOTTIE.JS
 export const get = dottie.get;
 export const set = dottie.set;
@@ -85,5 +89,4 @@ export const isEqual = deepEqual;
 export { shuffle, chunk, head, last, groupBy, isEmpty, isString, partition, snakeCase };
 
 // MODULES: RANDOM
-export const randomString = hyperid;
 export { flatten, deepEqual, camelCase, stringify };
