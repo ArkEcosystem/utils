@@ -34,8 +34,7 @@ export function sortByDesc(values: any, iteratees: any) {
 }
 
 export function orderBy(values: Iterable<{}>, iteratees: string[], orders: string[]) {
-    const columns = [];
-    fast.forEach(iteratees, (_: string, i: number) => columns.push({ [orders[i]]: iteratees[i] }));
+    const columns = fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] }));
 
     return sort(values).by(columns);
 }
