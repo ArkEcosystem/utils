@@ -13,3 +13,9 @@ test("sums up by the specified column", () => {
 
     expect(actual).toBe(106);
 });
+
+test("sums up using the specified function", () => {
+    const actual = sumBy(dummies, (value: { name: string; age: number }) => value.age);
+
+    expect(actual).toBe(106);
+});

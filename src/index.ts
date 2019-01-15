@@ -21,11 +21,11 @@ export function cloneDeepWith(value: any, customizer: any) {
     return fast.map(copy(value), customizer);
 }
 
-export function sortBy(values: any, iteratees: any) {
+export function sortBy(values: any, iteratees?: any) {
     return sort(values).asc(iteratees);
 }
 
-export function sortByDesc(values: any, iteratees: any) {
+export function sortByDesc(values: any, iteratees?: any) {
     return sort(values).desc(iteratees);
 }
 
@@ -41,12 +41,18 @@ export function sample(values: any[]) {
     return values[Math.floor(Math.random() * values.length)];
 }
 
-export function sumBy(values: Iterable<{}>, column: string) {
-    return fast.reduce(
-        values,
-        (accumulator: number, currentValue: { [x: string]: number }) => accumulator + currentValue[column],
-        0,
-    );
+export function sumBy(values: Iterable<{}>, iteratee: any) {
+    let result;
+
+    fast.forEach(values, (value: {}) => {
+        const current = typeof iteratee === "string" ? value[iteratee] : iteratee(value);
+
+        if (current !== undefined) {
+            result = result === undefined ? current : result + current;
+        }
+    });
+
+    return result;
 }
 
 export function compact(values: Iterable<{}>) {
