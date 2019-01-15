@@ -23,6 +23,9 @@ jobs:
       - run:
           name: Codecov
           command: ./node_modules/.bin/codecov
+      - run:
+          name: Benchmark
+          command: yarn benchmark
   test-node11:
     working_directory: ~/utils
     docker:
@@ -46,6 +49,9 @@ jobs:
       - run:
           name: Codecov
           command: ./node_modules/.bin/codecov
+      - run:
+          name: Benchmark
+          command: yarn benchmark
 workflows:
   version: 2
   build_and_test:
