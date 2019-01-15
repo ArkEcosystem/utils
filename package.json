@@ -22,7 +22,7 @@
         "docs": "./node_modules/typedoc/bin/typedoc src --out docs",
         "lint": "./node_modules/tslint/bin/tslint -c ./tslint.json 'src/**/*.ts' '__tests__/**/*.ts' --fix",
         "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./src/**/*.{ts,js,json,md}\"",
-        "benchmark": "node benchmark/index.js",
+        "benchmark": "yarn build && node benchmark/index.js",
         "test": "cross-env jest",
         "test:coverage": "cross-env jest --coverage",
         "test:debug": "cross-env node --inspect-brk ./node_modules/.bin/jest",
