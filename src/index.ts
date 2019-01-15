@@ -53,6 +53,7 @@ export const canTry = fast.canTry;
 export const concat = fast.concat;
 export const fill = fast.fill;
 export const filter = fast.filter;
+export const forEach = fast.forEach;
 export const indexOf = fast.indexOf;
 export const intern = fast.intern;
 export const map = fast.map;
