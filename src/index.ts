@@ -64,9 +64,9 @@ export const isEqual = deepEqual;
 export const first = head;
 export {
     chunk,
-    compact,
     cloneDeep,
     cloneDeepWith,
+    compact,
     groupBy,
     head,
     isEmpty,
