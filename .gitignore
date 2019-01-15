@@ -52,7 +52,6 @@ bundle.min.js
 
 # Build
 dist
-packages/**/dist/
 
 # Microsoft Visual Studio settings
 .vs

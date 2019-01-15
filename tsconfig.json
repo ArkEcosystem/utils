@@ -1,6 +1,7 @@
 {
     "extends": "@sindresorhus/tsconfig",
     "compilerOptions": {
+        "outDir": "dist",
         "lib": ["es2018"],
         "typeRoots": ["node_modules/@types"],
         "target": "es2018",
@@ -12,5 +13,6 @@
         "noUnusedParameters": false,
         "resolveJsonModule": true
     },
+    "include": ["src/**/**.ts"],
     "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
