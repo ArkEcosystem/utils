@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## 0.1.4 - 2019-01-14
+
+### Added
+
+-   Exporting `first` as an alias of `head`
+
+### Changed
+
+-   Replaced `cloneDeep` with `lodash/cloneDeep`
+-   Replaced `cloneDeepWith` with `lodash/cloneDeepWith`
+-   Replaced `compact` with `lodash/compact`
+-   Replaced `pick` with `lodash/pick`
+-   Replaced `sample` with `lodash/sample`
+-   Replaced `sumBy` with `lodash/sumBy`
+-   Replaced `uniq` with `lodash/uniq`
+
 ## 0.1.3 - 2019-01-14
 
 ### Added

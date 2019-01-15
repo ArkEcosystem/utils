@@ -1,7 +1,7 @@
 {
     "name": "@arkecosystem/utils",
     "description": "Performance oriented implementations of commonly used functions in TypeScript.",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "contributors": [
         "Brian Faust <brian@ark.io>",
         "Joshua Noack <joshua@ark.io>"
@@ -31,21 +31,26 @@
     "dependencies": {
         "@flatten/array": "^1.1.7",
         "dottie": "^2.0.1",
-        "fast-copy": "^1.2.3",
         "fast-equals": "^1.6.1",
         "fast-sort": "^1.5.4",
         "fast-stringify": "^1.1.1",
         "fast.js": "^0.1.1",
         "hyperid": "^2.0.1",
         "lodash.chunk": "^4.2.0",
+        "lodash.clonedeep": "^4.5.0",
+        "lodash.clonedeepwith": "^4.5.0",
+        "lodash.compact": "^3.0.1",
         "lodash.groupby": "^4.6.0",
         "lodash.head": "^4.0.1",
         "lodash.isempty": "^4.4.0",
         "lodash.isstring": "^4.0.1",
         "lodash.last": "^3.0.0",
         "lodash.partition": "^4.6.0",
+        "lodash.pick": "^4.4.0",
         "lodash.shuffle": "^4.2.0",
         "lodash.snakecase": "^4.1.1",
+        "lodash.sumby": "^4.6.0",
+        "lodash.uniq": "^4.5.0",
         "xcase": "^2.0.1"
     },
     "devDependencies": {

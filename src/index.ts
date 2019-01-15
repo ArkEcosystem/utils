@@ -1,25 +1,27 @@
 import flatten from "@flatten/array";
 import dottie from "dottie";
-import copy from "fast-copy";
 import { deepEqual } from "fast-equals";
 import sort from "fast-sort";
 import stringify from "fast-stringify";
 import fast from "fast.js";
 import hyperid from "hyperid";
 import chunk from "lodash/chunk";
+import cloneDeep from "lodash/cloneDeep";
+import cloneDeepWith from "lodash/cloneDeepWith";
+import compact from "lodash/compact";
 import groupBy from "lodash/groupBy";
 import head from "lodash/head";
 import isEmpty from "lodash/isEmpty";
 import isString from "lodash/isString";
 import last from "lodash/last";
 import partition from "lodash/partition";
+import pick from "lodash/pick";
+import sample from "lodash/sample";
 import shuffle from "lodash/shuffle";
 import snakeCase from "lodash/snakeCase";
+import sumBy from "lodash/sumBy";
+import uniq from "lodash/uniq";
 import { camelize as camelCase } from "xcase";
-
-export function cloneDeepWith(value: any, customizer: any) {
-    return fast.map(copy(value), customizer);
-}
 
 export function sortBy(values: any, iteratees?: any) {
     return sort(values).asc(iteratees);
@@ -33,46 +35,13 @@ export function orderBy(values: Iterable<{}>, iteratees: string[], orders: strin
     return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 }
 
-export function pick(values: Iterable<{}>, key: string) {
-    return fast.map(values, (i: { [x: string]: any }) => i[key]);
-}
-
-export function sample(values: any[]) {
-    return values[Math.floor(Math.random() * values.length)];
-}
-
-export function sumBy(values: Iterable<{}>, iteratee: any) {
-    let result;
-
-    fast.forEach(values, (value: {}) => {
-        const current = typeof iteratee === "string" ? value[iteratee] : iteratee(value);
-
-        if (current !== undefined) {
-            result = result === undefined ? current : result + current;
-        }
-    });
-
-    return result;
-}
-
-export function compact(values: Iterable<{}>) {
-    return fast.filter(values, (i: any) => !!i);
-}
-
 export function take(values: any[], size: number) {
     return values.slice(0, size);
-}
-
-export function uniq(value: Iterable<string | number>) {
-    return [...new Set(value)];
 }
 
 export function randomString(options?: boolean | hyperid.Options) {
     return hyperid(options)();
 }
-
-// MODULE: FAST-COPY
-export const cloneDeep = copy;
 
 // MODULE: DOTTIE.JS
 export const get = dottie.get;
@@ -92,7 +61,25 @@ export const some = fast.some;
 
 // MODULE: LODASH
 export const isEqual = deepEqual;
-export { shuffle, chunk, head, last, groupBy, isEmpty, isString, partition, snakeCase };
+export const first = head;
+export {
+    chunk,
+    compact,
+    cloneDeep,
+    cloneDeepWith,
+    groupBy,
+    head,
+    isEmpty,
+    isString,
+    last,
+    partition,
+    pick,
+    sample,
+    shuffle,
+    snakeCase,
+    sumBy,
+    uniq,
+};
 
 // MODULES: RANDOM
-export { flatten, deepEqual, camelCase, stringify };
+export { camelCase, deepEqual, flatten, stringify };
