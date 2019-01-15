@@ -15,14 +15,10 @@ import last from "lodash/last";
 import partition from "lodash/partition";
 import shuffle from "lodash/shuffle";
 import snakeCase from "lodash/snakeCase";
-import { camelizeKeys as camelCase } from "xcase";
+import { camelize as camelCase } from "xcase";
 
-export function cloneDeep(value: any) {
-    return copy(value);
-}
-
-export function cloneDeepWith(value: any, transformer: any) {
-    return copy(value).map(transformer);
+export function cloneDeepWith(value: any, customizer: any) {
+    return fast.map(copy(value), customizer);
 }
 
 export function sortBy(values: any, iteratees: any) {
@@ -34,13 +30,11 @@ export function sortByDesc(values: any, iteratees: any) {
 }
 
 export function orderBy(values: Iterable<{}>, iteratees: string[], orders: string[]) {
-    const columns = fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] }));
-
-    return sort(values).by(columns);
+    return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 }
 
-export function pick(values: Iterable<{}>, key: string | number) {
-    return fast.map(values, (i: number) => i[key]);
+export function pick(values: Iterable<{}>, key: string) {
+    return fast.map(values, (i: { [x: string]: any }) => i[key]);
 }
 
 export function sample(values: any[]) {
@@ -48,7 +42,11 @@ export function sample(values: any[]) {
 }
 
 export function sumBy(values: Iterable<{}>, column: string) {
-    return fast.reduce(values, (a: number, b: { [x: string]: number }) => a + b[column], 0);
+    return fast.reduce(
+        values,
+        (accumulator: number, currentValue: { [x: string]: number }) => accumulator + currentValue[column],
+        0,
+    );
 }
 
 export function compact(values: Iterable<{}>) {
@@ -59,13 +57,16 @@ export function take(values: any[], size: number) {
     return values.slice(0, size);
 }
 
-export function uniq(value: any[]) {
+export function uniq(value: Iterable<string | number>) {
     return [...new Set(value)];
 }
 
 export function randomString(options?: boolean | hyperid.Options) {
     return hyperid(options)();
 }
+
+// MODULE: FAST-COPY
+export const cloneDeep = copy;
 
 // MODULE: DOTTIE.JS
 export const get = dottie.get;
