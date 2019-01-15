@@ -7,6 +7,12 @@ const dummies = [
     { name: "Jane", age: 40 },
 ];
 
+test("sorts records without iteratees", () => {
+    const actual = sortByDesc(dummies);
+
+    expect(actual).toEqual(dummies);
+});
+
 test("sorts records by string", () => {
     const actual = sortByDesc(dummies, "age");
 
