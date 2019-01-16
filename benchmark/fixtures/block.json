@@ -1,0 +1,18 @@
+{
+    "blockSignature": "3045022100ec0ab2d915ff93f7af49a52c463d915758ca06d447cf9adab4cec1131065971702203c5702fbebc185f369c43219c15175ed4866bf0d4308e41598c58851246a597d",
+    "generatorPublicKey": "036a520acf24036ff691a4f8ba19514828e9b5aa36ca4ba0452e9012023caccfef",
+    "height": 1201204,
+    "id": "2653480465582386466",
+    "idHex": "24d30e6cb979ed22",
+    "numberOfTransactions": 0,
+    "payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "payloadLength": 0,
+    "previousBlock": "14512262220230802923",
+    "previousBlockHex": "c965e9999c2dbdeb",
+    "reward": 200000000,
+    "timestamp": 57337218,
+    "totalAmount": 0,
+    "totalFee": 0,
+    "transactions": [],
+    "version": 0
+}

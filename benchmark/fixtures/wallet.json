@@ -1,0 +1,17 @@
+{
+    "address": "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
+    "balance": "43964655884383",
+    "dirty": false,
+    "forgedFees": "109329149476",
+    "forgedRewards": "4835000000000",
+    "missedBlocks": 142,
+    "multisignature": null,
+    "producedBlocks": 24389,
+    "publicKey": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec",
+    "rate": 2,
+    "secondPublicKey": null,
+    "username": "arkx",
+    "vote": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec",
+    "voteBalance": "45580764424106",
+    "voted": true
+}

@@ -14,6 +14,12 @@ run([
     bench('Native.forEach vs Utils.forEach vs lodash.forEach (1000 items)', require('./forEach/1000')),
     bench('Native.forEach vs Utils.forEach vs lodash.forEach (10000 items)', require('./forEach/10000')),
     bench('Native.forEach vs Utils.forEach vs lodash.forEach (100000 items)', require('./forEach/100000')),
+
+    bench('Native.filter vs Utils.filter vs lodash.filter (10 items)', require('./filter/10')),
+    bench('Native.filter vs Utils.filter vs lodash.filter (100 items)', require('./filter/100')),
+    bench('Native.filter vs Utils.filter vs lodash.filter (1000 items)', require('./filter/1000')),
+    bench('Native.filter vs Utils.filter vs lodash.filter (10000 items)', require('./filter/10000')),
+    bench('Native.filter vs Utils.filter vs lodash.filter (100000 items)', require('./filter/100000')),
 ]);
 
 function bench(title, config) {

@@ -1,17 +1,19 @@
 const {
-    map
-} = require('../../dist');
+    native,
+    utils,
+    lodash
+} = require('./methods')
 
-const items = new Array(100000);
+const items = require('../helpers').createWallets(100000);
 
-exports['native'] = function () {
-    return items.map(user => user);
+exports['native'] = () => {
+    return native(items);
 };
 
-exports['utils'] = function () {
-    return map(items, user => user);
+exports['utils'] = () => {
+    return utils(items);
 };
 
-exports['lodash'] = function () {
-    return require('lodash/map')(items, user => user);
+exports['lodash'] = () => {
+    return lodash(items);
 };
