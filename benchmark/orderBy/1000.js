@@ -1,4 +1,5 @@
 const {
+    native,
     utils,
     lodash
 } = require('./methods')
