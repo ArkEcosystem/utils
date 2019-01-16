@@ -10,6 +10,23 @@
 
 > Performance oriented implementations of commonly used functions in TypeScript.
 
+## Installation
+
+```sh
+yarn add @arkecosystem/utils
+```
+
+## Benchmark
+
+```sh
+git clone git@github.com:ArkEcosystem/utils.git
+yarn && yarn bench
+```
+
+## Caveats
+
+-   The native `map`, `filter`, `reduce` and `forEach` will generally be faster when used on arrays that contain nothing but numerical values.
+
 ## Security
 
 If you discover a security vulnerability within this package, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
