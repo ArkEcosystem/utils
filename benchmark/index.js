@@ -48,26 +48,27 @@ run([
 
 function bench(title, config) {
     return function (next) {
-        var suite = new Benchmark.Suite();
-        var keys = Object.keys(config),
-            total = keys.length,
-            key, i;
+        const suite = new Benchmark.Suite();
+        const keys = Object.keys(config);
+        const total = keys.length;
 
-        for (i = 0; i < total; i++) {
-            key = keys[i];
+        for (let i = 0; i < total; i++) {
+            let key = keys[i];
             suite.add(key, config[key]);
         }
 
         suite.on('start', function () {
             console.log('  ' + title);
         });
+
         suite.on('cycle', function (event) {
             console.log("    \033[0;32m\✓\033[0m \033[0;37m " + event.target + "\033[0m");
         });
+
         suite.on('complete', function () {
-            var slowest = this.filter('slowest')[0],
-                baselineSuite = this.shift(),
-                UtilsSuite = this.shift();
+            const slowest = this.filter('slowest')[0];
+            let baselineSuite = this.shift();
+            let UtilsSuite = this.shift();
 
             // In most benchmarks, the first entry is the native implementation and
             // the second entry is the utils one. However, not all benchmarks have
@@ -78,9 +79,9 @@ function bench(title, config) {
                 baselineSuite = slowest;
             }
 
-            var diff = UtilsSuite.hz - baselineSuite.hz,
-                percentage = ((diff / baselineSuite.hz) * 100).toFixed(2),
-                relation = 'faster';
+            const diff = UtilsSuite.hz - baselineSuite.hz;
+            let percentage = ((diff / baselineSuite.hz) * 100).toFixed(2);
+            let relation = 'faster';
 
             if (percentage < 0) {
                 relation = 'slower';
@@ -90,6 +91,7 @@ function bench(title, config) {
             console.log('\n    \033[0;37mResult:\033[0m utils \033[0;37mis\033[0m ' + percentage + '% ' + relation + ' \033[0;37mthan\033[0m ' + baselineSuite.name + '.\n');
             next();
         });
+
         suite.run({
             async: true
         });
@@ -97,9 +99,9 @@ function bench(title, config) {
 }
 
 function run(benchmarks) {
-    var index = -1,
-        length = benchmarks.length,
-        startTime = Date.now();
+    let index = -1;
+    const length = benchmarks.length;
+    const startTime = Date.now();
 
     console.log('  \033[0;37mRunning ' + length + ' benchmarks, please wait...\033[0m\n');
 
@@ -108,10 +110,12 @@ function run(benchmarks) {
         if (index < length) {
             benchmarks[index](continuation);
         } else {
-            var endTime = Date.now(),
-                total = Math.ceil((endTime - startTime) / 1000);
+            const endTime = Date.now();
+            const total = Math.ceil((endTime - startTime) / 1000);
+
             console.log('  \n\033[0;37mFinished in ' + total + ' seconds\033[0m\n');
         }
     }
+
     continuation();
 }
