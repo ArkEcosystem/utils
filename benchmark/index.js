@@ -3,6 +3,18 @@ const Benchmark = require('benchmark');
 run([
     bench('Utils.camelCase vs lodash.camelCase', require('./camelCase')),
 
+    bench('Utils.orderBy vs lodash.orderBy (10 items)', require('./orderBy/10')),
+    bench('Utils.orderBy vs lodash.orderBy (100 items)', require('./orderBy/100')),
+    bench('Utils.orderBy vs lodash.orderBy (1000 items)', require('./orderBy/1000')),
+    bench('Utils.orderBy vs lodash.orderBy (10000 items)', require('./orderBy/10000')),
+    bench('Utils.orderBy vs lodash.orderBy (100000 items)', require('./orderBy/100000')),
+
+    bench('Utils.sortBy vs lodash.sortBy (10 items)', require('./sortBy/10')),
+    bench('Utils.sortBy vs lodash.sortBy (100 items)', require('./sortBy/100')),
+    bench('Utils.sortBy vs lodash.sortBy (1000 items)', require('./sortBy/1000')),
+    bench('Utils.sortBy vs lodash.sortBy (10000 items)', require('./sortBy/10000')),
+    bench('Utils.sortBy vs lodash.sortBy (100000 items)', require('./sortBy/100000')),
+
     bench('Native.map vs Utils.map vs lodash.map (10 items)', require('./map/10')),
     bench('Native.map vs Utils.map vs lodash.map (100 items)', require('./map/100')),
     bench('Native.map vs Utils.map vs lodash.map (1000 items)', require('./map/1000')),
