@@ -12,3 +12,5 @@ exports.createTransactions = count => new Array(count).fill(require("./fixtures/
 exports.createWallets = count => new Array(count).fill(require("./fixtures/wallet"));
 
 exports.createObjects = (count, width, depth) => new Array(count).fill(randomObject(width, depth));
+
+exports.createObject = (width, depth) => randomObject(width, depth);
