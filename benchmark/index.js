@@ -75,8 +75,13 @@ function bench(title, config) {
             // a native baseline implementation (e.g. there is none for "clone").
             // In such a case, use the slowest benchmark result as a baseline.
             if (UtilsSuite.name.indexOf('utils') != 0) {
-                UtilsSuite = baselineSuite;
-                baselineSuite = slowest;
+                if (total === 2 && slowest.name.indexOf('utils') !== -1) {
+                    baselineSuite = UtilsSuite;
+                    UtilsSuite = slowest;
+                } else {
+                    UtilsSuite = baselineSuite;
+                    baselineSuite = slowest;
+                }
             }
 
             const diff = UtilsSuite.hz - baselineSuite.hz;
