@@ -3,6 +3,12 @@ const Benchmark = require('benchmark');
 run([
     bench('Utils.camelCase vs lodash.camelCase', require('./camelCase')),
 
+    bench('Utils.take vs lodash.take (10 wallets)', require('./take/10')),
+    bench('Utils.take vs lodash.take (100 wallets)', require('./take/100')),
+    bench('Utils.take vs lodash.take (1000 wallets)', require('./take/1000')),
+    bench('Utils.take vs lodash.take (10000 wallets)', require('./take/10000')),
+    bench('Utils.take vs lodash.take (100000 wallets)', require('./take/100000')),
+
     bench('Utils.orderBy vs lodash.orderBy (10 wallets)', require('./orderBy/10')),
     bench('Utils.orderBy vs lodash.orderBy (100 wallets)', require('./orderBy/100')),
     bench('Utils.orderBy vs lodash.orderBy (1000 wallets)', require('./orderBy/1000')),
@@ -14,6 +20,12 @@ run([
     bench('Utils.sortBy vs lodash.sortBy (1000 wallets)', require('./sortBy/1000')),
     bench('Utils.sortBy vs lodash.sortBy (10000 wallets)', require('./sortBy/10000')),
     bench('Utils.sortBy vs lodash.sortBy (100000 wallets)', require('./sortBy/100000')),
+
+    bench('Utils.sortByDesc vs lodash.sortByDesc (10 wallets)', require('./sortByDesc/10')),
+    bench('Utils.sortByDesc vs lodash.sortByDesc (100 wallets)', require('./sortByDesc/100')),
+    bench('Utils.sortByDesc vs lodash.sortByDesc (1000 wallets)', require('./sortByDesc/1000')),
+    bench('Utils.sortByDesc vs lodash.sortByDesc (10000 wallets)', require('./sortByDesc/10000')),
+    bench('Utils.sortByDesc vs lodash.sortByDesc (100000 wallets)', require('./sortByDesc/100000')),
 
     bench('Native.map vs Utils.map vs lodash.map (10 wallets)', require('./map/10')),
     bench('Native.map vs Utils.map vs lodash.map (100 wallets)', require('./map/100')),
