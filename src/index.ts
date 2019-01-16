@@ -32,7 +32,7 @@ export const set = dottie.set;
 
 // MODULE: FAST.JS
 export const assign = fast.assign;
-export const canTry = fast.canTry;
+export const tryCatch = fast.try;
 export const concat = fast.concat;
 export const fill = fast.fill;
 export const filter = fast.filter;
