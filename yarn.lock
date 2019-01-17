@@ -45,6 +45,13 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@faustbrian/benchmarker@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@faustbrian/benchmarker/-/benchmarker-0.1.0.tgz#135f69c221fde978cae2b0e4f6482b9dc339337e"
+  integrity sha512-nGFXFMRpZ5TVbku9jOgkyBK/fgs6ccoZhyToaCk7OdD8NfsonqPszt+UlPnz836OfhK5d5QyUX8rsfkmBEcaVw==
+  dependencies:
+    benchmark "^2.1.4"
+
 "@flatten/array@^1.1.7":
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/@flatten/array/-/array-1.1.7.tgz#f94659bbf32d558f692a6234304a247312a6fa38"
