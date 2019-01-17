@@ -4,7 +4,6 @@ import sort from "fast-sort";
 import stringify from "fast-stringify";
 import fast from "fast.js";
 import hyperid from "hyperid";
-import { camelize as camelCase } from "xcase";
 
 export function sortBy(values: any, iteratees?: any): any {
     return sort(values).asc(iteratees);
@@ -44,4 +43,4 @@ export const reduce = fast.reduce;
 export const some = fast.some;
 
 // MODULES: RANDOM
-export { camelCase, flatten, stringify };
+export { flatten, stringify };

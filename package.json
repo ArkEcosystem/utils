@@ -35,8 +35,7 @@
         "fast-sort": "^1.5.4",
         "fast-stringify": "^1.1.1",
         "fast.js": "^0.1.1",
-        "hyperid": "^2.0.1",
-        "xcase": "^2.0.1"
+        "hyperid": "^2.0.1"
     },
     "devDependencies": {
         "@sindresorhus/tsconfig": "^0.1.1",
