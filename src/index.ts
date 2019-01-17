@@ -21,6 +21,14 @@ export function randomString(options?: boolean | hyperid.Options): string {
     return hyperid(options)();
 }
 
+export function capitalize(word: string): string {
+    return word[0].toUpperCase() + word.slice(1);
+}
+
+export function uncapitalize(word: string): string {
+    return word[0].toLowerCase() + word.slice(1);
+}
+
 // MODULE: DOTTIE.JS
 export const get = dottie.get;
 export const set = dottie.set;
