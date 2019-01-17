@@ -17,10 +17,6 @@ export function orderBy(values: Iterable<{}>, iteratees: string[], orders: strin
     return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 }
 
-export function take(values: any[], size: number): any[] {
-    return values.slice(0, size);
-}
-
 export function randomString(options?: boolean | hyperid.Options): string {
     return hyperid(options)();
 }

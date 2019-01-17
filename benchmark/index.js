@@ -1,12 +1,6 @@
 const Benchmark = require('benchmark');
 
 run([
-    bench('Utils.take vs lodash.take (10 wallets)', require('./take/10')),
-    bench('Utils.take vs lodash.take (100 wallets)', require('./take/100')),
-    bench('Utils.take vs lodash.take (1000 wallets)', require('./take/1000')),
-    bench('Utils.take vs lodash.take (10000 wallets)', require('./take/10000')),
-    bench('Utils.take vs lodash.take (100000 wallets)', require('./take/100000')),
-
     bench('Utils.orderBy vs lodash.orderBy (10 wallets)', require('./orderBy/10')),
     bench('Utils.orderBy vs lodash.orderBy (100 wallets)', require('./orderBy/100')),
     bench('Utils.orderBy vs lodash.orderBy (1000 wallets)', require('./orderBy/1000')),
