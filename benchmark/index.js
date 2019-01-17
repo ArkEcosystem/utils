@@ -1,8 +1,6 @@
 const Benchmark = require('benchmark');
 
 run([
-    bench('Utils.camelCase vs lodash.camelCase', require('./camelCase')),
-
     bench('Utils.take vs lodash.take (10 wallets)', require('./take/10')),
     bench('Utils.take vs lodash.take (100 wallets)', require('./take/100')),
     bench('Utils.take vs lodash.take (1000 wallets)', require('./take/1000')),
