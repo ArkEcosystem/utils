@@ -39,6 +39,7 @@
     },
     "devDependencies": {
         "@arkecosystem/crypto": "^0.2.6",
+        "@faustbrian/benchmarker": "^0.1.0",
         "@sindresorhus/tsconfig": "^0.1.1",
         "@types/dottie": "^2.0.2",
         "@types/jest": "^23.3.12",
