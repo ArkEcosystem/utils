@@ -1,4 +1,3 @@
-import "jest-extended";
 import { uncapitalize } from "../src";
 
 const dummies = {
