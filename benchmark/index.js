@@ -36,4 +36,10 @@ benchmarker('utils', [
     { name: 'Native.filter vs Utils.filter vs lodash.filter (1000 wallets)', scenarios: require('./filter/1000') },
     { name: 'Native.filter vs Utils.filter vs lodash.filter (10000 wallets)', scenarios: require('./filter/10000') },
     { name: 'Native.filter vs Utils.filter vs lodash.filter (100000 wallets)', scenarios: require('./filter/100000') },
+
+    { name: 'Native.stringify vs Utils.stringify (10 wallets)', scenarios: require('./stringify/10') },
+    { name: 'Native.stringify vs Utils.stringify (100 wallets)', scenarios: require('./stringify/100') },
+    { name: 'Native.stringify vs Utils.stringify (1000 wallets)', scenarios: require('./stringify/1000') },
+    { name: 'Native.stringify vs Utils.stringify (10000 wallets)', scenarios: require('./stringify/10000') },
+    { name: 'Native.stringify vs Utils.stringify (100000 wallets)', scenarios: require('./stringify/100000') },
 ]);

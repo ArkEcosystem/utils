@@ -1,7 +1,7 @@
 import flatten from "@flatten/array";
 import dottie from "dottie";
+import stringify from "fast-safe-stringify";
 import sort from "fast-sort";
-import stringify from "fast-stringify";
 import fast from "fast.js";
 import hyperid from "hyperid";
 
