@@ -5,15 +5,15 @@ import sort from "fast-sort";
 import fast from "fast.js";
 import hyperid from "hyperid";
 
-export function sortBy(values: any, iteratees?: any): any {
+export function sortBy<T = any>(values: any, iteratees?: any): T[] {
     return sort(values).asc(iteratees);
 }
 
-export function sortByDesc(values: any, iteratees?: any): any {
+export function sortByDesc<T = any>(values: any, iteratees?: any): T[] {
     return sort(values).desc(iteratees);
 }
 
-export function orderBy(values: Iterable<{}>, iteratees: string[], orders: string[]): Iterable<{}> {
+export function orderBy<T = any>(values: T[], iteratees: string[], orders: string[]): T[] {
     return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 }
 
