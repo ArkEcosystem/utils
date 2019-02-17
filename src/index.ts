@@ -13,7 +13,15 @@ export function sortByDesc<T = any>(values: any, iteratees?: any): T[] {
     return sort(values).desc(iteratees);
 }
 
-export function orderBy<T = any>(values: T[], iteratees: string[], orders: string[]): T[] {
+export function orderBy<T = any>(values: T[], iteratees: string | string[], orders: string | string[]): T[] {
+    if (typeof iteratees === "string") {
+        iteratees = [iteratees];
+    }
+
+    if (typeof orders === "string") {
+        orders = [orders];
+    }
+
     return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 }
 
