@@ -7,12 +7,14 @@ const dummies = [
     { name: "Jane", age: 40 },
 ];
 
-const getAge = dummy => {
-    return dummy.age;
-};
-
 test("sorts records by youngest age (with string params)", () => {
     const actual = orderBy(dummies, "age", "asc");
+
+    expect(actual).toEqual(dummies);
+});
+
+test("sorts records by youngest age (with function params)", () => {
+    const actual = orderBy(dummies, value => value.age, "asc");
 
     expect(actual).toEqual(dummies);
 });
@@ -24,7 +26,7 @@ test("sorts records by oldest age (with string params)", () => {
 });
 
 test("sorts records by oldest age (with function params)", () => {
-    const actual = orderBy(dummies, getAge, "desc");
+    const actual = orderBy(dummies, value => value.age, "desc");
 
     expect(actual).toEqual(dummies.reverse());
 });
