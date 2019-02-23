@@ -17,11 +17,13 @@ export function sortByDesc<T = any>(values: any, iteratees?: any): T[] {
 
 export function orderBy<T = any>(
     values: T[],
-    iteratees: CallbackFunctionVariadicAnyReturn | string | any[],
+    iteratees: CallbackFunctionVariadicAnyReturn | string | CallbackFunctionVariadicAnyReturn[] | string[],
     orders: string | string[],
 ): T[] {
-    if (typeof iteratees === "string" || typeof iteratees === "function") {
-        iteratees = [iteratees];
+    if (typeof iteratees === "string") {
+        iteratees = [iteratees] as string[];
+    } else if (typeof iteratees === "function") {
+        iteratees = [iteratees] as CallbackFunctionVariadicAnyReturn[];
     }
 
     if (typeof orders === "string") {
