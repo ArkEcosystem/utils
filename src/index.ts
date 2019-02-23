@@ -5,6 +5,8 @@ import sort from "fast-sort";
 import fast from "fast.js";
 import hyperid from "hyperid";
 
+type CallbackFunctionVariadicAnyReturn = (...args: any[]) => any;
+
 export function sortBy<T = any>(values: any, iteratees?: any): T[] {
     return sort(values).asc(iteratees);
 }
@@ -13,8 +15,12 @@ export function sortByDesc<T = any>(values: any, iteratees?: any): T[] {
     return sort(values).desc(iteratees);
 }
 
-export function orderBy<T = any>(values: T[], iteratees: string | string[], orders: string | string[]): T[] {
-    if (typeof iteratees === "string") {
+export function orderBy<T = any>(
+    values: T[],
+    iteratees: CallbackFunctionVariadicAnyReturn | string | any[],
+    orders: string | string[],
+): T[] {
+    if (typeof iteratees === "string" || typeof iteratees === "function") {
         iteratees = [iteratees];
     }
 
