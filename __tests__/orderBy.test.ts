@@ -23,7 +23,7 @@ test("sorts records by oldest age (with string params)", () => {
     expect(actual).toEqual(dummies.reverse());
 });
 
-test("sorts records by oldest age (with function params", () => {
+test("sorts records by oldest age (with function params)", () => {
     const actual = orderBy(dummies, getAge, "desc");
 
     expect(actual).toEqual(dummies.reverse());
