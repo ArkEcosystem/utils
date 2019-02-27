@@ -1,10 +1,6 @@
 type DateTime = string | number | Dato | Date;
 
 export class Dato {
-    public static make(value?: DateTime): Dato {
-        return new Dato(value);
-    }
-
     private date: Date = new Date();
 
     public constructor(value?: DateTime) {
@@ -158,4 +154,8 @@ export class Dato {
 
         throw new Error(`Expected: string, number, Dato or Date. Received: ${typeof value}.`);
     }
+}
+
+export function dato(value?: DateTime): Dato {
+    return new Dato(value);
 }

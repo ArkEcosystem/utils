@@ -4,7 +4,7 @@ import stringify from "fast-safe-stringify";
 import sort from "fast-sort";
 import fast from "fast.js";
 import hyperid from "hyperid";
-import { Dato } from "./dato";
+import { dato, Dato } from "./dato";
 
 type CallbackFunctionVariadicAnyReturn = (...args: any[]) => any;
 
@@ -64,4 +64,4 @@ export const reduce = fast.reduce;
 export const some = fast.some;
 
 // MODULES: RANDOM
-export { flatten, stringify, Dato };
+export { flatten, stringify, dato, Dato };
