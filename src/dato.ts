@@ -1,11 +1,7 @@
 type DateTime = string | number | Dato | Date;
 
 export class Dato {
-    public static now(): Dato {
-        return new Dato();
-    }
-
-    public static from(value: DateTime): Dato {
+    public static make(value?: DateTime): Dato {
         return new Dato(value);
     }
 
