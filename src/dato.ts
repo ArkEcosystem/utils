@@ -156,6 +156,6 @@ export class Dato {
             return value.toDate();
         }
 
-        throw new Error(`Expected a string, number, Dato or Date. Received ${typeof value}`);
+        throw new Error(`Expected: string, number, Dato or Date. Received: ${typeof value}.`);
     }
 }
