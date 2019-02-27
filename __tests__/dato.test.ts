@@ -4,131 +4,188 @@ import { Dato } from "../src/dato";
 
 const epoch = "2017-03-21T13:00:00.000Z";
 
-// @ts-ignore
-const add = (value: number, unit: string) => day.add(value, unit).toString();
+function add(value: number, unit: string) {
+    // @ts-ignore
+    return day.add(value, unit).toString();
+}
 
-// @ts-ignore
-const subtract = (value: number, unit: string) => day.subtract(value, unit).toString();
+function subtract(value: number, unit: string) {
+    // @ts-ignore
+    return day.subtract(value, unit).toString();
+}
+
+const allowedTypes = [
+    ["string", epoch],
+    ["number", 1490101200000],
+    ["date", new Date(Date.parse(epoch))],
+    ["dato", Dato.from(epoch)],
+];
 
 let day: dayjs.Dayjs;
-let mom: Dato;
 beforeEach(() => {
     day = dayjs(epoch).utc();
-    mom = Dato.fromString(epoch);
 });
 
 describe("Dato", () => {
-    it("now", () => {
-        expect(Dato.now()).toBeInstanceOf(Dato);
+    test("returns a dato instance with the current date", () => {
+        const now = Dato.now();
+
+        expect(now).toBeInstanceOf(Dato);
+        expect(now.toDate()).toEqual(new Date(now.toMilliseconds()));
     });
 
-    it("fromString", () => {
-        expect(Dato.fromString(epoch)).toBeInstanceOf(Dato);
-    });
+    describe.each(allowedTypes)("%s", (type, value) => {
+        test(`.from()`, () => {
+            expect(Dato.from(value)).toBeInstanceOf(Dato);
+        });
 
-    it("fromDate", () => {
-        expect(Dato.fromDate(new Date())).toBeInstanceOf(Dato);
-    });
+        test(`.diff()`, () => {
+            // @ts-ignore
+            expect(Dato.from(value).diff(day.add(10, "milliseconds").toDate())).toBe(10);
+        });
 
-    it("diff (with date)", () => {
-        // @ts-ignore
-        expect(mom.diff(day.add(10, "milliseconds").toDate())).toBe(10);
-    });
+        test(`.diffSeconds()`, () => {
+            // @ts-ignore
+            expect(Dato.from(value).diffSeconds(day.add(10, "seconds").valueOf())).toBe(10);
+        });
 
-    it("diff (with number)", () => {
-        // @ts-ignore
-        expect(mom.diff(day.add(10, "milliseconds").valueOf())).toBe(10);
-    });
+        test(`.diffMinutes()`, () => {
+            // @ts-ignore
+            expect(Dato.from(value).diffMinutes(day.add(10, "minutes").valueOf())).toBe(10);
+        });
 
-    it("diffSeconds", () => {
-        // @ts-ignore
-        expect(mom.diffSeconds(day.add(10, "seconds").valueOf())).toBe(10);
-    });
+        test(`.isAfter()`, () => {
+            // @ts-ignore
+            expect(Dato.from(value).isAfter(day.subtract(10, "minutes").toDate())).toBeTrue();
+        });
 
-    it("diffMinutes", () => {
-        // @ts-ignore
-        expect(mom.diffMinutes(day.add(10, "minutes").valueOf())).toBe(10);
-    });
+        test(`.isBefore()`, () => {
+            // @ts-ignore
+            expect(Dato.from(value).isBefore(day.add(10, "minutes").toDate())).toBeTrue();
+        });
 
-    it("isAfter", () => {
-        // @ts-ignore
-        expect(mom.isAfter(day.subtract(10, "minutes").toDate())).toBeTrue();
-    });
+        test(`.addSeconds()`, () => {
+            expect(
+                Dato.from(value)
+                    .addSeconds(10)
+                    .toUTC(),
+            ).toBe(add(10, "seconds"));
+        });
 
-    it("isBefore", () => {
-        // @ts-ignore
-        expect(mom.isBefore(day.add(10, "minutes").toDate())).toBeTrue();
-    });
+        test(`.addMinutes()`, () => {
+            expect(
+                Dato.from(value)
+                    .addMinutes(10)
+                    .toUTC(),
+            ).toBe(add(10, "minutes"));
+        });
 
-    it("addSeconds", () => {
-        expect(mom.addSeconds(10).toUTC()).toBe(add(10, "seconds"));
-    });
+        test(`.addHours()`, () => {
+            expect(
+                Dato.from(value)
+                    .addHours(10)
+                    .toUTC(),
+            ).toBe(add(10, "hours"));
+        });
 
-    it("addMinutes", () => {
-        expect(mom.addMinutes(10).toUTC()).toBe(add(10, "minutes"));
-    });
+        test(`.addDays()`, () => {
+            expect(
+                Dato.from(value)
+                    .addDays(10)
+                    .toUTC(),
+            ).toBe(add(10, "days"));
+        });
 
-    it("addHours", () => {
-        expect(mom.addHours(10).toUTC()).toBe(add(10, "hours"));
-    });
+        test(`.addMonths()`, () => {
+            expect(
+                Dato.from(value)
+                    .addMonths(10)
+                    .toUTC(),
+            ).toBe(add(10, "months"));
+        });
 
-    it("addDays", () => {
-        expect(mom.addDays(10).toUTC()).toBe(add(10, "days"));
-    });
+        test(`.addYears()`, () => {
+            expect(
+                Dato.from(value)
+                    .addYears(10)
+                    .toUTC(),
+            ).toBe(add(10, "years"));
+        });
 
-    it("addMonths", () => {
-        expect(mom.addMonths(10).toUTC()).toBe(add(10, "months"));
-    });
+        test(`.subtractSeconds()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractSeconds(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "seconds"));
+        });
 
-    it("addYears", () => {
-        expect(mom.addYears(10).toUTC()).toBe(add(10, "years"));
-    });
+        test(`.subtractMinutes()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractMinutes(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "minutes"));
+        });
 
-    it("subtractSeconds", () => {
-        expect(mom.subtractSeconds(10).toUTC()).toBe(subtract(10, "seconds"));
-    });
+        test(`.subtractHours()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractHours(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "hours"));
+        });
 
-    it("subtractMinutes", () => {
-        expect(mom.subtractMinutes(10).toUTC()).toBe(subtract(10, "minutes"));
-    });
+        test(`.subtractDays()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractDays(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "days"));
+        });
 
-    it("subtractHours", () => {
-        expect(mom.subtractHours(10).toUTC()).toBe(subtract(10, "hours"));
-    });
+        test(`.subtractMonths()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractMonths(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "months"));
+        });
 
-    it("subtractDays", () => {
-        expect(mom.subtractDays(10).toUTC()).toBe(subtract(10, "days"));
-    });
+        test(`.subtractYears()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractYears(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "years"));
+        });
 
-    it("subtractMonths", () => {
-        expect(mom.subtractMonths(10).toUTC()).toBe(subtract(10, "months"));
-    });
+        test(`.subtractDays()`, () => {
+            expect(
+                Dato.from(value)
+                    .subtractDays(10)
+                    .toUTC(),
+            ).toBe(subtract(10, "days"));
+        });
 
-    it("subtractYears", () => {
-        expect(mom.subtractYears(10).toUTC()).toBe(subtract(10, "years"));
-    });
+        test(`.toDate()`, () => {
+            expect(Dato.from(value).toDate()).toEqual(day.toDate());
+        });
 
-    it("subtractDays", () => {
-        expect(mom.subtractDays(10).toUTC()).toBe(subtract(10, "days"));
-    });
+        test(`.toMilliseconds()`, () => {
+            expect(Dato.from(value).toMilliseconds()).toBe(day.valueOf());
+        });
 
-    it("toDate", () => {
-        expect(mom.toDate()).toEqual(day.toDate());
-    });
+        test(`.toUTC()`, () => {
+            expect(Dato.from(value).toUTC()).toBe(day.toString());
+        });
 
-    it("toMilliseconds", () => {
-        expect(mom.toMilliseconds()).toBe(day.valueOf());
-    });
+        test(`.toISO()`, () => {
+            expect(Dato.from(value).toISO()).toBe(day.toISOString());
+        });
 
-    it("toUTC", () => {
-        expect(mom.toUTC()).toBe(day.toString());
-    });
-
-    it("toISO", () => {
-        expect(mom.toISO()).toBe(day.toISOString());
-    });
-
-    it("toUnix", () => {
-        expect(mom.toUnix()).toBe(day.unix());
+        test(`.toUnix()`, () => {
+            expect(Dato.from(value).toUnix()).toBe(day.unix());
+        });
     });
 });

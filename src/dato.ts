@@ -1,120 +1,112 @@
-type DateTime = number | Dato | Date;
+type DateTime = string | number | Dato | Date;
 
 export class Dato {
     public static now(): Dato {
         return new Dato();
     }
 
-    public static fromString(value: string): Dato {
-        return new Dato(Date.parse(value));
-    }
-
-    public static fromDate(value: Date): Dato {
+    public static from(value: DateTime): Dato {
         return new Dato(value);
     }
 
     private date: Date = new Date();
 
-    public constructor(date?: number | Date) {
-        if (typeof date === "number") {
-            this.date = new Date(date);
-        }
-
-        if (date instanceof Date) {
-            this.date = date;
+    public constructor(value?: DateTime) {
+        if (value) {
+            this.date = this.castDateTime(value);
         }
 
         this.ensureUTC();
     }
 
-    public diff(compareTo: DateTime): number {
-        return Math.abs(this.castDateTime(compareTo).getTime() - this.date.getTime());
+    public diff(value: DateTime): number {
+        return Math.abs(this.castDateTime(value).getTime() - this.date.getTime());
     }
 
-    public diffSeconds(compareTo: DateTime): number {
-        return this.diff(compareTo) / 1e3;
+    public diffSeconds(value: DateTime): number {
+        return this.diff(value) / 1e3;
     }
 
-    public diffMinutes(compareTo: DateTime): number {
-        return this.diffSeconds(compareTo) / 60;
+    public diffMinutes(value: DateTime): number {
+        return this.diffSeconds(value) / 60;
     }
 
-    public isAfter(compareTo: DateTime): boolean {
-        return this.date > this.castDateTime(compareTo);
+    public isAfter(value: DateTime): boolean {
+        return this.date > this.castDateTime(value);
     }
 
-    public isBefore(compareTo: DateTime): boolean {
-        return !this.isAfter(compareTo);
+    public isBefore(value: DateTime): boolean {
+        return this.date < this.castDateTime(value);
     }
 
-    public addSeconds(amount: number): Dato {
-        this.add(amount, "Seconds");
+    public addSeconds(value: number): Dato {
+        this.add(value, "Seconds");
 
         return this;
     }
 
-    public addMinutes(amount: number): Dato {
-        this.add(amount, "Minutes");
+    public addMinutes(value: number): Dato {
+        this.add(value, "Minutes");
 
         return this;
     }
 
-    public addHours(amount: number): Dato {
-        this.add(amount, "Hours");
+    public addHours(value: number): Dato {
+        this.add(value, "Hours");
 
         return this;
     }
 
-    public addDays(amount: number): Dato {
-        this.add(amount, "Date");
+    public addDays(value: number): Dato {
+        this.add(value, "Date");
 
         return this;
     }
 
-    public addMonths(amount: number): Dato {
-        this.add(amount, "Month");
+    public addMonths(value: number): Dato {
+        this.add(value, "Month");
 
         return this;
     }
 
-    public addYears(amount: number): Dato {
-        this.add(amount, "FullYear");
+    public addYears(value: number): Dato {
+        this.add(value, "FullYear");
 
         return this;
     }
 
-    public subtractSeconds(amount: number): Dato {
-        this.subtract(amount, "Seconds");
+    public subtractSeconds(value: number): Dato {
+        this.subtract(value, "Seconds");
 
         return this;
     }
 
-    public subtractMinutes(amount: number): Dato {
-        this.subtract(amount, "Minutes");
+    public subtractMinutes(value: number): Dato {
+        this.subtract(value, "Minutes");
 
         return this;
     }
 
-    public subtractHours(amount: number): Dato {
-        this.subtract(amount, "Hours");
+    public subtractHours(value: number): Dato {
+        this.subtract(value, "Hours");
 
         return this;
     }
 
-    public subtractDays(amount: number): Dato {
-        this.subtract(amount, "Date");
+    public subtractDays(value: number): Dato {
+        this.subtract(value, "Date");
 
         return this;
     }
 
-    public subtractMonths(amount: number): Dato {
-        this.subtract(amount, "Month");
+    public subtractMonths(value: number): Dato {
+        this.subtract(value, "Month");
 
         return this;
     }
 
-    public subtractYears(amount: number): Dato {
-        this.subtract(amount, "FullYear");
+    public subtractYears(value: number): Dato {
+        this.subtract(value, "FullYear");
 
         return this;
     }
@@ -139,19 +131,27 @@ export class Dato {
         return +Math.floor(this.date.getTime() / 1000).toFixed(0);
     }
 
-    private add(amount: number, unit: string): void {
-        this.date[`set${unit}`](+this.date[`get${unit}`]() + amount);
+    private add(value: number, unit: string): void {
+        this.date[`set${unit}`](+this.date[`get${unit}`]() + value);
     }
 
-    private subtract(amount: number, unit: string): void {
-        this.date[`set${unit}`](+this.date[`get${unit}`]() - amount);
+    private subtract(value: number, unit: string): void {
+        this.date[`set${unit}`](+this.date[`get${unit}`]() - value);
     }
 
-    private ensureUTC() {
+    private ensureUTC(): void {
         this.date = new Date(this.date.toUTCString());
     }
 
     private castDateTime(value: DateTime): Date {
+        if (value instanceof Date) {
+            return value;
+        }
+
+        if (typeof value === "string") {
+            return new Date(Date.parse(value));
+        }
+
         if (typeof value === "number") {
             return new Date(value);
         }
@@ -160,6 +160,6 @@ export class Dato {
             return value.toDate();
         }
 
-        return value;
+        throw new Error(`Expected a string, number, Dato or Date. Received ${typeof value}`);
     }
 }
