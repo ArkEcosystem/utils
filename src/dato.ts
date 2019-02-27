@@ -1,3 +1,5 @@
+type DateTime = number | Dato | Date;
+
 export class Dato {
     public static now(): Dato {
         return new Dato();
@@ -25,35 +27,23 @@ export class Dato {
         this.ensureUTC();
     }
 
-    public diff(compareTo: number | Date): number {
-        if (typeof compareTo === "number") {
-            compareTo = new Date(compareTo);
-        }
-
-        return Math.abs(compareTo.getTime() - this.date.getTime());
+    public diff(compareTo: DateTime): number {
+        return Math.abs(this.castDateTime(compareTo).getTime() - this.date.getTime());
     }
 
-    public diffSeconds(compareTo: number | Date): number {
+    public diffSeconds(compareTo: DateTime): number {
         return this.diff(compareTo) / 1e3;
     }
 
-    public diffMinutes(compareTo: number | Date): number {
+    public diffMinutes(compareTo: DateTime): number {
         return this.diffSeconds(compareTo) / 60;
     }
 
-    public isAfter(compareTo: number | Dato | Date): boolean {
-        if (compareTo instanceof Dato) {
-            compareTo = compareTo.toDate();
-        }
-
-        if (typeof compareTo === "number") {
-            compareTo = new Date(compareTo);
-        }
-
-        return this.date > compareTo;
+    public isAfter(compareTo: DateTime): boolean {
+        return this.date > this.castDateTime(compareTo);
     }
 
-    public isBefore(compareTo: number | Dato | Date): boolean {
+    public isBefore(compareTo: DateTime): boolean {
         return !this.isAfter(compareTo);
     }
 
@@ -159,5 +149,17 @@ export class Dato {
 
     private ensureUTC() {
         this.date = new Date(this.date.toUTCString());
+    }
+
+    private castDateTime(value: DateTime): Date {
+        if (typeof value === "number") {
+            return new Date(value);
+        }
+
+        if (value instanceof Dato) {
+            return value.toDate();
+        }
+
+        return value;
     }
 }
