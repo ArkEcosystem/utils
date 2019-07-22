@@ -10,6 +10,8 @@
 
 > Performance oriented implementations of commonly used functions in TypeScript.
 
+> Lead Maintainer: [Brian Faust](https://github.com/faustbrian)
+
 ## Installation
 
 ```sh
@@ -33,10 +35,8 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## Credits
 
--   [Brian Faust](https://github.com/faustbrian)
--   [Joshua Noack](https://github.com/supaiku0)
--   [All Contributors](../../contributors)
+This project exists thanks to all the people who [contribute](../../contributors).
 
 ## License
 
-[MIT](LICENSE) © [ArkEcosystem](https://ark.io)
+[MIT](LICENSE) © [ARK Ecosystem](https://ark.io)
