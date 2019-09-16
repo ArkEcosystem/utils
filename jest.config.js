@@ -16,7 +16,7 @@ module.exports = {
         "json",
         "node"
     ],
-    "collectCoverage": true,
+    "collectCoverage": false,
     "coverageDirectory": "<rootDir>/.coverage",
     "collectCoverageFrom": [
         "src/**/*.ts",
