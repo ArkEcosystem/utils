@@ -1,8 +1,8 @@
 import sort from "fast-sort";
-import fast from "fast.js";
 import { FunctionReturning } from "./internal";
 import { isFunction } from "./is-function";
 import { isString } from "./is-string";
+import { map } from "./map";
 
 export const orderBy = <T>(
     values: T[],
@@ -19,5 +19,5 @@ export const orderBy = <T>(
         orders = [orders];
     }
 
-    return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
+    return sort(values).by(map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
 };
