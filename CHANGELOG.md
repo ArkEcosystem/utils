@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2019-09-16
+
+### Added
+
+-   Added `cappedSet` method
+-   Added `chunk` method
+-   Added `cloneDeep` method
+-   Added `Collection` class
+-   Added `groupBy` method
+-   Added `hasProperty` method
+-   Added `hasSomeProperty` method
+-   Added `has` method
+-   Added `isArrayOfType` method
+-   Added `isBooleanArray` method
+-   Added `isConstructor` method
+-   Added `isEmpty` method
+-   Added `isEqual` method
+-   Added `isFunction` method
+-   Added `isNil` method
+-   Added `isNumberArray` method
+-   Added `isObject` method
+-   Added `isStringArray` method
+-   Added `isString` method
+-   Added `isSymbol` method
+-   Added `isUndefined` method
+-   Added `minBy` method
+-   Added `NSect` class
+-   Added `OrderedCappedMap` class
+-   Added `partition` method
+-   Added `pick` method
+-   Added `sample` method
+-   Added `shuffle` method
+-   Added `take` method
+-   Added `uniq` method
+-   Added `unset` method
+
 ## [0.3.0] - 2019-02-27
 
 ### Removed
