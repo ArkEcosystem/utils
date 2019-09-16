@@ -5,8 +5,10 @@ const dummies = {
     "test space": "Test space",
 };
 
-test("capitalizes input", () => {
-    Object.keys(dummies).forEach(key => {
-        expect(capitalize(key)).toEqual(dummies[key]);
+describe("#capitalize", () => {
+    it("should capitalize the given input", () => {
+        Object.keys(dummies).forEach(key => {
+            expect(capitalize(key)).toEqual(dummies[key]);
+        });
     });
 });

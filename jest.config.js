@@ -1,0 +1,27 @@
+module.exports = {
+    "testEnvironment": "node",
+    "bail": false,
+    "verbose": true,
+    "transform": {
+        "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+        "**/*.test.ts"
+    ],
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/.coverage",
+    "collectCoverageFrom": [
+        "src/**/*.ts",
+        "!**/node_modules/**"
+    ],
+    "watchman": false,
+    "setupFilesAfterEnv": ["jest-extended"]
+}
