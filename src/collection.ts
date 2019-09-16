@@ -37,7 +37,7 @@ export class Collection<T> {
     }
 
     public set(key: string, value: T): void {
-        set<T>(this.collection, key, value);
+        set(this.collection, key, value);
     }
 
     public forget(key: string): void {
