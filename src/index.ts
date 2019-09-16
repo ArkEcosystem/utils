@@ -1,55 +1,48 @@
-import flatten from "@flatten/array";
-import dottie from "dottie";
-import stringify from "fast-safe-stringify";
-import sort from "fast-sort";
 import fast from "fast.js";
-import hyperid from "hyperid";
 
-type CallbackFunctionVariadicAnyReturn = (...args: any[]) => any;
+// Internal
+export * from "./capitalize";
+export * from "./capped-set";
+export * from "./chunk";
+export * from "./clone-deep";
+export * from "./collection";
+export * from "./flatten";
+export * from "./get";
+export * from "./group-by";
+export * from "./has-property";
+export * from "./has-some-property";
+export * from "./has";
+export * from "./is-array-of-type";
+export * from "./is-boolean-array";
+export * from "./is-constructor";
+export * from "./is-empty";
+export * from "./is-equal";
+export * from "./is-function";
+export * from "./is-nil";
+export * from "./is-number-array";
+export * from "./is-object";
+export * from "./is-string-array";
+export * from "./is-string";
+export * from "./is-symbol";
+export * from "./is-undefined";
+export * from "./min-by";
+export * from "./nsect";
+export * from "./order-by";
+export * from "./ordered-capped-map";
+export * from "./partition";
+export * from "./pick";
+export * from "./sample";
+export * from "./set";
+export * from "./shuffle";
+export * from "./sort-by-desc";
+export * from "./sort-by";
+export * from "./stringify";
+export * from "./take";
+export * from "./uncapitalize";
+export * from "./uniq";
+export * from "./unset";
 
-export function sortBy<T = any>(values: any, iteratees?: any): T[] {
-    return sort(values).asc(iteratees);
-}
-
-export function sortByDesc<T = any>(values: any, iteratees?: any): T[] {
-    return sort(values).desc(iteratees);
-}
-
-export function orderBy<T = any>(
-    values: T[],
-    iteratees: CallbackFunctionVariadicAnyReturn | string | CallbackFunctionVariadicAnyReturn[] | string[],
-    orders: string | string[],
-): T[] {
-    if (typeof iteratees === "string") {
-        iteratees = [iteratees] as string[];
-    } else if (typeof iteratees === "function") {
-        iteratees = [iteratees] as CallbackFunctionVariadicAnyReturn[];
-    }
-
-    if (typeof orders === "string") {
-        orders = [orders];
-    }
-
-    return sort(values).by(fast.map(iteratees, (_: string, i: number) => ({ [orders[i]]: iteratees[i] })));
-}
-
-export function randomString(options?: boolean | hyperid.Options): string {
-    return hyperid(options)();
-}
-
-export function capitalize(text: string): string {
-    return text[0].toUpperCase() + text.slice(1);
-}
-
-export function uncapitalize(text: string): string {
-    return text[0].toLowerCase() + text.slice(1);
-}
-
-// MODULE: DOTTIE.JS
-export const get = dottie.get;
-export const set = dottie.set;
-
-// MODULE: FAST.JS
+// fast.js
 export const assign = fast.assign;
 export const tryCatch = fast.try;
 export const concat = fast.concat;
@@ -61,6 +54,3 @@ export const intern = fast.intern;
 export const map = fast.map;
 export const reduce = fast.reduce;
 export const some = fast.some;
-
-// MODULES: RANDOM
-export { flatten, stringify };
