@@ -34,6 +34,7 @@ export * from "./is-symbol";
 export * from "./is-undefined";
 export * from "./last";
 export * from "./lower-first";
+export * from "./map-values";
 export * from "./map";
 export * from "./max-by";
 export * from "./max";
