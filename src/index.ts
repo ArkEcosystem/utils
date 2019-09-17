@@ -63,6 +63,7 @@ export * from "./sort-by";
 export * from "./stringify";
 export * from "./tail";
 export * from "./take";
+export * from "./union-by";
 export * from "./union";
 export * from "./uniq-by";
 export * from "./uniq";
