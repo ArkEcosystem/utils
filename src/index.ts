@@ -4,6 +4,7 @@ export * from "./capped-set";
 export * from "./cast-array";
 export * from "./chunk";
 export * from "./clone-deep";
+export * from "./clone";
 export * from "./collection";
 export * from "./concat";
 export * from "./fill";

@@ -190,4 +190,9 @@ benchmarker('utils', [{
         name: 'Utils.zipObject vs lodash.zipObject (100000 pairs)',
         scenarios: require('./zipObject/100000')
     },
+
+    {
+        name: 'Utils.clone vs lodash.clone',
+        scenarios: require('./clone')
+    },
 ]);
