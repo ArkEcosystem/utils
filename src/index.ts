@@ -1,6 +1,6 @@
 export * from "./assign";
 export * from "./at";
-export * from "./capitalize";
+export * from "./upper-first";
 export * from "./capped-set";
 export * from "./chunk";
 export * from "./clone-deep";
@@ -53,6 +53,6 @@ export * from "./sort-by";
 export * from "./stringify";
 export * from "./tail";
 export * from "./take";
-export * from "./uncapitalize";
+export * from "./lower-first";
 export * from "./uniq";
 export * from "./unset";

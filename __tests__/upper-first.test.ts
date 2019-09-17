@@ -1,14 +1,15 @@
-import { capitalize } from "../src";
+import { upperFirst } from "../src";
 
 const dummies = {
-    test: "Test",
+    fred: "Fred",
+    FRED: "FRED",
     "test space": "Test space",
 };
 
-describe("#capitalize", () => {
+describe("#upperFirst", () => {
     it("should capitalize the given input", () => {
         Object.keys(dummies).forEach(key => {
-            expect(capitalize(key)).toEqual(dummies[key]);
+            expect(upperFirst(key)).toEqual(dummies[key]);
         });
     });
 });

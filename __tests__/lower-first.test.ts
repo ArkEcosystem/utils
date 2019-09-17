@@ -1,14 +1,15 @@
-import { uncapitalize } from "../src";
+import { lowerFirst } from "../src";
 
 const dummies = {
-    Test: "test",
+    Fred: "fred",
+    FRED: "fRED",
     "Test Space": "test Space",
 };
 
-describe("#uncapitalize", () => {
+describe("#lowerFirst", () => {
     it("should uncapitalize the given input", () => {
         Object.keys(dummies).forEach(key => {
-            expect(uncapitalize(key)).toEqual(dummies[key]);
+            expect(lowerFirst(key)).toEqual(dummies[key]);
         });
     });
 });
