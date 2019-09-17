@@ -1,6 +1,7 @@
 export * from "./assign";
 export * from "./at";
 export * from "./capped-set";
+export * from "./cast-array";
 export * from "./chunk";
 export * from "./clone-deep";
 export * from "./collection";
