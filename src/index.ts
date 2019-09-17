@@ -42,6 +42,7 @@ export * from "./ordered-capped-map";
 export * from "./partition";
 export * from "./pick";
 export * from "./reduce";
+export * from "./reject";
 export * from "./sample";
 export * from "./set";
 export * from "./shuffle";
