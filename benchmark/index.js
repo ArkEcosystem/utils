@@ -169,4 +169,25 @@ benchmarker('utils', [{
         name: 'Utils.uniqBy vs lodash.uniqBy (100000 wallets)',
         scenarios: require('./uniqBy/100000')
     },
+
+    {
+        name: 'Utils.zipObject vs lodash.zipObject (10 pairs)',
+        scenarios: require('./zipObject/10')
+    },
+    {
+        name: 'Utils.zipObject vs lodash.zipObject (100 pairs)',
+        scenarios: require('./zipObject/100')
+    },
+    {
+        name: 'Utils.zipObject vs lodash.zipObject (1000 pairs)',
+        scenarios: require('./zipObject/1000')
+    },
+    {
+        name: 'Utils.zipObject vs lodash.zipObject (10000 pairs)',
+        scenarios: require('./zipObject/10000')
+    },
+    {
+        name: 'Utils.zipObject vs lodash.zipObject (100000 pairs)',
+        scenarios: require('./zipObject/100000')
+    },
 ]);
