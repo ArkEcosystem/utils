@@ -47,6 +47,7 @@ export * from "./ordered-capped-map";
 export * from "./partition";
 export * from "./pick-by";
 export * from "./pick";
+export * from "./pull-all-by";
 export * from "./pull-all";
 export * from "./pull";
 export * from "./random";

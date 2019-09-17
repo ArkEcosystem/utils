@@ -1,8 +1,3 @@
-import { filter } from "./filter";
-import { isFunction } from "./is-function";
+import { pull } from "./pull";
 
-export const pullAll = (collection, predicate) => {
-    const func = isFunction(predicate) ? predicate : item => !predicate.includes(item);
-
-    return filter(collection, func);
-};
+export const pullAll = (collection, predicate) => pull(collection, ...predicate);
