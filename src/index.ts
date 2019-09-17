@@ -55,5 +55,6 @@ export * from "./stringify";
 export * from "./tail";
 export * from "./take";
 export * from "./uniq";
+export * from "./uniq-by";
 export * from "./unset";
 export * from "./upper-first";
