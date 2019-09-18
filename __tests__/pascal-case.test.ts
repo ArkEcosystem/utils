@@ -8,8 +8,10 @@ describe("#pascalCase", () => {
         expect(pascalCase("camelCase")).toBe("CamelCase");
         expect(pascalCase("param-case")).toBe("ParamCase");
         expect(pascalCase("PascalCase")).toBe("PascalCase");
-        expect(pascalCase("pascal_case")).toBe("PascalCase");
+        expect(pascalCase("UPPER_CASE")).toBe("UpperCase");
+        expect(pascalCase("snake_case")).toBe("SnakeCase");
         expect(pascalCase("sentence case")).toBe("SentenceCase");
         expect(pascalCase("Title Case")).toBe("TitleCase");
+        expect(pascalCase("dot.case")).toBe("DotCase");
     });
 });
