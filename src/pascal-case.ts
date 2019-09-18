@@ -1,4 +1,4 @@
 import { pascalize } from "fast-case";
-import noCase from "no-case";
+import { lowerCase } from "./lower-case";
 
-export const pascalCase = (value: string): string => pascalize(noCase(value));
+export const pascalCase = (value: string): string => pascalize(lowerCase(value));

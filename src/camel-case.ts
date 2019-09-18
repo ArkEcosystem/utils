@@ -1,4 +1,4 @@
 import { camelize } from "fast-case";
-import noCase from "no-case";
+import { lowerCase } from "./lower-case";
 
-export const camelCase = (value: string): string => camelize(noCase(value));
+export const camelCase = (value: string): string => camelize(lowerCase(value));
