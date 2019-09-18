@@ -35,6 +35,7 @@ export * from "./is-string-array";
 export * from "./is-string";
 export * from "./is-symbol";
 export * from "./is-undefined";
+export * from "./key-by";
 export * from "./last";
 export * from "./lower-case";
 export * from "./lower-first";
