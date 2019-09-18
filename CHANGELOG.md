@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2019-09-18
+
+### Added
+
+-   Added `at` method
+-   Added `camelCase` method
+-   Added `castArray` method
+-   Added `clone` method
+-   Added `findKey` method
+-   Added `head` method
+-   Added `isBoolean` method
+-   Added `isNumber` method
+-   Added `keyBy` method
+-   Added `keys` method
+-   Added `last` method
+-   Added `lowerCase` method
+-   Added `mapValues` method
+-   Added `max` method
+-   Added `maxBy` method
+-   Added `merge` method
+-   Added `min` method
+-   Added `omitBy` method
+-   Added `pascalCase` method
+-   Added `pickBy` method
+-   Added `pull` method
+-   Added `pullAll` method
+-   Added `pullAllBy` method
+-   Added `random` method
+-   Added `reject` method
+-   Added `snakeCase` method
+-   Added `tail` method
+-   Added `toString` method
+-   Added `union` method
+-   Added `unionBy` method
+-   Added `uniqBy` method
+-   Added `upperCase` method
+-   Added `zipObject` method
+
 ## [0.4.0] - 2019-09-16
 
 ### Added
@@ -160,6 +198,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[0.5.0]: https://github.com/ArkEcosystem/utils/compare/0.4.0...0.5.0
+[0.4.0]: https://github.com/ArkEcosystem/utils/compare/0.3.0...0.4.0
+[0.3.0]: https://github.com/ArkEcosystem/utils/compare/0.2.7...0.3.0
+[0.2.7]: https://github.com/ArkEcosystem/utils/compare/0.2.6...0.2.7
+[0.2.6]: https://github.com/ArkEcosystem/utils/compare/0.2.51...0.2.6
+[0.2.51]: https://github.com/ArkEcosystem/utils/compare/0.2.5...0.2.51
+[0.2.5]: https://github.com/ArkEcosystem/utils/compare/0.2.4...0.2.5
+[0.2.4]: https://github.com/ArkEcosystem/utils/compare/0.2.3...0.2.4
 [0.2.4]: https://github.com/ArkEcosystem/utils/compare/0.2.3...0.2.4
 [0.2.3]: https://github.com/ArkEcosystem/utils/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/ArkEcosystem/utils/compare/0.2.1...0.2.2
