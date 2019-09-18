@@ -41,6 +41,7 @@ export * from "./map-values";
 export * from "./map";
 export * from "./max-by";
 export * from "./max";
+export * from "./merge";
 export * from "./min-by";
 export * from "./min";
 export * from "./nsect";
