@@ -195,4 +195,9 @@ benchmarker('utils', [{
         name: 'Utils.clone vs lodash.clone',
         scenarios: require('./clone')
     },
+
+    {
+        name: 'Utils.clone vs lodash.clone',
+        scenarios: require('./clone-deep')
+    },
 ]);

@@ -1,4 +1,3 @@
-import { parse } from "./parse";
-import { stringify } from "./stringify";
+import rfdc from "rfdc";
 
-export const clone = <T>(value): T => parse(stringify(value));
+export const clone = <T>(object: T, opts?: { proto?: boolean; circles?: boolean }): T => rfdc(opts)(object);

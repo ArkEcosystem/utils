@@ -1,3 +1,3 @@
-import rfdc from "rfdc";
+import deepClone from "fast-copy";
 
-export const cloneDeep = <T>(object: T, opts?: { proto?: boolean; circles?: boolean }): T => rfdc(opts)(object);
+export const cloneDeep = <T>(object: T): T => deepClone(object);
