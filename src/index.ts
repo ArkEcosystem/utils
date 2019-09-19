@@ -21,6 +21,7 @@ export * from "./head";
 export * from "./index-of";
 export * from "./intern";
 export * from "./is-array-of-type";
+export * from "./is-array";
 export * from "./is-boolean-array";
 export * from "./is-boolean";
 export * from "./is-constructor";

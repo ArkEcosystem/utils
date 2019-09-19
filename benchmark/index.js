@@ -190,14 +190,88 @@ benchmarker("utils", [{
         name: "Utils.zipObject vs lodash.zipObject (100000 pairs)",
         scenarios: require("./zipObject/100000"),
     },
-
+    {
+        name: "Utils.assign vs lodash.assign",
+        scenarios: require("./assign"),
+    },
+    {
+        name: "Utils.at vs lodash.at",
+        scenarios: require("./at"),
+    },
+    {
+        name: "Utils.camelCase vs lodash.camelCase",
+        scenarios: require("./camel-case"),
+    },
+    {
+        name: "Utils.chunk vs lodash.chunk",
+        scenarios: require("./chunk"),
+    },
     {
         name: "Utils.clone vs lodash.clone",
         scenarios: require("./clone"),
     },
-
     {
         name: "Utils.cloneDeep vs lodash.cloneDeep",
         scenarios: require("./clone-deep"),
+    },
+    {
+        name: "Utils.head vs lodash.head",
+        scenarios: require("./head"),
+    },
+    {
+        name: "Utils.tail vs lodash.tail",
+        scenarios: require("./tail"),
+    },
+    {
+        name: "Utils.last vs lodash.last",
+        scenarios: require("./last"),
+    },
+    {
+        name: "Utils.isString vs lodash.isString",
+        scenarios: require("./is-string"),
+    },
+    {
+        name: "Utils.isNumber vs lodash.isNumber",
+        scenarios: require("./is-number"),
+    },
+    {
+        name: "Utils.isArray vs lodash.isArray",
+        scenarios: require("./is-array"),
+    },
+    {
+        name: "Utils.isBoolean vs lodash.isBoolean",
+        scenarios: require("./is-boolean"),
+    },
+    {
+        name: "Utils.keys vs lodash.keys",
+        scenarios: require("./keys"),
+    },
+    {
+        name: "Utils.min vs lodash.min",
+        scenarios: require("./min"),
+    },
+    {
+        name: "Utils.max vs lodash.max",
+        scenarios: require("./max"),
+    },
+    {
+        name: "Utils.flatten vs lodash.flatten",
+        scenarios: require("./flatten"),
+    },
+    {
+        name: "Utils.get vs lodash.get",
+        scenarios: require("./get"),
+    },
+    {
+        name: "Utils.set vs lodash.set",
+        scenarios: require("./set"),
+    },
+    {
+        name: "Utils.has vs lodash.has",
+        scenarios: require("./has"),
+    },
+    {
+        name: "Utils.unset vs lodash.unset",
+        scenarios: require("./unset"),
     },
 ]);
