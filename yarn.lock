@@ -175,11 +175,6 @@
   dependencies:
     benchmark "^2.1.4"
 
-"@flatten/array@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@flatten/array/-/array-1.1.8.tgz#5cce316da119d7851ae51e08adb1af714b7f05b9"
-  integrity sha512-6zP/OIuGkE+p7jdS0VwyqHoCjK0cuCsO+StkBEV1eHQ40m/A6o2+NnRB6G9h+OnYV4C4o8mZakWY56QUrsM6fA==
-
 "@hapi/address@2.x.x":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.1.tgz#61395b5ed94c4cb19c2dc4c85969cff3d40d583f"

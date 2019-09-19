@@ -1,3 +1,9 @@
-import flatten from "@flatten/array";
+const flat = (arr, stash): any[] => {
+    for (const element of arr) {
+        Array.isArray(element) ? flat(element, stash) : stash.push(element);
+    }
 
-export { flatten };
+    return stash;
+};
+
+export const flatten = (arr): any[] => flat(arr, []);
