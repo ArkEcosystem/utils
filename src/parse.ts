@@ -1,11 +1,11 @@
 import jsonParse from "fast-json-parse";
 
-export const parse = value => {
-    const result = jsonParse(value);
+export const parse = (json: string) => {
+    const { err, value } = jsonParse(json);
 
-    if (result.err) {
-        throw new Error(result.err.message);
+    if (err) {
+        throw new Error(err.message);
     }
 
-    return result.value;
+    return value;
 };

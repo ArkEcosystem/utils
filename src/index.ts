@@ -53,6 +53,7 @@ export * from "./nsect";
 export * from "./omit-by";
 export * from "./order-by";
 export * from "./ordered-capped-map";
+export * from "./parse";
 export * from "./partition";
 export * from "./pascal-case";
 export * from "./pick-by";

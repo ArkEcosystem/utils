@@ -10,6 +10,13 @@ module.exports = {
     collectCoverage: false,
     coverageDirectory: "<rootDir>/.coverage",
     collectCoverageFrom: ["src/**/*.ts", "!**/node_modules/**"],
+    coverageReporters: [
+        "json",
+        "lcov",
+        "text",
+        "clover",
+        "html"
+    ],
     watchman: false,
     setupFilesAfterEnv: ["jest-extended"],
 };
