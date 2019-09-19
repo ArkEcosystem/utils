@@ -3,16 +3,16 @@ import "jest-extended";
 import { set } from "../src";
 
 describe("#set", () => {
-    it("should work like lodash", () => {
-        const object = { a: [{ b: { c: 3 } }] };
+    it("should work with a string or array as path", () => {
+        const object = { a: { b: { c: 3 } } };
 
-        set(object, "a[0].b.c", 4);
+        set(object, "a.b.c", 4);
 
-        expect(object.a[0].b.c).toBe(4);
+        expect(object.a.b.c).toBe(4);
 
-        set(object, ["x", "0", "y", "z"], 5);
+        set(object, ["x", "y", "z"], 5);
 
         // @ts-ignore
-        expect(object.x[0].y.z).toBe(5);
+        expect(object.x.y.z).toBe(5);
     });
 });
