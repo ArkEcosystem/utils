@@ -22,7 +22,6 @@ benchmarker("utils", [{
         name: "Utils.orderBy vs lodash.orderBy (100000 wallets)",
         scenarios: require("./orderBy/100000"),
     },
-
     {
         name: "Utils.sortBy vs lodash.sortBy (10 wallets)",
         scenarios: require("./sortBy/10"),
@@ -43,7 +42,6 @@ benchmarker("utils", [{
         name: "Utils.sortBy vs lodash.sortBy (100000 wallets)",
         scenarios: require("./sortBy/100000"),
     },
-
     {
         name: "Utils.sortByDesc vs lodash.sortByDesc (10 wallets)",
         scenarios: require("./sortByDesc/10"),
@@ -64,7 +62,6 @@ benchmarker("utils", [{
         name: "Utils.sortByDesc vs lodash.sortByDesc (100000 wallets)",
         scenarios: require("./sortByDesc/100000"),
     },
-
     {
         name: "Native.map vs Utils.map vs lodash.map (10 wallets)",
         scenarios: require("./map/10"),
@@ -85,7 +82,6 @@ benchmarker("utils", [{
         name: "Native.map vs Utils.map vs lodash.map (100000 wallets)",
         scenarios: require("./map/100000"),
     },
-
     {
         name: "Native.forEach vs Utils.forEach vs lodash.forEach (10 wallets)",
         scenarios: require("./forEach/10"),
@@ -106,7 +102,6 @@ benchmarker("utils", [{
         name: "Native.forEach vs Utils.forEach vs lodash.forEach (100000 wallets)",
         scenarios: require("./forEach/100000"),
     },
-
     {
         name: "Native.filter vs Utils.filter vs lodash.filter (10 wallets)",
         scenarios: require("./filter/10"),
@@ -127,7 +122,6 @@ benchmarker("utils", [{
         name: "Native.filter vs Utils.filter vs lodash.filter (100000 wallets)",
         scenarios: require("./filter/100000"),
     },
-
     {
         name: "Native.stringify vs Utils.stringify (10 wallets)",
         scenarios: require("./stringify/10"),
@@ -148,7 +142,6 @@ benchmarker("utils", [{
         name: "Native.stringify vs Utils.stringify (100000 wallets)",
         scenarios: require("./stringify/100000"),
     },
-
     {
         name: "Utils.uniqBy vs lodash.uniqBy (10 wallets)",
         scenarios: require("./uniqBy/10"),
@@ -169,7 +162,6 @@ benchmarker("utils", [{
         name: "Utils.uniqBy vs lodash.uniqBy (100000 wallets)",
         scenarios: require("./uniqBy/100000"),
     },
-
     {
         name: "Utils.zipObject vs lodash.zipObject (10 pairs)",
         scenarios: require("./zipObject/10"),

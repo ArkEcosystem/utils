@@ -7,6 +7,6 @@ var object = {
     }
 };
 
-exports['utils'] = () => utils.has(object, 'a');
+exports['utils'] = () => utils.has(object, 'a.b');
 
-exports['lodash'] = () => lodash(object, 'a');
+exports['lodash'] = () => lodash(object, 'a.b');

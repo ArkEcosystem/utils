@@ -24,5 +24,5 @@ export const set = <T>(object: T, path: string | string[], value: unknown): bool
         object = object[key];
     }
 
-    return true;
+    return !!object;
 };
