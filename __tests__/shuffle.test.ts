@@ -1,10 +1,10 @@
 import "jest-extended";
 
-import { shuffle } from "../src";
+import { numberArray, shuffle } from "../src";
 
 describe("#shuffle", () => {
     it("should return a new array with items in random order", () => {
-        const possibleValues: number[] = Array.from(Array(100).keys());
+        const possibleValues: number[] = numberArray(100);
 
         const shuffledValues: number[] = shuffle(possibleValues);
 

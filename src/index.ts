@@ -63,6 +63,7 @@ export * from "./merge";
 export * from "./min-by";
 export * from "./min";
 export * from "./nsect";
+export * from "./number-array";
 export * from "./omit-by";
 export * from "./order-by";
 export * from "./parse";
