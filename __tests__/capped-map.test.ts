@@ -1,10 +1,10 @@
 import "jest-extended";
 
-import { OrderedCappedMap } from "../src";
+import { CappedMap } from "../src";
 
-describe("Ordered Capped Map", () => {
+describe("Capped Map", () => {
     it("should set and get an entry", () => {
-        const store = new OrderedCappedMap<string, number>(100);
+        const store = new CappedMap<string, number>(100);
         store.set("foo", 1);
         store.set("bar", 2);
 
@@ -13,7 +13,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should get an entry", () => {
-        const store = new OrderedCappedMap<string, number>(2);
+        const store = new CappedMap<string, number>(2);
         store.set("1", 1);
         store.set("2", 2);
 
@@ -28,7 +28,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should set entries and remove ones that exceed the maximum size", () => {
-        const store = new OrderedCappedMap<string, number>(2);
+        const store = new CappedMap<string, number>(2);
         store.set("foo", 1);
         store.set("bar", 2);
 
@@ -46,7 +46,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should update an entry", () => {
-        const store = new OrderedCappedMap<string, number>(100);
+        const store = new CappedMap<string, number>(100);
         store.set("foo", 1);
 
         expect(store.get("foo")).toBe(1);
@@ -58,14 +58,14 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should return if an entry exists", () => {
-        const store = new OrderedCappedMap<string, number>(100);
+        const store = new CappedMap<string, number>(100);
         store.set("1", 1);
 
         expect(store.has("1")).toBeTrue();
     });
 
     it("should remove the specified entrys", () => {
-        const store = new OrderedCappedMap<string, number>(100);
+        const store = new CappedMap<string, number>(100);
         store.set("1", 1);
         store.set("2", 2);
 
@@ -77,7 +77,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should remove the specified entrys", () => {
-        const store = new OrderedCappedMap<string, number>(2);
+        const store = new CappedMap<string, number>(2);
         store.set("1", 1);
         store.set("2", 2);
 
@@ -92,7 +92,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should remove all entrys", () => {
-        const store = new OrderedCappedMap<string, number>(3);
+        const store = new CappedMap<string, number>(3);
         store.set("1", 1);
         store.set("2", 2);
         store.set("3", 3);
@@ -105,7 +105,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should return the first value", () => {
-        const store = new OrderedCappedMap<string, number>(2);
+        const store = new CappedMap<string, number>(2);
         store.set("1", 1);
         store.set("2", 2);
 
@@ -113,7 +113,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should return the last value", () => {
-        const store = new OrderedCappedMap<string, number>(2);
+        const store = new CappedMap<string, number>(2);
         store.set("1", 1);
         store.set("2", 2);
 
@@ -121,7 +121,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should return the keys", () => {
-        const store = new OrderedCappedMap<string, number>(3);
+        const store = new CappedMap<string, number>(3);
         store.set("1", 1);
         store.set("2", 2);
         store.set("3", 3);
@@ -130,7 +130,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should return the values", () => {
-        const store = new OrderedCappedMap<string, number>(3);
+        const store = new CappedMap<string, number>(3);
         store.set("1", 1);
         store.set("2", 2);
         store.set("3", 3);
@@ -139,7 +139,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should return the entry count", () => {
-        const store = new OrderedCappedMap<string, number>(100);
+        const store = new CappedMap<string, number>(100);
         store.set("1", 1);
         store.set("2", 2);
 
@@ -155,7 +155,7 @@ describe("Ordered Capped Map", () => {
     });
 
     it("should resize the map", () => {
-        const store = new OrderedCappedMap<string, number>(3);
+        const store = new CappedMap<string, number>(3);
         store.set("1", 1);
         store.set("2", 2);
         store.set("3", 3);

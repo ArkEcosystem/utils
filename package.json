@@ -34,8 +34,7 @@
         "fast-json-parse": "^1.0.3",
         "fast-safe-stringify": "^2.0.7",
         "fast-sort": "^1.5.6",
-        "fast.js": "^0.1.1",
-        "immutable": "^4.0.0-rc.12"
+        "fast.js": "^0.1.1"
     },
     "devDependencies": {
         "@arkecosystem/crypto": "^2.5.24",

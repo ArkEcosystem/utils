@@ -1,7 +1,5 @@
-import { OrderedMap } from "immutable";
-
-export class OrderedCappedMap<K, V> {
-    protected store: OrderedMap<K, V> = OrderedMap<K, V>();
+export class CappedMap<K, V> {
+    protected store: Map<K, V> = new Map<K, V>();
     private maxSize: number;
 
     constructor(maxSize: number) {
@@ -14,7 +12,7 @@ export class OrderedCappedMap<K, V> {
 
     public set(key: K, value: V): void {
         if (this.store.size >= this.maxSize) {
-            this.store = this.store.delete(this.store.keyOf(this.first()));
+            this.store.delete(Array.from(this.store)[0][0]);
         }
 
         this.store = this.store.set(key, value);
@@ -29,37 +27,37 @@ export class OrderedCappedMap<K, V> {
             return false;
         }
 
-        this.store = this.store.delete(key);
+        this.store.delete(key);
 
         return !this.store.has(key);
     }
 
     public clear(): void {
-        this.store = this.store.clear();
+        this.store.clear();
     }
 
     public resize(maxSize: number): void {
         this.maxSize = maxSize;
 
         if (this.store.size > this.maxSize) {
-            this.store = this.store.takeLast(this.maxSize);
+            this.store = new Map<K, V>(Array.from(this.store).slice(-Math.max(0, this.maxSize)));
         }
     }
 
     public first(): V {
-        return this.store.first() as V;
+        return Array.from(this.store)[0][1];
     }
 
     public last(): V {
-        return this.store.last() as V;
+        return Array.from(this.store)[this.store.size - 1][1];
     }
 
     public keys(): K[] {
-        return this.store.keySeq().toArray();
+        return [...this.store.keys()];
     }
 
     public values(): V[] {
-        return this.store.valueSeq().toArray();
+        return [...this.store.values()];
     }
 
     public count(): number {
