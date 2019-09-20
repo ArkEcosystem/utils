@@ -1,8 +1,8 @@
-import stringify from "fast-safe-stringify";
 import { get } from "./get";
 import { has } from "./has";
 import { sample } from "./sample";
 import { set } from "./set";
+import { stringify } from "./stringify";
 import { unset } from "./unset";
 
 export class Collection<T> {
@@ -49,7 +49,7 @@ export class Collection<T> {
     }
 
     public has(key: string): boolean {
-        return !!this.get(key);
+        return has(this.collection, key);
     }
 
     public missing(key: string): boolean {

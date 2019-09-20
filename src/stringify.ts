@@ -1,3 +1,7 @@
-import stringify from "fast-safe-stringify";
-
-export { stringify };
+export const stringify = <T>(value: T): string | undefined => {
+    try {
+        return JSON.stringify(value);
+    } catch {
+        return undefined;
+    }
+};

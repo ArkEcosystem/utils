@@ -4,10 +4,13 @@ import { stringify } from "../src";
 
 describe("#stringify", () => {
     it("should return the given value as JSON", () => {
-        const o = { b: 1, a: 0 };
-        // @ts-ignore
+        expect(stringify({ b: 1, a: 0 })).toBe('{"b":1,"a":0}');
+    });
+
+    it("should return undefined if there are circular references", () => {
+        const o: any = { b: 1, a: 0 };
         o.o = o;
 
-        expect(stringify(o)).toEqual('{"b":1,"a":0,"o":"[Circular]"}');
+        expect(stringify(o)).toBeUndefined();
     });
 });
