@@ -28,6 +28,7 @@ export * from "./has-property";
 export * from "./has-some-property";
 export * from "./has";
 export * from "./head";
+export * from "./header-case";
 export * from "./index-of";
 export * from "./intern";
 export * from "./is-array-of-type";
