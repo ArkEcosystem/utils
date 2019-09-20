@@ -13,6 +13,8 @@ export * from "./clone-deep";
 export * from "./clone";
 export * from "./collection";
 export * from "./concat";
+export * from "./constant-case";
+export * from "./dot-case";
 export * from "./fill";
 export * from "./filter";
 export * from "./find-key";
