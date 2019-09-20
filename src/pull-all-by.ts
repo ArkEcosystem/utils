@@ -1,13 +1,14 @@
 import { filter } from "./filter";
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 
-export const pullAllBy = (collection, values, predicate) => {
+export const pullAllBy = <T>(iterable: T[], values: T[], iteratee: Iteratee): T[] => {
     const predicateValues = {};
 
-    return filter(collection, collectionItem => {
-        const func = isFunction(predicate) ? predicate : item => item[predicate];
+    return filter(iterable, iterableItem => {
+        const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
-        const itemValue = func(collectionItem);
+        const itemValue = func(iterableItem);
 
         if (!predicateValues[itemValue]) {
             predicateValues[itemValue] = values.map(value => func(value));

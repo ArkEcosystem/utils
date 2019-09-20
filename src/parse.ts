@@ -1,3 +1,3 @@
 import { parse as bourne } from "@hapi/bourne";
 
-export const parse = (json: string) => bourne(json);
+export const parse = <T>(json: string): T => bourne(json);

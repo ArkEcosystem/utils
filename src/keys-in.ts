@@ -1,5 +1,3 @@
-import { hasProperty } from "./has-property";
-
 export const keysIn = <T>(value: T): string[] => {
     const prototype: T = Object.getPrototypeOf(value);
 

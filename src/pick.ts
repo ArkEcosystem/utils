@@ -1,9 +1,9 @@
-export const pick = (collection: object, keys: string[]) => {
-    const newValues: object = {};
+export const pick = <T>(iterable: T, keys: string[]): T => {
+    const newValues: unknown = {};
 
     for (const key of keys) {
-        newValues[key] = collection[key];
+        newValues[key] = iterable[key];
     }
 
-    return newValues;
+    return newValues as T;
 };

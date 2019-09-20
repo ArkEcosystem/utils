@@ -1,8 +1,8 @@
-import { filter } from "./filter";
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 
-export const uniqBy = <T>(values: any, iteratees?: any): T[] => {
-    const func = isFunction(iteratees) ? iteratees : item => item[iteratees];
+export const uniqBy = <T>(values: T[], iteratee?: Iteratee): T[] => {
+    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
     const result: T[] = [];
 

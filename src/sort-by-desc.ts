@@ -1,3 +1,4 @@
 import sort from "fast-sort";
+import { Iteratee } from "./internal";
 
-export const sortByDesc = <T>(values: any, iteratees?: any): T[] => sort(values).desc(iteratees);
+export const sortByDesc = <T>(values: T[], iteratees?: Iteratee[]): T[] => sort(values).desc(iteratees);

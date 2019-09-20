@@ -1,1 +1,1 @@
-export const lowerFirst = (text: string): string => text[0].toLowerCase() + text.slice(1);
+export const lowerFirst = (value: string): string => value[0].toLowerCase() + value.slice(1);

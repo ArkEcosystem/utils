@@ -1,10 +1,15 @@
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 import { map } from "./map";
 
-export const minBy = (collection, iteratee) => {
-    const func = isFunction(iteratee) ? iteratee : item => item[iteratee];
+export const minBy = <T>(iterable: T[], iteratee: Iteratee): T | undefined => {
+    if (!iterable || !iterable.length) {
+        return undefined;
+    }
 
-    const min = Math.min(...map(collection, func));
+    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
-    return collection.find(item => func(item) === min);
+    const min = Math.min(...map(iterable, func));
+
+    return iterable.find(item => func(item) === min);
 };

@@ -1,3 +1,4 @@
 import { filter } from "./filter";
+import { FunctionReturning } from "./internal";
 
-export const pickBy = (collection, predicate) => filter(collection, value => predicate(value));
+export const pickBy = <T>(iterable: T, iteratee: FunctionReturning): T => filter(iterable, value => iteratee(value));

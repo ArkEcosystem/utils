@@ -1,8 +1,9 @@
 import { filter } from "./filter";
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 
-export const findKey = (collection, predicate) => {
-    const func = isFunction(predicate) ? predicate : item => item[predicate];
+export const findKey = <T>(iterable: T, iteratee: Iteratee): string | undefined => {
+    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
-    return Object.keys(filter(collection, func))[0];
+    return Object.keys(filter(iterable, func))[0];
 };

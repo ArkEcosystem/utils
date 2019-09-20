@@ -1,1 +1,1 @@
-export const sample = <T>(collection: T[]) => collection[Math.floor(Math.random() * collection.length)];
+export const sample = <T>(iterable: T[]): T => iterable[Math.floor(Math.random() * iterable.length)];

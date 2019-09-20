@@ -1,9 +1,14 @@
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 
-export const keyBy = (collection, iteratee) => {
-    const func = isFunction(iteratee) ? iteratee : item => item[iteratee];
+export const keyBy = <T>(iterable: T[], iteratee: Iteratee) => {
+    if (!iterable || !iterable.length) {
+        return undefined;
+    }
 
-    return collection.reduce((result, value) => {
+    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
+
+    return iterable.reduce((result, value) => {
         result[func(value)] = value;
 
         return result;

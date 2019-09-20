@@ -1,8 +1,9 @@
 import { filter } from "./filter";
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 
-export const reject = (collection, predicate) => {
-    const func = isFunction(predicate) ? predicate : item => item[predicate];
+export const reject = <T>(iterable: T[], iteratee: Iteratee): T[] => {
+    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
-    return filter(collection, item => !func(item));
+    return filter(iterable, item => !func(item));
 };

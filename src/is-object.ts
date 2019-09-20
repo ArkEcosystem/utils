@@ -1,3 +1,3 @@
-import { isNil } from "./is-nil";
+import { isEmpty } from "./is-empty";
 
-export const isObject = (value: unknown): value is object => !isNil(value) && typeof value === "object";
+export const isObject = (value: unknown): value is object => typeof value === "object";

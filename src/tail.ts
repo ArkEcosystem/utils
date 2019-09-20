@@ -1,1 +1,1 @@
-export const tail = <T>(values: T[]): T[] | undefined => values.slice(1);
+export const tail = <T>(values: T[]): T[] => values.slice(1);

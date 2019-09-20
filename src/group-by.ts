@@ -1,11 +1,16 @@
-import { isFunction } from "./is-function";
+import { Iteratee } from "./internal";
+import { isString } from "./is-string";
 
-export const groupBy = <T>(collection: T[], iteratee): object => {
-    const func = isFunction(iteratee) ? iteratee : item => item[iteratee];
+export const groupBy = <T>(iterable: T[], iteratee: Iteratee): object => {
+    if (!iterable || !iterable.length) {
+        return undefined;
+    }
+
+    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
     const groupedValues: object = {};
 
-    for (const value of collection) {
+    for (const value of iterable) {
         const keyValue = func(value);
 
         if (!groupedValues[keyValue]) {
