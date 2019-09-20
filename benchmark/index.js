@@ -85,26 +85,6 @@ benchmarker("utils", [
         scenarios: require("./map/100000"),
     },
     {
-        name: "Native.forEach vs Utils.forEach vs lodash.forEach (10 wallets)",
-        scenarios: require("./forEach/10"),
-    },
-    {
-        name: "Native.forEach vs Utils.forEach vs lodash.forEach (100 wallets)",
-        scenarios: require("./forEach/100"),
-    },
-    {
-        name: "Native.forEach vs Utils.forEach vs lodash.forEach (1000 wallets)",
-        scenarios: require("./forEach/1000"),
-    },
-    {
-        name: "Native.forEach vs Utils.forEach vs lodash.forEach (10000 wallets)",
-        scenarios: require("./forEach/10000"),
-    },
-    {
-        name: "Native.forEach vs Utils.forEach vs lodash.forEach (100000 wallets)",
-        scenarios: require("./forEach/100000"),
-    },
-    {
         name: "Native.filter vs Utils.filter vs lodash.filter (10 wallets)",
         scenarios: require("./filter/10"),
     },
