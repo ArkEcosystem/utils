@@ -4,7 +4,7 @@ jobs:
         working_directory: ~/utils
         docker:
             - image: "circleci/node:10"
-        steps: &stepsJobs
+        steps: &stepsTest
             - checkout
             - restore_cache:
                   keys:
@@ -23,19 +23,46 @@ jobs:
             - run:
                   name: Codecov
                   command: ./node_modules/.bin/codecov
-            - run:
-                  name: Benchmark
-                  command: yarn bench
     test-node11:
         working_directory: ~/utils
         docker:
             - image: "circleci/node:11"
-        steps: *stepsJobs
+        steps: *stepsTest
     test-node12:
         working_directory: ~/utils
         docker:
             - image: "circleci/node:12"
-        steps: *stepsJobs
+        steps: *stepsTest
+    benchmark-node10:
+        working_directory: ~/utils
+        docker:
+            - image: "circleci/node:10"
+        steps: &stepsBenchmark
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
+            - run:
+                  name: Install
+                  command: yarn install
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "yarn.lock" }}
+            - run:
+                  name: Benchmark
+                  command: yarn bench
+    benchmark-node11:
+        working_directory: ~/utils
+        docker:
+            - image: "circleci/node:11"
+        steps: *stepsBenchmark
+    benchmark-node12:
+        working_directory: ~/utils
+        docker:
+            - image: "circleci/node:12"
+        steps: *stepsBenchmark
 workflows:
     version: 2
     build_and_test:
@@ -43,3 +70,6 @@ workflows:
             - test-node10
             - test-node11
             - test-node12
+            - benchmark-node10
+            - benchmark-node11
+            - benchmark-node12
