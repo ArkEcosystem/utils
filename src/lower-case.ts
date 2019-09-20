@@ -1,3 +1,3 @@
-import noCase from "no-case";
+import { removeCase } from "./internal/remove-case";
 
-export const lowerCase = (value: string): string => noCase(value);
+export const lowerCase = (value: string): string => removeCase(value);

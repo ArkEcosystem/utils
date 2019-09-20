@@ -35,8 +35,7 @@
         "fast-safe-stringify": "^2.0.7",
         "fast-sort": "^1.5.6",
         "fast.js": "^0.1.1",
-        "immutable": "^4.0.0-rc.12",
-        "no-case": "^2.3.2"
+        "immutable": "^4.0.0-rc.12"
     },
     "devDependencies": {
         "@arkecosystem/crypto": "^2.5.24",

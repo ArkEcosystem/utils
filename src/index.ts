@@ -1,3 +1,7 @@
+// Private
+export * from "./internal";
+
+// Public
 export * from "./assign";
 export * from "./at";
 export * from "./camel-case";

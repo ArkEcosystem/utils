@@ -1,8 +1,12 @@
 import { hasProperty } from "./has-property";
-import { isString } from "./is-string";
+import { castPath } from "./internal";
 
+/**
+ * This behaves like lodash.set with the major difference of
+ * not supporting square brackets which nets a 3x performance gain.
+ */
 export const set = <T>(object: T, path: string | string[], value: unknown): boolean => {
-    const fragments: string[] = isString(path) ? path.split(".") : path;
+    const fragments: string[] = castPath(path);
 
     let index = 0;
     const length: number = fragments.length;

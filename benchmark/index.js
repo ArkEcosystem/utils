@@ -3,7 +3,7 @@ const {
 } = require("@faustbrian/benchmarker");
 
 benchmarker("utils", [
-    // Cases
+    // Public
     {
         name: "Utils.orderBy vs lodash.orderBy (10 wallets)",
         scenarios: require("./orderBy/10"),
