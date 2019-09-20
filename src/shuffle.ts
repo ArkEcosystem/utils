@@ -1,11 +1,15 @@
-export const shuffle = <T>(collection: T[]): T[] => {
-    for (let i = 0; i < collection.length; i++) {
-        const rand = Math.floor(Math.random() * (i + 1));
-        const value = collection[i];
+import { clone } from "./clone";
 
-        collection[i] = collection[rand];
-        collection[rand] = value;
+export const shuffle = <T>(collection: T[]): T[] => {
+    const shuffledValues: T[] = clone(collection);
+
+    for (let i = 0; i < shuffledValues.length; i++) {
+        const rand: number = Math.floor(Math.random() * (i + 1));
+        const value: T = shuffledValues[i];
+
+        shuffledValues[i] = shuffledValues[rand];
+        shuffledValues[rand] = value;
     }
 
-    return collection;
+    return shuffledValues;
 };
