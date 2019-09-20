@@ -18,7 +18,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install
       run: yarn install
-    - name: Run
+    - name: Benchmark
       run: yarn bench
       
       env:
