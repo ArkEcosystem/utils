@@ -1,5 +1,6 @@
 // Taken from https://raw.githubusercontent.com/lodash/lodash/4.17.15-post/lodash.js
 
+/* istanbul ignore next */
 const slice = <T>(array: T[], start: number, end: number): T[] => {
     let index = -1;
     let length = array.length;

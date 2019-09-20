@@ -3,23 +3,27 @@ import "jest-extended";
 import { isEqual } from "../src";
 
 describe("#isEqual", () => {
-    it("should pass with strings", () => {
+    it("should return true for the same strings", () => {
         expect(isEqual("true", "true")).toBeTrue();
     });
 
-    it("should pass with numbers", () => {
+    it("should return true for the same numbers", () => {
         expect(isEqual(1, 1)).toBeTrue();
     });
 
-    it("should pass with booleans", () => {
+    it("should return true for the same booleans", () => {
         expect(isEqual(true, true)).toBeTrue();
     });
 
-    it("should pass with objects", () => {
+    it("should return true for the same objects", () => {
         expect(isEqual({}, {})).toBeTrue();
     });
 
-    it("should pass with arrays", () => {
+    it("should return true for the same arrays", () => {
         expect(isEqual([], [])).toBeTrue();
+    });
+
+    it("should return true for the same nulls", () => {
+        expect(isEqual(null, null)).toBeTrue();
     });
 });

@@ -1,3 +1,3 @@
-export type FunctionReturning = <T>(...args: any[]) => T;
+export type FunctionReturning = (...args: any[]) => any;
 
 export type Iteratee = string | FunctionReturning;

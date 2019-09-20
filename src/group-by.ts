@@ -2,10 +2,6 @@ import { Iteratee } from "./internal";
 import { isString } from "./is-string";
 
 export const groupBy = <T>(iterable: T[], iteratee: Iteratee): object => {
-    if (!iterable || !iterable.length) {
-        return undefined;
-    }
-
     const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
     const groupedValues: object = {};

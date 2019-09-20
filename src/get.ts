@@ -14,10 +14,5 @@ export const get = <T>(object: object, path: string | string[], defaultValue?: T
         object = object[fragments[index++]];
     }
 
-    if (index && index === length) {
-        // @ts-ignore
-        return object || defaultValue;
-    }
-
-    return defaultValue;
+    return ((object || defaultValue) as unknown) as T;
 };

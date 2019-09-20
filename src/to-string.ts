@@ -17,6 +17,7 @@ export const toString = <T>(value: T): string => {
     }
 
     if (Array.isArray(value)) {
+        /* istanbul ignore next */
         return `${map(value, other => (other === null ? other : toString(other)))}`;
     }
 

@@ -13,6 +13,7 @@ export const removeCase = (str: string): string =>
             .replace(CAMEL_CASE_UPPER_REGEXP, "$1 $2")
             // Remove all non-word characters and replace with a single space.
             .replace(NON_WORD_REGEXP, (match, index, value) =>
+                /* istanbul ignore next */
                 index === 0 || index === value.length - match.length ? "" : " ",
             ),
     );
