@@ -297,14 +297,6 @@ benchmarker("utils", [
         scenarios: require("./uniq"),
     },
     {
-        name: "Utils.uniqBy vs lodash.uniqBy",
-        scenarios: require("./uniq-by"),
-    },
-    {
-        name: "Utils.zipObject vs lodash.zipObject",
-        scenarios: require("./zip-object"),
-    },
-    {
         name: "Utils.isArray vs lodash.isArray",
         scenarios: require("./is-array"),
     },
