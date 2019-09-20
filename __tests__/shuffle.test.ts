@@ -4,7 +4,7 @@ import { shuffle } from "../src";
 
 describe("#shuffle", () => {
     it("should return a new array with items in random order", () => {
-        const possibleValues: number[] = [1, 2, 3, 4, 5];
+        const possibleValues: number[] = Array.from(Array(100).keys());
 
         const shuffledValues: number[] = shuffle(possibleValues);
 
