@@ -16,10 +16,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and bench
-      run: |
-        npm install
-        npm run bench
+    - name: Install
+      run: yarn install
+    - name: Benchmark
+      run: yarn bench
       
       env:
         CI: true
