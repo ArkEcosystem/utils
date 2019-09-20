@@ -18,8 +18,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install and bench
       run: |
-        npm install
-        npm run bench
+        yarn install
+        yarn bench
       
       env:
         CI: true
