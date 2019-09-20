@@ -1,4 +1,5 @@
 import sort from "fast-sort";
+
 import { FunctionReturning, Iteratee } from "./internal";
 import { isFunction } from "./is-function";
 import { isString } from "./is-string";
