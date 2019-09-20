@@ -2,7 +2,9 @@ const {
     benchmarker
 } = require("@faustbrian/benchmarker");
 
-benchmarker("utils", [{
+benchmarker("utils", [
+    // Cases
+    {
         name: "Utils.orderBy vs lodash.orderBy (10 wallets)",
         scenarios: require("./orderBy/10"),
     },
@@ -265,5 +267,21 @@ benchmarker("utils", [{
     {
         name: "Utils.unset vs lodash.unset",
         scenarios: require("./unset"),
+    },
+    {
+        name: "Utils.lowerCase vs lodash.lowerCase",
+        scenarios: require("./lower-case"),
+    },
+    {
+        name: "Utils.upperCase vs lodash.upperCase",
+        scenarios: require("./upper-case"),
+    },
+    {
+        name: "Utils.toLower vs lodash.toLower",
+        scenarios: require("./to-lower"),
+    },
+    {
+        name: "Utils.toUpper vs lodash.toUpper",
+        scenarios: require("./to-upper"),
     },
 ]);
