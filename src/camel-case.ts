@@ -1,4 +1,5 @@
-import { camelize } from "fast-case";
-import { lowerCase } from "./lower-case";
+import { compoundWords } from "./internal";
+import { upperFirst } from "./upper-first";
 
-export const camelCase = (value: string): string => camelize(lowerCase(value));
+export const camelCase = (value: string): string =>
+    compoundWords(value, (result: string, word: string, index: number) => result + (index ? upperFirst(word) : word));

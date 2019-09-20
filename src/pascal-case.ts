@@ -1,4 +1,5 @@
-import { pascalize } from "fast-case";
-import { lowerCase } from "./lower-case";
+import { compoundWords } from "./internal";
+import { upperFirst } from "./upper-first";
 
-export const pascalCase = (value: string): string => pascalize(lowerCase(value));
+export const pascalCase = (value: string): string =>
+    compoundWords(value, (result: string, word: string, index: number) => result + upperFirst(word));

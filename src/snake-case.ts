@@ -1,3 +1,4 @@
-import { lowerCase } from "./lower-case";
+import { compoundWords } from "./internal";
 
-export const snakeCase = (value: string): string => lowerCase(value).replace(" ", "_");
+export const snakeCase = (value: string): string =>
+    compoundWords(value, (result: string, word: string, index: number) => result + (index ? "_" : "") + word);
