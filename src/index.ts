@@ -73,6 +73,7 @@ export * from "./order-by";
 export * from "./parse";
 export * from "./partition";
 export * from "./pascal-case";
+export * from "./path-case";
 export * from "./pick-by";
 export * from "./pick";
 export * from "./pull-all-by";
