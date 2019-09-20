@@ -74,6 +74,7 @@ export * from "./pull";
 export * from "./random";
 export * from "./reduce";
 export * from "./reject";
+export * from "./reverse";
 export * from "./sample";
 export * from "./set";
 export * from "./shuffle";
