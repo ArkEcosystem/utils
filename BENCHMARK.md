@@ -2,15 +2,6 @@
 
 > Take those benchmark results with a grain of salt as the outcome will fluctuate, sometimes utils will be faster and sometimes lodash, with a marginal difference.
 
-## System
-
-```
-OS: Ubuntu 18.04 bionic
-Kernel: x86_64 Linux 4.15.0-43-generic
-CPU: AMD Ryzen 5 2600 Six-Core @ 12x 3.4GHz
-RAM: 32164MiB
-```
-
 ## Results
 
 ```
