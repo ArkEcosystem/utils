@@ -5,9 +5,11 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     strategy:
       matrix:
         node-version: [10.x, 11.x, 12.x]
+        
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -19,5 +21,8 @@ jobs:
         npm install
         npm run build
         npm run test:coverage
+    - name: Codecov
+      run: ./node_modules/.bin/codecov
+      
       env:
         CI: true
