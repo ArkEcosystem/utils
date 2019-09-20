@@ -284,4 +284,8 @@ benchmarker("utils", [
         name: "Utils.toUpper vs lodash.toUpper",
         scenarios: require("./to-upper"),
     },
+    {
+        name: "Utils.parse vs lodash.parse",
+        scenarios: require("./parse"),
+    },
 ]);

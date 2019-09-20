@@ -1,11 +1,3 @@
-import jsonParse from "fast-json-parse";
+import { parse as bourne } from "@hapi/bourne";
 
-export const parse = (json: string) => {
-    const { err, value } = jsonParse(json);
-
-    if (err) {
-        throw new Error(err.message);
-    }
-
-    return value;
-};
+export const parse = (json: string) => bourne(json);
