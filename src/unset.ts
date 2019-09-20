@@ -1,4 +1,3 @@
-import { delete as _delete } from "dot-prop";
 import { isString } from "./is-string";
 
 export const unset = (object: object, path: string | string[]): boolean => {

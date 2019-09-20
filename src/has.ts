@@ -1,4 +1,3 @@
-import { has as _has } from "dot-prop";
 import { isString } from "./is-string";
 
 export const has = (object: object, path: string | string[]): boolean => {

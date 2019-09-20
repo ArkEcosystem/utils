@@ -1,4 +1,3 @@
-import { get as _get } from "dot-prop";
 import { isString } from "./is-string";
 
 /**

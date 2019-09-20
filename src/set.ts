@@ -1,4 +1,3 @@
-import { set as _set } from "dot-prop";
 import { hasProperty } from "./has-property";
 import { isString } from "./is-string";
 
