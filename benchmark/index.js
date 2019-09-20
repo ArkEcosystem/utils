@@ -288,4 +288,180 @@ benchmarker("utils", [
         name: "Utils.parse vs lodash.parse",
         scenarios: require("./parse"),
     },
+    {
+        name: "Utils.upperFirst vs lodash.upperFirst",
+        scenarios: require("./upper-first"),
+    },
+    {
+        name: "Utils.uniq vs lodash.uniq",
+        scenarios: require("./uniq"),
+    },
+    {
+        name: "Utils.uniqBy vs lodash.uniqBy",
+        scenarios: require("./uniq-by"),
+    },
+    {
+        name: "Utils.zipObject vs lodash.zipObject",
+        scenarios: require("./zip-object"),
+    },
+    {
+        name: "Utils.isArray vs lodash.isArray",
+        scenarios: require("./is-array"),
+    },
+    {
+        name: "Utils.isBoolean vs lodash.isBoolean",
+        scenarios: require("./is-boolean"),
+    },
+    {
+        name: "Utils.isEmpty vs lodash.isEmpty",
+        scenarios: require("./is-empty"),
+    },
+    {
+        name: "Utils.isEqual vs lodash.isEqual",
+        scenarios: require("./is-equal"),
+    },
+    {
+        name: "Utils.isFunction vs lodash.isFunction",
+        scenarios: require("./is-function"),
+    },
+    {
+        name: "Utils.isNil vs lodash.isNil",
+        scenarios: require("./is-nil"),
+    },
+    {
+        name: "Utils.isNumber vs lodash.isNumber",
+        scenarios: require("./is-number"),
+    },
+    {
+        name: "Utils.isObject vs lodash.isObject",
+        scenarios: require("./is-object"),
+    },
+    {
+        name: "Utils.isString vs lodash.isString",
+        scenarios: require("./is-string"),
+    },
+    {
+        name: "Utils.isSymbol vs lodash.isSymbol",
+        scenarios: require("./is-symbol"),
+    },
+    {
+        name: "Utils.isUndefined vs lodash.isUndefined",
+        scenarios: require("./is-undefined"),
+    },
+    {
+        name: "Utils.castArray vs lodash.castArray",
+        scenarios: require("./cast-array"),
+    },
+    {
+        name: "Utils.concat vs lodash.concat",
+        scenarios: require("./concat"),
+    },
+    {
+        name: "Utils.fill vs lodash.fill",
+        scenarios: require("./fill"),
+    },
+    {
+        name: "Utils.findKey vs lodash.findKey",
+        scenarios: require("./find-key"),
+    },
+    {
+        name: "Utils.indexOf vs lodash.indexOf",
+        scenarios: require("./index-of"),
+    },
+    {
+        name: "Utils.groupBy vs lodash.groupBy",
+        scenarios: require("./group-by"),
+    },
+    {
+        name: "Utils.keyBy vs lodash.keyBy",
+        scenarios: require("./key-by"),
+    },
+    {
+        name: "Utils.keysIn vs lodash.keysIn",
+        scenarios: require("./keys-in"),
+    },
+    {
+        name: "Utils.maxBy vs lodash.maxBy",
+        scenarios: require("./max-by"),
+    },
+    {
+        name: "Utils.minBy vs lodash.minBy",
+        scenarios: require("./min-by"),
+    },
+    {
+        name: "Utils.mapValues vs lodash.mapValues",
+        scenarios: require("./map-values"),
+    },
+    {
+        name: "Utils.merge vs lodash.merge",
+        scenarios: require("./merge"),
+    },
+    {
+        name: "Utils.shuffle vs lodash.shuffle",
+        scenarios: require("./shuffle"),
+    },
+    {
+        name: "Utils.reject vs lodash.reject",
+        scenarios: require("./reject"),
+    },
+    {
+        name: "Utils.sample vs lodash.sample",
+        scenarios: require("./sample"),
+    },
+    {
+        name: "Utils.snakeCase vs lodash.snakeCase",
+        scenarios: require("./snake-case"),
+    },
+    {
+        name: "Utils.toString vs lodash.toString",
+        scenarios: require("./to-string"),
+    },
+    {
+        name: "Utils.take vs lodash.take",
+        scenarios: require("./take"),
+    },
+    {
+        name: "Utils.union vs lodash.union",
+        scenarios: require("./union"),
+    },
+    {
+        name: "Utils.unionBy vs lodash.unionBy",
+        scenarios: require("./union-by"),
+    },
+    {
+        name: "Utils.some vs lodash.some",
+        scenarios: require("./some"),
+    },
+    {
+        name: "Utils.reduce vs lodash.reduce",
+        scenarios: require("./reduce"),
+    },
+    {
+        name: "Utils.random vs lodash.random",
+        scenarios: require("./random"),
+    },
+    {
+        name: "Utils.pull vs lodash.pull",
+        scenarios: require("./pull"),
+    },
+    {
+        name: "Utils.pullAll vs lodash.pullAll",
+        scenarios: require("./pull-all"),
+    },
+    {
+        name: "Utils.pullAllBy vs lodash.pullAllBy",
+        scenarios: require("./pull-all-by"),
+    },
+    {
+        name: "Utils.partition vs lodash.partition",
+        scenarios: require("./partition"),
+    },
+    {
+        name: "Utils.pick vs lodash.pick",
+        scenarios: require("./pick"),
+    },
+    {
+        name: "Utils.pickBy vs lodash.pickBy",
+        scenarios: require("./pick-by"),
+    },
 ]);
