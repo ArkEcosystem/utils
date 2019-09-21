@@ -1,6 +1,6 @@
 name: Test
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
     - name: Test
       run: yarn test:coverage
     - name: Codecov
-      run: ./node_modules/.bin/codecov
+      run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
       
       env:
         CI: true
