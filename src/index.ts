@@ -104,4 +104,5 @@ export * from "./uniq";
 export * from "./unset";
 export * from "./upper-case";
 export * from "./upper-first";
+export * from "./words";
 export * from "./zip-object";

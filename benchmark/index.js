@@ -78,5 +78,6 @@ benchmarker("utils", [
     { name: "Utils.unset vs lodash.unset", scenarios: require("./unset"), },
     { name: "Utils.upperCase vs lodash.upperCase", scenarios: require("./upper-case"), },
     { name: "Utils.upperFirst vs lodash.upperFirst", scenarios: require("./upper-first"), },
+    { name: "Utils.words vs lodash.words", scenarios: require("./words"), },
     { name: "Utils.zipObject vs lodash.zipObject", scenarios: require("./zip-object"), },
 ]);
