@@ -1,5 +1,5 @@
-import { map } from ".";
 import { get } from "./get";
+import { map } from "./map";
 
 /**
  * This behaves like lodash.at with the major difference of
