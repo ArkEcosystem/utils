@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    filter
+} = require('../dist')
 const lodash = require('lodash/filter')
 
 const users = [{
@@ -13,6 +15,8 @@ const users = [{
     }
 ];
 
-exports['utils'] = () => utils.filter(users, o => !o.active);
+exports['native'] = () => users.filter(o => !o.active);
+
+exports['utils'] = () => filter(users, o => !o.active);
 
 exports['lodash'] = () => lodash(users, o => !o.active);

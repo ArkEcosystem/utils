@@ -1,7 +1,9 @@
-const utils = require('../dist')
+const {
+    pick
+} = require('../dist')
 const lodash = require('lodash/pick')
 
-exports['utils'] = () => utils.pick({
+exports['utils'] = () => pick({
     'a': 1,
     'b': '2',
     'c': 3

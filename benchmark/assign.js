@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    assign
+} = require('../dist')
 const lodash = require('lodash/assign')
 
 function Foo() {
@@ -12,7 +14,7 @@ function Bar() {
 Foo.prototype.b = 2;
 Bar.prototype.d = 4;
 
-exports['utils'] = () => utils.assign({
+exports['utils'] = () => assign({
     'a': 0
 }, new Foo, new Bar);
 

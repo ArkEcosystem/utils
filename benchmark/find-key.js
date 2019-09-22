@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    findKey
+} = require('../dist')
 const lodash = require('lodash/findKey')
 
 const users = {
@@ -16,6 +18,6 @@ const users = {
     }
 };
 
-exports['utils'] = () => utils.findKey(users, o => o.age < 40);
+exports['utils'] = () => findKey(users, o => o.age < 40);
 
 exports['lodash'] = () => lodash(users, o => o.age < 40);

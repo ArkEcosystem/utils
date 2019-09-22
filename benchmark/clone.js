@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    clone
+} = require('../dist')
 const lodash = require('lodash/clone')
 
 const objects = [{
@@ -7,6 +9,6 @@ const objects = [{
     b: 2
 }];
 
-exports['utils'] = () => utils.clone(objects);
+exports['utils'] = () => clone(objects);
 
 exports['lodash'] = () => lodash(objects);

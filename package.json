@@ -21,7 +21,6 @@
         "clean": "del dist",
         "format": "yarn lint && yarn prettier",
         "lint": "./node_modules/eslint/bin/eslint.js src --ext .ts --fix",
-        "lint:test": "./node_modules/eslint/bin/eslint.js __tests__ --ext .ts --fix",
         "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./src/**/*.{ts,js,json,md}\"",
         "bench": "yarn build && node benchmark/index.js",
         "test": "cross-env jest",

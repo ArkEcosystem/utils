@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    unset
+} = require('../dist')
 const lodash = require('lodash/unset')
 
 var object = {
@@ -9,6 +11,6 @@ var object = {
     }
 };
 
-exports['utils'] = () => utils.unset(object, 'a.b.c');
+exports['utils'] = () => unset(object, 'a.b.c');
 
 exports['lodash'] = () => lodash(object, 'a.b.c');

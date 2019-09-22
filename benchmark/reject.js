@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    reject
+} = require('../dist')
 const lodash = require('lodash/reject')
 
 const users = [{
@@ -12,6 +14,6 @@ const users = [{
         'active': true
     }
 ];
-exports['utils'] = () => utils.reject(users, 'active');
+exports['utils'] = () => reject(users, 'active');
 
 exports['lodash'] = () => lodash(users, 'active');

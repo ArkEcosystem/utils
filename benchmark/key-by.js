@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    keyBy
+} = require('../dist')
 const lodash = require('lodash/keyBy')
 
 const array = [{
@@ -11,6 +13,6 @@ const array = [{
     }
 ];
 
-exports['utils'] = () => utils.keyBy(array, 'dir');
+exports['utils'] = () => keyBy(array, 'dir');
 
 exports['lodash'] = () => lodash(array, 'dir');

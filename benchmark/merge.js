@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    merge
+} = require('../dist')
 const lodash = require('lodash/merge')
 
 var object = {
@@ -17,6 +19,6 @@ var other = {
     }]
 };
 
-exports['utils'] = () => utils.merge(object, other);
+exports['utils'] = () => merge(object, other);
 
 exports['lodash'] = () => lodash(object, other);

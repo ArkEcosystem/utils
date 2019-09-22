@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    get
+} = require('../dist')
 const lodash = require('lodash/get')
 
 var object = {
@@ -9,6 +11,6 @@ var object = {
     }
 };
 
-exports['utils'] = () => utils.get(object, 'a.b.c');
+exports['utils'] = () => get(object, 'a.b.c');
 
 exports['lodash'] = () => lodash(object, 'a.b.c');

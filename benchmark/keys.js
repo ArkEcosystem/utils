@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    keys
+} = require('../dist')
 const lodash = require('lodash/keys')
 
 function Foo() {
@@ -8,6 +10,6 @@ function Foo() {
 
 Foo.prototype.c = 3;
 
-exports['utils'] = () => utils.keys(new Foo);
+exports['utils'] = () => keys(new Foo);
 
 exports['lodash'] = () => lodash(new Foo);

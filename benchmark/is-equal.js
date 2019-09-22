@@ -1,6 +1,8 @@
-const utils = require('../dist')
+const {
+    isEqual
+} = require('../dist')
 const lodash = require('lodash/isEqual')
 
-exports['utils'] = () => utils.isEqual('abc');
+exports['utils'] = () => isEqual('abc');
 
 exports['lodash'] = () => lodash('abc');

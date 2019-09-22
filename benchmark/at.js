@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    at
+} = require('../dist')
 const lodash = require('lodash/at')
 
 var object = {
@@ -14,6 +16,6 @@ var object = {
     },
 };
 
-exports['utils'] = () => utils.at(object, ['a.b.c', 'x.y.z']);
+exports['utils'] = () => at(object, ['a.b.c', 'x.y.z']);
 
 exports['lodash'] = () => lodash(object, ['a.b.c', 'x.y.z']);
