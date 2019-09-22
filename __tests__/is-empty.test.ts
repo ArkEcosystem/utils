@@ -11,6 +11,18 @@ describe("#isEmpty", () => {
         expect(isEmpty({})).toBeTrue();
     });
 
+    it("should return true for a false boolean", () => {
+        expect(isEmpty(false)).toBeTrue();
+    });
+
+    it("should return true for null", () => {
+        expect(isEmpty(null)).toBeTrue();
+    });
+
+    it("should return true for undefined", () => {
+        expect(isEmpty(undefined)).toBeTrue();
+    });
+
     it("should return true for an empty map", () => {
         expect(isEmpty(new Map())).toBeTrue();
     });

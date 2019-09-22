@@ -1,1 +1,3 @@
-export const toUpper = (value: string): string => value.toUpperCase();
+import { toString } from "./to-string";
+
+export const toUpper = <T>(value: T): string => toString(value).toUpperCase();

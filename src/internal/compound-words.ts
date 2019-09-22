@@ -1,7 +1,8 @@
+import { map } from "../map";
 import { reduce } from "../reduce";
-import { removeCase } from "./remove-case";
+import { words } from "../words";
 
 export const compoundWords = (
-    words: string,
+    value: string,
     transformer: (result: string, word: string, index: number) => string,
-): string => reduce(removeCase(words).split(" "), transformer, "");
+): string => reduce(map(words(value), w => w.toLowerCase()), transformer, "");
