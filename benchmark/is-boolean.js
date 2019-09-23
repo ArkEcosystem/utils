@@ -1,6 +1,8 @@
-const utils = require('../dist')
+const {
+    isBoolean
+} = require('../dist')
 const lodash = require('lodash/isBoolean')
 
-exports['utils'] = () => utils.isBoolean('abc');
+exports['utils'] = () => isBoolean('abc');
 
 exports['lodash'] = () => lodash('abc');

@@ -1,7 +1,9 @@
-const utils = require('../dist')
+const {
+    pullAllBy
+} = require('../dist')
 const lodash = require('lodash/pullAllBy')
 
-exports['utils'] = () => utils.pullAllBy([{
+exports['utils'] = () => pullAllBy([{
     'x': 1
 }, {
     'x': 2

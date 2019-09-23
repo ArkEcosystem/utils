@@ -1,6 +1,8 @@
-const utils = require('../dist')
+const {
+    isNumber
+} = require('../dist')
 const lodash = require('lodash/isNumber')
 
-exports['utils'] = () => utils.isNumber('abc');
+exports['utils'] = () => isNumber('abc');
 
 exports['lodash'] = () => lodash('abc');

@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    mapValues
+} = require('../dist')
 const lodash = require('lodash/mapValues')
 
 const users = {
@@ -12,6 +14,6 @@ const users = {
     }
 };
 
-exports['utils'] = () => utils.mapValues(users, 'age');
+exports['utils'] = () => mapValues(users, 'age');
 
 exports['lodash'] = () => lodash(users, 'age');

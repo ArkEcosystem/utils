@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    orderBy
+} = require('../dist')
 const lodash = require('lodash/orderBy')
 
 const users = [{
@@ -19,6 +21,6 @@ const users = [{
     }
 ];
 
-exports['utils'] = () => utils.orderBy(users, ['user', 'age'], ['asc', 'desc']);
+exports['utils'] = () => orderBy(users, ['user', 'age'], ['asc', 'desc']);
 
 exports['lodash'] = () => lodash(users, ['user', 'age'], ['asc', 'desc']);

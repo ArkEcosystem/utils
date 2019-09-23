@@ -1,6 +1,8 @@
-const utils = require('../dist')
+const {
+    upperFirst
+} = require('../dist')
 const lodash = require('lodash/upperFirst')
 
-exports['utils'] = () => utils.upperFirst('__FOO_BAR__');
+exports['utils'] = () => upperFirst('__FOO_BAR__');
 
 exports['lodash'] = () => lodash('__FOO_BAR__');

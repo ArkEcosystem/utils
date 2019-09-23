@@ -6,7 +6,7 @@ import { max } from "./max";
 export const maxBy = <T>(iterable: T[], iteratee: Iteratee): T => {
     const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
-    const maxValue = max(map(iterable, func));
+    const maxValue: number = max(map(iterable, func));
 
     return iterable.find(item => func(item) === maxValue);
 };

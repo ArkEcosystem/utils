@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    partition
+} = require('../dist')
 const lodash = require('lodash/partition')
 
 const users = [{
@@ -18,6 +20,6 @@ const users = [{
     }
 ];
 
-exports['utils'] = () => utils.partition(users, 'active');
+exports['utils'] = () => partition(users, 'active');
 
 exports['lodash'] = () => lodash(users, 'active');

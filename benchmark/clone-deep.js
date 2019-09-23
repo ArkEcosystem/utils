@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    cloneDeep
+} = require('../dist')
 const lodash = require('lodash/cloneDeep')
 
 const objects = [{
@@ -7,6 +9,6 @@ const objects = [{
     b: 2
 }];
 
-exports['utils'] = () => utils.cloneDeep(objects);
+exports['utils'] = () => cloneDeep(objects);
 
 exports['lodash'] = () => lodash(objects);

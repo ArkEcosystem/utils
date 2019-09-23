@@ -1,4 +1,6 @@
-const utils = require('../dist')
+const {
+    minBy
+} = require('../dist')
 const lodash = require('lodash/minBy')
 
 const objects = [{
@@ -7,6 +9,6 @@ const objects = [{
     'n': 2
 }];
 
-exports['utils'] = () => utils.minBy(objects, 'n');
+exports['utils'] = () => minBy(objects, 'n');
 
 exports['lodash'] = () => lodash(objects, 'n');
