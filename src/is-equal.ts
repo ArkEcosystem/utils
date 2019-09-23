@@ -1,4 +1,3 @@
-import { stringify } from "./stringify";
+import isEqual from "fast-deep-equal";
 
-export const isEqual = (actual: unknown, expected: unknown): boolean =>
-    actual === expected || stringify(actual) === stringify(expected);
+export { isEqual };

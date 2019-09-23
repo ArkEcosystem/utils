@@ -3,6 +3,6 @@ const {
 } = require('../dist')
 const lodash = require('lodash/isEqual')
 
-exports['utils'] = () => isEqual('abc');
+exports['utils'] = () => isEqual('abc', 'abc');
 
-exports['lodash'] = () => lodash('abc');
+exports['lodash'] = () => lodash('abc', 'abc');
