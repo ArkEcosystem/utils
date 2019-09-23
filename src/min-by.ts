@@ -4,7 +4,7 @@ import { map } from "./map";
 import { min } from "./min";
 
 export const minBy = <T>(iterable: T[], iteratee: Iteratee): T => {
-    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
+    const func = isString(iteratee) ? (item): number => item[iteratee] : iteratee;
 
     const minValue: number = min(map(iterable, func));
 

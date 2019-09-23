@@ -4,7 +4,7 @@ import { map } from "./map";
 import { max } from "./max";
 
 export const maxBy = <T>(iterable: T[], iteratee: Iteratee): T => {
-    const func = isString(iteratee) ? item => item[iteratee] : iteratee;
+    const func = isString(iteratee) ? (item): number => item[iteratee] : iteratee;
 
     const maxValue: number = max(map(iterable, func));
 
