@@ -1,11 +1,12 @@
 import { Iteratee } from "./internal";
 import { isString } from "./is-string";
 import { map } from "./map";
+import { max } from "./max";
 
 export const maxBy = <T>(iterable: T[], iteratee: Iteratee): T => {
     const func = isString(iteratee) ? item => item[iteratee] : iteratee;
 
-    const max = Math.max(...map(iterable, func));
+    const maxValue = max(map(iterable, func));
 
-    return iterable.find(item => func(item) === max);
+    return iterable.find(item => func(item) === maxValue);
 };
