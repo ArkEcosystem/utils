@@ -4,7 +4,6 @@
     <img src="./banner.png" />
 </p>
 
-[![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/utils)](https://circleci.com/gh/ArkEcosystem/utils)
 [![Codecov](https://badgen.now.sh/codecov/c/github/arkecosystem/utils)](https://codecov.io/gh/arkecosystem/utils)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
