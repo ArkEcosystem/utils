@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.6.8] - 2019-09-23
+
+### Added
+
+-   Added `constantCase` method
+-   Added `dotCase` method
+-   Added `headerCase` method
+-   Added `kebabBase` method
+-   Added `numberArray` method
+-   Added `pathCase` method
+-   Added `startCase` method
+-   Added `words` method
+
+### Changed
+
+-   Greatly improved the performance of various methods to be as fast or faster than lodash.
+
 ## [0.6.0] - 2019-09-20
 
 ### Added
@@ -227,6 +244,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[0.6.8]: https://github.com/ArkEcosystem/utils/compare/0.6.0...0.6.8
 [0.6.0]: https://github.com/ArkEcosystem/utils/compare/0.5.1...0.6.0
 [0.5.1]: https://github.com/ArkEcosystem/utils/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/ArkEcosystem/utils/compare/0.4.0...0.5.0
