@@ -1,4 +1,4 @@
-export const isEmpty = (value: any): boolean => {
+export const isEmpty = <T>(value: T): boolean => {
     if (!value) {
         return true;
     }
@@ -11,5 +11,5 @@ export const isEmpty = (value: any): boolean => {
         return true;
     }
 
-    return value.length <= 0;
+    return (value as any).length <= 0;
 };

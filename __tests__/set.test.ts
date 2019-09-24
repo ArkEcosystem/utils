@@ -3,6 +3,10 @@ import "jest-extended";
 import { set } from "../src";
 
 describe("#set", () => {
+    it("should not do anything if the object is not an object", () => {
+        expect(set(undefined, "a.b.c", 4)).toBeFalse();
+    });
+
     it("should work with a string or array as path", () => {
         const object = { a: { b: { c: 3 } } };
 

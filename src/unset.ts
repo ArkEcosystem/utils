@@ -7,7 +7,7 @@ import { isEmpty } from "./is-empty";
  */
 export const unset = (object: object, path: string | string[]): boolean => {
     if (isEmpty(object)) {
-        return true;
+        return false;
     }
 
     const fragments: string[] = castPath(path);
