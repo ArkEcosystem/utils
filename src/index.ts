@@ -74,6 +74,7 @@ export * from "./nsect";
 export * from "./number-array";
 export * from "./omit-by";
 export * from "./order-by";
+export * from "./ordinal";
 export * from "./parse";
 export * from "./partition";
 export * from "./pascal-case";
