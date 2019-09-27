@@ -113,6 +113,7 @@ export * from "./take";
 export * from "./to-lower";
 export * from "./to-string";
 export * from "./to-upper";
+export * from "./truncate";
 export * from "./union-by";
 export * from "./union";
 export * from "./uniq-by";
