@@ -18,5 +18,11 @@ describe("#truncate", () => {
                 omission: " [...]",
             }),
         ).toBe("Hello [...]");
+
+        expect(
+            truncate("#".repeat(31), {
+                omission: " [...]",
+            }),
+        ).toBe(`${"#".repeat(30)} [...]`);
     });
 });
