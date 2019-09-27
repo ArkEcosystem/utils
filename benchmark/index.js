@@ -67,6 +67,7 @@ benchmarker("utils", [
     { name: "Utils.toLower vs lodash.toLower", scenarios: require("./to-lower"), },
     { name: "Utils.toString vs lodash.toString", scenarios: require("./to-string"), },
     { name: "Utils.toUpper vs lodash.toUpper", scenarios: require("./to-upper"), },
+    { name: "Utils.truncate vs lodash.truncate", scenarios: require("./truncate"), },
     { name: "Utils.union vs lodash.union", scenarios: require("./union"), },
     { name: "Utils.unionBy vs lodash.unionBy", scenarios: require("./union-by"), },
     { name: "Utils.uniq vs lodash.uniq", scenarios: require("./uniq"), },
