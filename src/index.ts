@@ -22,6 +22,8 @@ export * from "./first-map-entry";
 export * from "./first-map-key";
 export * from "./first-map-value";
 export * from "./flatten";
+export * from "./format-bytes";
+export * from "./format-number";
 export * from "./format-string";
 export * from "./get";
 export * from "./group-by";
