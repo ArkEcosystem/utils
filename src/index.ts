@@ -55,6 +55,7 @@ export * from "./is-match";
 export * from "./is-nil";
 export * from "./is-not-between";
 export * from "./is-not-equal";
+export * from "./is-null";
 export * from "./is-number-array";
 export * from "./is-number";
 export * from "./is-object";
