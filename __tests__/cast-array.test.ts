@@ -8,7 +8,8 @@ describe("#castArray", () => {
         expect(castArray([1])).toEqual([1]);
         expect(castArray({ a: 1 })).toEqual([{ a: 1 }]);
         expect(castArray("abc")).toEqual(["abc"]);
-        expect(castArray(null)).toEqual([null]);
-        expect(castArray(undefined)).toEqual([undefined]);
+        expect(castArray(null)).toEqual([]);
+        expect(castArray(undefined)).toEqual([]);
+        expect(castArray(new Map([["key", "value"]]).keys())).toEqual(["key"]);
     });
 });
