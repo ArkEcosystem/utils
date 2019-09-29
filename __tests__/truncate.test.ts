@@ -10,19 +10,34 @@ describe("#truncate", () => {
             truncate("Hello World", {
                 length: 5,
             }),
-        ).toBe("Hello...");
+        ).toBe("He...");
 
         expect(
             truncate("Hello World", {
-                length: 5,
+                length: 8,
                 omission: " [...]",
             }),
-        ).toBe("Hello [...]");
+        ).toBe("He [...]");
 
         expect(
-            truncate("#".repeat(31), {
-                omission: " [...]",
+            truncate("#".repeat(10), {
+                length: 5,
+                omissionPosition: "left",
             }),
-        ).toBe(`${"#".repeat(30)} [...]`);
+        ).toBe(`...${"#".repeat(2)}`);
+
+        expect(
+            truncate("#".repeat(10), {
+                length: 5,
+                omissionPosition: "right",
+            }),
+        ).toBe(`${"#".repeat(2)}...`);
+
+        expect(
+            truncate("#".repeat(15), {
+                length: 5,
+                omissionPosition: "middle",
+            }),
+        ).toBe(`${"#".repeat(1)}...${"#".repeat(1)}`);
     });
 });
