@@ -1,18 +1,15 @@
-export const indexOf = (subject, target, fromIndex) => {
+export const lastIndexOf = (subject, target, fromIndex) => {
     const length = subject.length;
-    let i = 0;
+    let i = length - 1;
 
     if (typeof fromIndex === "number") {
         i = fromIndex;
         if (i < 0) {
             i += length;
-            if (i < 0) {
-                i = 0;
-            }
         }
     }
 
-    for (; i < length; i++) {
+    for (; i >= 0; i--) {
         if (subject[i] === target) {
             return i;
         }
