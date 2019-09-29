@@ -31,7 +31,7 @@ jobs:
               run: yarn build
 
             - name: Test
-              run: NODE_ICU_DATA=node_modules/full-icu yarn test --coverage
+              run: yarn test --coverage
 
             - name: Codecov
               run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}

@@ -23,7 +23,7 @@
         "lint": "./node_modules/eslint/bin/eslint.js src --ext .ts --fix",
         "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./src/**/*.{ts,js,json,md}\"",
         "bench": "yarn build && node benchmark/index.js",
-        "test": "cross-env jest"
+        "test": "cross-env NODE_ICU_DATA=node_modules/full-icu jest"
     },
     "dependencies": {
         "@hapi/bourne": "^1.3.2",
