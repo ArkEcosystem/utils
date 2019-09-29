@@ -9,6 +9,11 @@
 
 > Lead Maintainer: [Brian Faust](https://github.com/faustbrian)
 
+## Caveats
+
+-   The native `map`, `filter`, `reduce` and `forEach` will generally be faster when used on arrays that contain nothing but numerical values.
+-   If you plan to use `formatCurrency` method with node.js for anything else then the `en` locale you'll have to make sure to properly setup https://github.com/unicode-org/full-icu-npm as node.js itself only ships with the `en` locale by default unless specifically build with more locales.
+
 ## Installation
 
 ```sh
@@ -27,10 +32,6 @@ yarn test:coverage
 git clone git@github.com:ArkEcosystem/utils.git
 yarn && yarn bench
 ```
-
-## Caveats
-
--   The native `map`, `filter`, `reduce` and `forEach` will generally be faster when used on arrays that contain nothing but numerical values.
 
 ## Security
 
