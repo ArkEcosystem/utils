@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 2019-09-29
+
+### Added
+
+-   Added `formatBytes` method
+-   Added `formatNumber` method
+-   Added `isBetween` method
+-   Added `isEmptyArray` method
+-   Added `isEmptyArray` method
+-   Added `isEmptyMap` method
+-   Added `isEmptyObject` method
+-   Added `isFalse` method
+-   Added `isGreaterThan` method
+-   Added `isGreaterThanOrEqual` method
+-   Added `isLessThan` method
+-   Added `isLessThanOrEqual` method
+-   Added `isMatch` method
+-   Added `isNotBetween` method
+-   Added `isNotEqual` method
+-   Added `isRegExp` method
+-   Added `isTrue` method
+
 ## [0.7.1] - 2019-09-24
 
 ### Fixed
@@ -263,6 +285,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[0.8.0]: https://github.com/ArkEcosystem/utils/compare/0.7.1...0.8.0
 [0.7.1]: https://github.com/ArkEcosystem/utils/compare/0.7.0...0.7.1
 [0.7.0]: https://github.com/ArkEcosystem/utils/compare/0.6.8...0.7.0
 [0.6.8]: https://github.com/ArkEcosystem/utils/compare/0.6.0...0.6.8
