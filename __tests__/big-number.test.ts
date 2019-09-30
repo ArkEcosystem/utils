@@ -51,15 +51,6 @@ describe("#BigNumber", () => {
         expect(new BigNumber(5).isLessThanEqual(5)).toBeTrue();
     });
 
-    it(".lt", () => {
-        expect(new BigNumber(5).lt(19)).toBeTrue();
-    });
-
-    it(".lte", () => {
-        expect(new BigNumber(5).lte(10)).toBeTrue();
-        expect(new BigNumber(5).lte(5)).toBeTrue();
-    });
-
     it(".isGreaterThan", () => {
         expect(new BigNumber(10).isGreaterThan(5)).toBeTrue();
     });
@@ -67,15 +58,6 @@ describe("#BigNumber", () => {
     it(".isGreaterThanEqual", () => {
         expect(new BigNumber(10).isGreaterThanEqual(10)).toBeTrue();
         expect(new BigNumber(10).isGreaterThanEqual(5)).toBeTrue();
-    });
-
-    it(".gt", () => {
-        expect(new BigNumber(10).gt(5)).toBeTrue();
-    });
-
-    it(".gte", () => {
-        expect(new BigNumber(10).gte(10)).toBeTrue();
-        expect(new BigNumber(10).gte(5)).toBeTrue();
     });
 
     it(".isEqualTo", () => {

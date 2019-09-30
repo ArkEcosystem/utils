@@ -57,28 +57,12 @@ export class BigNumber {
         return this.value <= this.toBigNumber(other);
     }
 
-    public lt(other: BigNumberType): boolean {
-        return this.isLessThan(other);
-    }
-
-    public lte(other: BigNumberType): boolean {
-        return this.isLessThanEqual(other);
-    }
-
     public isGreaterThan(other: BigNumberType): boolean {
         return this.value > this.toBigNumber(other);
     }
 
     public isGreaterThanEqual(other: BigNumberType): boolean {
         return this.value >= this.toBigNumber(other);
-    }
-
-    public gt(other: BigNumberType): boolean {
-        return this.isGreaterThan(other);
-    }
-
-    public gte(other: BigNumberType): boolean {
-        return this.isGreaterThanEqual(other);
     }
 
     public isEqualTo(other: BigNumberType): boolean {
