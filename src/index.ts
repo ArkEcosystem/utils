@@ -4,6 +4,7 @@ export * from "./internal";
 // Public
 export * from "./assign";
 export * from "./at";
+export * from "./big-number";
 export * from "./camel-case";
 export * from "./capped-map";
 export * from "./capped-set";

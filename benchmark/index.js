@@ -5,6 +5,7 @@ const {
 benchmarker("utils", [
     { name: "Utils.assign vs lodash.assign", scenarios: require("./assign"), },
     { name: "Utils.at vs lodash.at", scenarios: require("./at"), },
+    { name: "Utils.BigNumber vs Native.BigInt vs BigNumber.js", scenarios: require("./big-number"), },
     { name: "Utils.camelCase vs lodash.camelCase", scenarios: require("./camel-case"), },
     { name: "Utils.castArray vs lodash.castArray", scenarios: require("./cast-array"), },
     { name: "Utils.chunk vs lodash.chunk", scenarios: require("./chunk"), },
