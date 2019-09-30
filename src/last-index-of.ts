@@ -1,9 +1,10 @@
-export const lastIndexOf = (subject, target, fromIndex) => {
+export const lastIndexOf = (subject, target, fromIndex?: number): number => {
     const length: number = subject.length;
     let i = length - 1;
 
-    if (typeof fromIndex === "number") {
+    if (fromIndex) {
         i = fromIndex;
+
         if (i < 0) {
             i += length;
         }

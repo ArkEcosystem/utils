@@ -1,4 +1,14 @@
 import { FunctionReturning } from "./internal";
-import { mapObject } from "./map-object";
 
-export const mapValues = <T>(iterable: T, iteratee: FunctionReturning): T => mapObject(iterable, iteratee);
+export const mapValues = <T>(iterable: T, iteratee: FunctionReturning): object => {
+    const keys: string[] = Object.keys(iterable);
+    const result = {};
+
+    for (let i = 0; i < keys.length; i++) {
+        const key: string = keys[i];
+
+        result[key] = iteratee(iterable[key], key, iterable);
+    }
+
+    return result;
+};

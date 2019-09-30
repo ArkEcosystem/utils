@@ -1,26 +1,24 @@
 import { isArray } from "./is-array";
 
-export const concat = <T>(...args): T[] => {
-    const length: number = args.length;
-    const arr = [];
-    let i;
+export const concat = <T>(...values): T[] => {
+    const result = [];
+
     let item;
     let childLength;
-    let j;
 
-    for (i = 0; i < length; i++) {
-        item = args[i];
+    for (let i = 0; i < values.length; i++) {
+        item = values[i];
 
         if (isArray(item)) {
             childLength = item.length;
 
-            for (j = 0; j < childLength; j++) {
-                arr.push(item[j]);
+            for (let j = 0; j < childLength; j++) {
+                result.push(item[j]);
             }
         } else {
-            arr.push(item);
+            result.push(item);
         }
     }
 
-    return arr;
+    return result;
 };

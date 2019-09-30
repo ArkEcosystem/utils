@@ -1,19 +1,9 @@
 import { FunctionReturning } from "./internal";
 
-export const reduceRightArray = <T, V>(iterable: T[], iteratee: FunctionReturning, initialValue: V): T => {
-    const length: number = iterable.length;
-    let i;
-    let result;
+export const reduceRightArray = <T, V>(iterable: T[], iteratee: FunctionReturning, initialValue: V): V => {
+    let result: V = initialValue;
 
-    if (initialValue === undefined) {
-        i = length - 2;
-        result = iterable[length - 1];
-    } else {
-        i = length - 1;
-        result = initialValue;
-    }
-
-    for (; i >= 0; i--) {
+    for (let i = iterable.length - 1; i >= 0; i--) {
         result = iteratee(result, iterable[i], i, iterable);
     }
 

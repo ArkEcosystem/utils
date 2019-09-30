@@ -1,20 +1,13 @@
 import { FunctionReturning } from "./internal";
 
-export const reduceObject = <T, V>(iterable: T, iteratee: FunctionReturning, initialValue: V): T => {
+export const reduceObject = <T, V>(iterable: T, iteratee: FunctionReturning, initialValue: V): V => {
     const keys: string[] = Object.keys(iterable);
-    let i;
-    let result;
 
-    if (initialValue === undefined) {
-        i = 1;
-        result = iterable[keys[0]];
-    } else {
-        i = 0;
-        result = initialValue;
-    }
+    let result: V = initialValue;
 
-    for (; i < keys.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
         const key = keys[i];
+
         result = iteratee(result, iterable[key], key, iterable);
     }
 

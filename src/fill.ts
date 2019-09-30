@@ -1,12 +1,10 @@
-export const fill = (subject, value, start, end) => {
-    const length: number = subject.length;
-
+export const fill = <T>(subject, value, start?: number, end?: number): T[] => {
     if (start === undefined) {
         start = 0;
     }
 
     if (end === undefined) {
-        end = length;
+        end = subject.length;
     }
 
     for (let i = start; i < end; i++) {

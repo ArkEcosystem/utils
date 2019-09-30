@@ -1,12 +1,15 @@
-export const indexOf = (subject, target, fromIndex) => {
-    const length: number = subject.length;
+export const indexOf = <T>(iterable: T[], value, fromIndex?: number): number => {
+    const length: number = iterable.length;
+
     let i = 0;
 
-    if (typeof fromIndex === "number") {
+    if (fromIndex) {
         i = fromIndex;
 
         if (i < 0) {
             i += length;
+
+            /* istanbul ignore else */
             if (i < 0) {
                 i = 0;
             }
@@ -14,7 +17,7 @@ export const indexOf = (subject, target, fromIndex) => {
     }
 
     for (; i < length; i++) {
-        if (subject[i] === target) {
+        if (iterable[i] === value) {
             return i;
         }
     }

@@ -3,8 +3,14 @@ import "jest-extended";
 import { clone } from "../src";
 
 describe("#clone", () => {
-    it("should work like lodash", () => {
+    it("should work with an array", () => {
         const objects = [{ a: 1 }, { b: 2 }];
+
+        expect(clone(objects)).toEqual(objects);
+    });
+
+    it("should work with an object", () => {
+        const objects = { a: 1 };
 
         expect(clone(objects)).toEqual(objects);
     });
