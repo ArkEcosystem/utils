@@ -53,7 +53,7 @@ benchmarker("utils", [
     { name: "Utils.pullAll vs lodash.pullAll", scenarios: require("./pull-all"), },
     { name: "Utils.pullAllBy vs lodash.pullAllBy", scenarios: require("./pull-all-by"), },
     { name: "Utils.random vs lodash.random", scenarios: require("./random"), },
-    { name: "Utils.reduce vs lodash.reduce", scenarios: require("./reduce"), },
+    { name: "Utils.reduce vs Native.reduce vs lodash.reduce", scenarios: require("./reduce"), },
     { name: "Utils.reject vs lodash.reject", scenarios: require("./reject"), },
     { name: "Utils.sample vs lodash.sample", scenarios: require("./sample"), },
     { name: "Utils.set vs lodash.set", scenarios: require("./set"), },
