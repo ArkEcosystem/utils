@@ -1,13 +1,7 @@
+import { filterArray } from "./filter-array";
+import { filterObject } from "./filter-object";
 import { FunctionReturning } from "./internal";
+import { isArray } from "./is-array";
 
-export const filter = <T>(iterable: T[], iteratee: FunctionReturning): T[] => {
-    const result = [];
-
-    for (let i = 0; i < iterable.length; i++) {
-        if (iteratee(iterable[i], i, iterable)) {
-            result.push(iterable[i]);
-        }
-    }
-
-    return result;
-};
+export const filter = <T>(iterable: T | T[], iteratee: FunctionReturning): T | T[] =>
+    isArray(iterable) ? filterArray(iterable, iteratee) : filterObject(iterable, iteratee);

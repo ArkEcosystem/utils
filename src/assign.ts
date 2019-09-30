@@ -1,4 +1,4 @@
-export const assign = (target, ...args) => {
+export const assign = <T>(target: T, ...args): T => {
     for (let i = 1; i < args.length; i++) {
         const source = args[i];
         const keys = Object.keys(source);

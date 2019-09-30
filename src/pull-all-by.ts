@@ -12,5 +12,5 @@ export const pullAllBy = <T>(iterable: T[], values: T[], iteratee: FunctionRetur
         }
 
         return !iterateeValues[itemValue].includes(itemValue);
-    });
+    }) as T[];
 };
