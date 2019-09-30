@@ -1,18 +1,18 @@
 import { FunctionReturning } from "./internal";
 
-export const uniqBy = <T>(values: T[], iteratee?: FunctionReturning): T[] => {
+export const uniqBy = <T>(iterable: T[], iteratee?: FunctionReturning): T[] => {
     const result: T[] = [];
 
-    const map: Map<T, boolean> = new Map();
+    const set: Set<T> = new Set<T>();
+    for (let i = 0; i < iterable.length; i++) {
+        const value: T = iteratee(iterable[i]);
 
-    for (const item of values) {
-        const computed = iteratee(item);
-
-        if (!map.has(computed)) {
-            map.set(computed, true);
-
-            result.push(item);
+        if (set.has(value)) {
+            continue;
         }
+
+        set.add(value);
+        result.push(iterable[i]);
     }
 
     return result;
