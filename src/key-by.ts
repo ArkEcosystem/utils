@@ -1,12 +1,8 @@
-import { Iteratee } from "./internal";
-import { isString } from "./is-string";
+import { FunctionReturning } from "./internal";
 
-export const keyBy = <T>(iterable: T[], iteratee: Iteratee): object => {
-    const func = isString(iteratee) ? (item): T => item[iteratee] : iteratee;
-
-    return iterable.reduce((result, value) => {
-        result[func(value)] = value;
+export const keyBy = <T>(iterable: T[], iteratee: FunctionReturning): object =>
+    iterable.reduce((result, value) => {
+        result[iteratee(value)] = value;
 
         return result;
     }, {});
-};

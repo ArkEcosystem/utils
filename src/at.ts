@@ -1,8 +1,8 @@
 import { get } from "./get";
-import { map } from "./map";
+import { mapObject } from "./map-object";
 
 /**
  * This behaves like lodash.at with the major difference of
  * not supporting square brackets which nets a 3x performance gain.
  */
-export const at = <T>(object: object, paths: string[]): T[] => map(paths, (path: string) => get(object, path));
+export const at = <T>(object: object, paths: string[]): T[] => mapObject(paths, (path: string) => get(object, path));

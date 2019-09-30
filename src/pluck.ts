@@ -1,9 +1,9 @@
 export const pluck = (input, field) => {
-    var length = input.length,
-        plucked = [],
-        count = 0,
-        value,
-        i;
+    const length = input.length;
+    const plucked = [];
+    let count = 0;
+    let value;
+    let i;
 
     for (i = 0; i < length; i++) {
         value = input[i];

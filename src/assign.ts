@@ -1,20 +1,15 @@
 export const assign = (target, ...args) => {
-    const totalArgs = args.length; // args has to be popped
-    let source;
-    let i;
-    let totalKeys;
-    let keys;
-    let key;
-    let j;
+    for (let i = 1; i < args.length; i++) {
+        const source = args[i];
+        const keys = Object.keys(source);
+        const totalKeys = keys.length;
 
-    for (i = 1; i < totalArgs; i++) {
-        source = args[i];
-        keys = Object.keys(source);
-        totalKeys = keys.length;
-        for (j = 0; j < totalKeys; j++) {
-            key = keys[j];
+        for (let j = 0; j < totalKeys; j++) {
+            const key = keys[j];
+
             target[key] = source[key];
         }
     }
+
     return target;
 };

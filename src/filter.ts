@@ -1,4 +1,6 @@
-export const filter = (iterable, iteratee) => {
+import { FunctionReturning } from "./internal";
+
+export const filter = <T>(iterable: T[], iteratee: FunctionReturning): T[] => {
     const result = [];
 
     for (let i = 0; i < iterable.length; i++) {

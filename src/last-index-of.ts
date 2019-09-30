@@ -1,5 +1,5 @@
 export const lastIndexOf = (subject, target, fromIndex) => {
-    const length = subject.length;
+    const length: number = subject.length;
     let i = length - 1;
 
     if (typeof fromIndex === "number") {

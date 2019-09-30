@@ -1,9 +1,4 @@
-import { Iteratee } from "./internal";
-import { isString } from "./is-string";
-import { map } from "./map";
+import { FunctionReturning } from "./internal";
+import { mapObject } from "./map-object";
 
-export const mapValues = <T>(iterable: T, iteratee: Iteratee): T => {
-    const func = isString(iteratee) ? (item): T => item[iteratee] : iteratee;
-
-    return map(iterable, func);
-};
+export const mapValues = <T>(iterable: T, iteratee: FunctionReturning): T => mapObject(iterable, iteratee);

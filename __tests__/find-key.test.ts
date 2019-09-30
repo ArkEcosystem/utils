@@ -12,8 +12,4 @@ describe("#findKey", () => {
     it("should work with a function", () => {
         expect(findKey(users, o => o.age < 40)).toBe("barney");
     });
-
-    it("should work with a property", () => {
-        expect(findKey(users, "active")).toBe("barney");
-    });
 });

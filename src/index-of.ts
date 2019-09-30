@@ -1,9 +1,10 @@
 export const indexOf = (subject, target, fromIndex) => {
-    const length = subject.length;
+    const length: number = subject.length;
     let i = 0;
 
     if (typeof fromIndex === "number") {
         i = fromIndex;
+
         if (i < 0) {
             i += length;
             if (i < 0) {
