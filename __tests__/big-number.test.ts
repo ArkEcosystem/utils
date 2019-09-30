@@ -8,6 +8,10 @@ describe("#BigNumber", () => {
         expect(new BigNumber("0x20", 16).toFixed()).toBe(new BigNum("0x20", 16).toFixed());
     });
 
+    it("should work with a BigNumber instance as input", () => {
+        expect(new BigNumber(1e8).plus(new BigNumber(1e8)).toFixed()).toBe(new BigNum(1e8).plus(1e8).toFixed());
+    });
+
     it(".plus", () => {
         expect(new BigNumber(1e8).plus(1e8).toFixed()).toBe(new BigNum(1e8).plus(1e8).toFixed());
     });
