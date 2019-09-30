@@ -73,10 +73,6 @@ export class BigNumber {
         return this.value >= this.toBigNumber(other);
     }
 
-    public isGreaterThanOrEqualTo(other: BigNumberType): boolean {
-        return this.isGreaterThanEqual(other);
-    }
-
     public gt(other: BigNumberType): boolean {
         return this.isGreaterThan(other);
     }
