@@ -1,7 +1,7 @@
 import { isArray } from "./is-array";
 
 export const concat = <T>(...args): T[] => {
-    const length = args.length;
+    const length: number = args.length;
     const arr = [];
     let i;
     let item;

@@ -2,7 +2,7 @@ import { FunctionReturning } from "./internal";
 
 export const filterObject = <T>(iterable: T, iteratee: FunctionReturning): T => {
     const keys = Object.keys(iterable);
-    const length = keys.length;
+    const length: number = keys.length;
     const result = {};
 
     for (let i = 0; i < length; i++) {
