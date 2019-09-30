@@ -15,7 +15,7 @@ exports['utils'] = () => pullAllBy([{
     'x': 1
 }, {
     'x': 3
-}], 'x');
+}], o => o.x);
 
 exports['lodash'] = () => lodash([{
     'x': 1
@@ -29,4 +29,4 @@ exports['lodash'] = () => lodash([{
     'x': 1
 }, {
     'x': 3
-}], 'x');
+}], o => o.x);

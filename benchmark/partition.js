@@ -20,6 +20,6 @@ const users = [{
     }
 ];
 
-exports['utils'] = () => partition(users, 'active');
+exports['utils'] = () => partition(users, o => o.active);
 
-exports['lodash'] = () => lodash(users, 'active');
+exports['lodash'] = () => lodash(users, o => o.active);

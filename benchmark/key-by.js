@@ -13,6 +13,6 @@ const array = [{
     }
 ];
 
-exports['utils'] = () => keyBy(array, 'dir');
+exports['utils'] = () => keyBy(array, o => String.fromCharCode(o.code));
 
-exports['lodash'] = () => lodash(array, 'dir');
+exports['lodash'] = () => lodash(array, o => String.fromCharCode(o.code));

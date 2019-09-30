@@ -9,6 +9,6 @@ const objects = [{
     'n': 2
 }];
 
-exports['utils'] = () => maxBy(objects, 'n');
+exports['utils'] = () => maxBy(objects, o => o.n);
 
-exports['lodash'] = () => lodash(objects, 'n');
+exports['lodash'] = () => lodash(objects, o => o.n);

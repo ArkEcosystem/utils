@@ -14,6 +14,6 @@ const users = [{
         'active': true
     }
 ];
-exports['utils'] = () => reject(users, 'active');
+exports['utils'] = () => reject(users, o => o.active);
 
-exports['lodash'] = () => lodash(users, 'active');
+exports['lodash'] = () => lodash(users, o => o.active);
