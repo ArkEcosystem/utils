@@ -8,8 +8,4 @@ describe("#reject", () => {
     it("should work with a function", () => {
         expect(reject(users, o => !o.active)).toEqual([{ user: "fred", age: 40, active: true }]);
     });
-
-    it("should work with a property", () => {
-        expect(reject(users, "active")).toEqual([{ user: "barney", age: 36, active: false }]);
-    });
 });

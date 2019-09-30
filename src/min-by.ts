@@ -1,12 +1,9 @@
-import { Iteratee } from "./internal";
-import { isString } from "./is-string";
-import { map } from "./map";
+import { FunctionReturning } from "./internal";
+import { mapArray } from "./map-array";
 import { min } from "./min";
 
-export const minBy = <T>(iterable: T[], iteratee: Iteratee): T => {
-    const func = isString(iteratee) ? (item): number => item[iteratee] : iteratee;
+export const minBy = <T>(iterable: T[], iteratee: FunctionReturning): T => {
+    const minValue: number = min(mapArray<T, number>(iterable, iteratee));
 
-    const minValue: number = min(map(iterable, func));
-
-    return iterable.find(item => func(item) === minValue);
+    return iterable.find(item => iteratee(item) === minValue);
 };

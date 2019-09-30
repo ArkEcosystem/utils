@@ -1,9 +1,14 @@
-import { Iteratee } from "./internal";
-import { isString } from "./is-string";
-import { map } from "./map";
+import { FunctionReturning } from "./internal";
 
-export const mapValues = <T>(iterable: T, iteratee: Iteratee): T => {
-    const func = isString(iteratee) ? (item): T => item[iteratee] : iteratee;
+export const mapValues = <T>(iterable: T, iteratee: FunctionReturning): object => {
+    const keys: string[] = Object.keys(iterable);
+    const result = {};
 
-    return map(iterable, func);
+    for (let i = 0; i < keys.length; i++) {
+        const key: string = keys[i];
+
+        result[key] = iteratee(iterable[key], key, iterable);
+    }
+
+    return result;
 };

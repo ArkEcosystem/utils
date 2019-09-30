@@ -12,7 +12,7 @@ export const truncate = (
         omissionPosition: "right",
     },
 ): string => {
-    if (!options.length) {
+    if (!options.length || options.length < 0) {
         options.length = 30;
     }
 
@@ -30,10 +30,6 @@ export const truncate = (
         return value;
     }
 
-    if (options.omissionPosition === "left") {
-        return options.omission + value.substring(value.length - options.length + options.omission.length);
-    }
-
     if (options.omissionPosition === "right") {
         return value.substring(0, options.length - options.omission.length) + options.omission;
     }
@@ -47,5 +43,5 @@ export const truncate = (
         )}`;
     }
 
-    return value.substring(0, options.length) + options.omission;
+    return options.omission + value.substring(value.length - options.length + options.omission.length);
 };

@@ -1,8 +1,4 @@
-import { Iteratee } from "./internal";
-import { isString } from "./is-string";
+import { FunctionReturning } from "./internal";
 
-export const partition = <T>(iterable: T[], iteratee: Iteratee): [T[], T[]] => {
-    const func = isString(iteratee) ? (item): T => item[iteratee] : iteratee;
-
-    return iterable.reduce((result, value) => (result[func(value) ? 0 : 1].push(value), result), [[], []]);
-};
+export const partition = <T>(iterable: T[], iteratee: FunctionReturning): [T[], T[]] =>
+    iterable.reduce((result, value) => (result[iteratee(value) ? 0 : 1].push(value), result), [[], []]);
