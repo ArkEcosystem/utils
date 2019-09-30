@@ -4,6 +4,6 @@ import { maxBy } from "../src";
 
 describe("#maxBy", () => {
     it("should work with a function", () => {
-        expect(maxBy([{ n: 1 }, { n: 2 }], o => o.n)).toEqual({ n: 2 });
+        expect(maxBy([{ n: 2 }, { n: 3 }, { n: 1 }, { n: 5 }, { n: 4 }], o => o.n)).toEqual({ n: 5 });
     });
 });

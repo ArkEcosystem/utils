@@ -1,9 +1,18 @@
 import { FunctionReturning } from "./internal";
 import { mapArray } from "./map-array";
-import { min } from "./min";
 
 export const minBy = <T>(iterable: T[], iteratee: FunctionReturning): T => {
-    const minValue: number = min(mapArray<T, number>(iterable, iteratee));
+    const values: number[] = mapArray<T, number>(iterable, iteratee);
 
-    return iterable.find(item => iteratee(item) === minValue);
+    let index: number = 0;
+    let smallest: number = values[index];
+
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] < smallest) {
+            smallest = values[i];
+            index = i;
+        }
+    }
+
+    return iterable[index];
 };
