@@ -11,8 +11,4 @@ describe("#mapValues", () => {
     it("should work with a function", () => {
         expect(mapValues(users, o => o.age)).toEqual({ fred: 40, pebbles: 1 });
     });
-
-    it("should work with a property", () => {
-        expect(mapValues(users, "age")).toEqual({ fred: 40, pebbles: 1 });
-    });
 });

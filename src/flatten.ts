@@ -1,4 +1,4 @@
-const flat = <T>(iterable: T[], stash): T[] => {
+const flat = <T>(iterable: T[], stash: T[]): T[] => {
     for (const element of iterable) {
         Array.isArray(element) ? flat(element, stash) : stash.push(element);
     }

@@ -39,5 +39,7 @@ describe("#truncate", () => {
                 omissionPosition: "middle",
             }),
         ).toBe(`${"#".repeat(1)}...${"#".repeat(1)}`);
+
+        expect(truncate("#".repeat(30), {})).toBe(`${"#".repeat(27)}...`);
     });
 });

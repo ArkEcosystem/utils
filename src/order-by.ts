@@ -16,5 +16,7 @@ export const orderBy = <T>(values: T[], iteratees: Iteratee | Iteratee[], orders
         orders = [orders];
     }
 
-    return sort(values).by(map(iteratees, (_: string, index: number) => ({ [orders[index]]: iteratees[index] })));
+    return sort(values).by(
+        map(iteratees as any, (_: string, index: number) => ({ [orders[index]]: iteratees[index] })),
+    );
 };

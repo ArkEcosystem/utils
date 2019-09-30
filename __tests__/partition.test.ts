@@ -15,11 +15,4 @@ describe("#partition", () => {
             [{ user: "barney", age: 36, active: false }, { user: "pebbles", age: 1, active: false }],
         ]);
     });
-
-    it("should work with a property", () => {
-        expect(partition(users, "active")).toEqual([
-            [{ user: "fred", age: 40, active: true }],
-            [{ user: "barney", age: 36, active: false }, { user: "pebbles", age: 1, active: false }],
-        ]);
-    });
 });
