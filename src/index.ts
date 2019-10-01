@@ -36,6 +36,7 @@ export * from "./group-by";
 export * from "./has-property";
 export * from "./has-some-property";
 export * from "./has";
+export * from "./hash-string";
 export * from "./head";
 export * from "./header-case";
 export * from "./index-of";
