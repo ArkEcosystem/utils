@@ -1,10 +1,15 @@
 export const hashString = (value: string): number => {
-    let hash: number = 5381;
-    let remaining: number = value.length;
+    let hash: number = 0;
 
-    while (remaining) {
-        hash = (hash * 33) ^ value.charCodeAt(--remaining);
+    if (value.length == 0) {
+        return hash;
     }
 
-    return hash >>> 0;
+    for (let i = 0; i < value.length; i++) {
+        hash = (hash << 5) - hash;
+        hash = hash + value.charCodeAt(i);
+        hash = hash & hash;
+    }
+
+    return Math.abs(hash);
 };

@@ -37,6 +37,7 @@ export * from "./has-property";
 export * from "./has-some-property";
 export * from "./has";
 export * from "./hash-string";
+export * from "./hash-table";
 export * from "./head";
 export * from "./header-case";
 export * from "./index-of";
