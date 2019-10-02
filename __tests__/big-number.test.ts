@@ -64,17 +64,17 @@ describe("#BigNumber", () => {
         expect(new BigNumber(10).isEqualTo(10)).toBeTrue();
     });
 
-    it(".isInteger", () => {
-        expect(new BigNumber(10).isInteger()).toBeTrue();
-        expect(new BigNumber(Number.MAX_SAFE_INTEGER + 1).isInteger()).toBeFalse();
-    });
-
     it(".isNegative", () => {
         expect(new BigNumber(-10).isNegative()).toBeTrue();
     });
 
     it(".toFixed", () => {
         expect(new BigNumber(1e8).toFixed()).toBe(`${1e8}`);
+    });
+
+    it(".toString", () => {
+        expect(new BigNumber(1e8).toString()).toBe(`${1e8}`);
+        expect(new BigNumber(255).toString(16)).toBe(`ff`);
     });
 
     it(".toJSON", () => {
