@@ -11,6 +11,10 @@ export class BigNumber {
         this.value = this.toBigNumber(value, base);
     }
 
+    public static make(value: BigNumberType, base: number = 10): BigNumber {
+        return new BigNumber(value, base);
+    }
+
     public plus(other: BigNumberType): BigNumber {
         return new BigNumber(this.value + this.toBigNumber(other));
     }
