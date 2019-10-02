@@ -12,6 +12,10 @@ describe("#BigNumber", () => {
         expect(new BigNumber(1e8).plus(new BigNumber(1e8)).toFixed()).toBe(new BigNum(1e8).plus(1e8).toFixed());
     });
 
+    it(".make", () => {
+        expect(BigNumber.make(1e8).plus(1e8).toFixed()).toBe(new BigNum(1e8).plus(1e8).toFixed());
+    });
+
     it(".plus", () => {
         expect(new BigNumber(1e8).plus(1e8).toFixed()).toBe(new BigNum(1e8).plus(1e8).toFixed());
     });
