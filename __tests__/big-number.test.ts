@@ -5,7 +5,7 @@ import BigNum from "bignumber.js";
 
 describe("#BigNumber", () => {
     it("should be created from hex", () => {
-        expect(new BigNumber("0x20", 16).toFixed()).toBe(new BigNum("0x20", 16).toFixed());
+        expect(new BigNumber("0x20").toFixed()).toBe(new BigNum("0x20", 16).toFixed());
     });
 
     it("should work with a BigNumber instance as input", () => {

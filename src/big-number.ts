@@ -7,12 +7,12 @@ export class BigNumber {
 
     private readonly value: bigint;
 
-    public constructor(value: BigNumberType, base: number = 10) {
-        this.value = this.toBigNumber(value, base);
+    public constructor(value: BigNumberType) {
+        this.value = this.toBigNumber(value);
     }
 
-    public static make(value: BigNumberType, base: number = 10): BigNumber {
-        return new BigNumber(value, base);
+    public static make(value: BigNumberType): BigNumber {
+        return new BigNumber(value);
     }
 
     public plus(other: BigNumberType): BigNumber {
@@ -89,11 +89,9 @@ export class BigNumber {
         return this.toFixed();
     }
 
-    private toBigNumber(value: BigNumberType, base: number = 10): bigint {
+    private toBigNumber(value: BigNumberType): bigint {
         if (value instanceof BigNumber) {
             value = value.value;
-        } else if (typeof value === "string" && base !== 10) {
-            value = parseInt(value, base);
         }
 
         return BigInt(value);
