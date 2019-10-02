@@ -73,16 +73,16 @@ export class BigNumber {
         return this.value === this.toBigNumber(other);
     }
 
-    public isInteger(): boolean {
-        return this.value <= Number.MAX_SAFE_INTEGER;
-    }
-
     public isNegative(): boolean {
         return this.value < 0;
     }
 
     public toFixed(): string {
         return this.value.toString();
+    }
+
+    public toString(base = 10) {
+        return this.value.toString(base);
     }
 
     public toJSON(): string {
@@ -92,8 +92,10 @@ export class BigNumber {
     private toBigNumber(value: BigNumberType, base: number = 10): bigint {
         if (value instanceof BigNumber) {
             value = value.value;
+        } else if (typeof value === "string" && base !== 10) {
+            value = parseInt(value, base);
         }
 
-        return BigInt(value.toString(base));
+        return BigInt(value);
     }
 }
