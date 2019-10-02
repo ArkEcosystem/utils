@@ -7,8 +7,12 @@ export class BigNumber {
 
     private readonly value: bigint;
 
-    public constructor(value: BigNumberType, base: number = 10) {
-        this.value = this.toBigNumber(value, base);
+    public constructor(value: BigNumberType) {
+        this.value = this.toBigNumber(value);
+    }
+
+    public static make(value: BigNumberType): BigNumber {
+        return new BigNumber(value);
     }
 
     public plus(other: BigNumberType): BigNumber {
@@ -69,10 +73,6 @@ export class BigNumber {
         return this.value === this.toBigNumber(other);
     }
 
-    public isInteger(): boolean {
-        return this.value <= Number.MAX_SAFE_INTEGER;
-    }
-
     public isNegative(): boolean {
         return this.value < 0;
     }
@@ -81,15 +81,19 @@ export class BigNumber {
         return this.value.toString();
     }
 
+    public toString(base: number = 10): string {
+        return this.value.toString(base);
+    }
+
     public toJSON(): string {
         return this.toFixed();
     }
 
-    private toBigNumber(value: BigNumberType, base: number = 10): bigint {
+    private toBigNumber(value: BigNumberType): bigint {
         if (value instanceof BigNumber) {
             value = value.value;
         }
 
-        return BigInt(value.toString(base));
+        return BigInt(value);
     }
 }
