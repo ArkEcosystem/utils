@@ -44,6 +44,8 @@
         "@typescript-eslint/eslint-plugin": "^2.3.1",
         "@typescript-eslint/parser": "^2.3.1",
         "benchmark": "^2.1.4",
+        "big-number": "^2.0.0",
+        "big.js": "^5.2.2",
         "bignumber.js": "^9.0.0",
         "codecov": "^3.6.1",
         "cross-env": "^6.0.0",
