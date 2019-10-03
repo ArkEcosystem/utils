@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.8.3] - 2019-10-03
+
+### Added
+
+-   Added `numberToHex` method
+-   Added `BigNumber` class
+-   Added `hashString` method
+
+### Changed
+
+-   Greatly improved the performance of various methods to be as fast or faster than lodash.
+
 ## [0.8.0] - 2019-09-29
 
 ### Added
