@@ -1,0 +1,47 @@
+import "jest-extended";
+
+import { parseGitUrl } from "../src";
+
+describe("#parseGitUrl", () => {
+    it("should return the expected fields", () => {
+        expect(parseGitUrl("git@github.com:owner/repo.git")).toEqual({
+            host: "github.com",
+            owner: "owner",
+            name: "repo",
+            repo: "owner/repo",
+            branch: "master",
+        });
+
+        expect(parseGitUrl("https://github.com/owner/repo.git")).toEqual({
+            host: "github.com",
+            owner: "owner",
+            name: "repo",
+            repo: "owner/repo",
+            branch: "master",
+        });
+
+        expect(parseGitUrl("https://github.com/owner/repo.git#develop")).toEqual({
+            host: "github.com",
+            owner: "owner",
+            name: "repo",
+            repo: "owner/repo",
+            branch: "develop",
+        });
+
+        expect(parseGitUrl("https://github.com/owner/repo.git#f4991348ca779b68b8e7139cfcbc601e6d496612")).toEqual({
+            host: "github.com",
+            owner: "owner",
+            name: "repo",
+            repo: "owner/repo",
+            branch: "f4991348ca779b68b8e7139cfcbc601e6d496612",
+        });
+
+        expect(parseGitUrl("https://github.com/owner/repo.git#develop#develop")).toEqual({
+            host: "github.com",
+            owner: "owner",
+            name: "repo",
+            repo: "owner/repo",
+            branch: "develop",
+        });
+    });
+});
