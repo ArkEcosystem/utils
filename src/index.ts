@@ -23,6 +23,7 @@ export * from "./fill";
 export * from "./filter-array";
 export * from "./filter-object";
 export * from "./filter";
+export * from "./find-index";
 export * from "./find-key";
 export * from "./first-map-entry";
 export * from "./first-map-key";

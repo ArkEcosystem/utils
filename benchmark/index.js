@@ -14,6 +14,7 @@ benchmarker("utils", [
     { name: "Utils.concat vs lodash.concat", scenarios: require("./concat"), },
     { name: "Utils.fill vs lodash.fill", scenarios: require("./fill"), },
     { name: "Utils.filter vs Native.filter cs lodash.filter", scenarios: require("./filter"), },
+    { name: "Utils.findIndex vs lodash.findIndex", scenarios: require("./find-index"), },
     { name: "Utils.findKey vs lodash.findKey", scenarios: require("./find-key"), },
     { name: "Utils.flatten vs lodash.flatten", scenarios: require("./flatten"), },
     { name: "Utils.get vs lodash.get", scenarios: require("./get"), },
