@@ -40,6 +40,7 @@ export * from "./has";
 export * from "./hash-string";
 export * from "./head";
 export * from "./header-case";
+export * from "./includes";
 export * from "./index-of";
 export * from "./is-array-of-type";
 export * from "./is-array";

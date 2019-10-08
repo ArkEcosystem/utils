@@ -21,6 +21,7 @@ benchmarker("utils", [
     { name: "Utils.groupBy vs lodash.groupBy", scenarios: require("./group-by"), },
     { name: "Utils.has vs lodash.has", scenarios: require("./has"), },
     { name: "Utils.head vs lodash.head", scenarios: require("./head"), },
+    { name: "Utils.includes vs lodash.includes", scenarios: require("./includes"), },
     { name: "Utils.indexOf vs lodash.indexOf", scenarios: require("./index-of"), },
     { name: "Utils.isArray vs lodash.isArray", scenarios: require("./is-array"), },
     { name: "Utils.isBoolean vs lodash.isBoolean", scenarios: require("./is-boolean"), },
