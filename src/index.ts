@@ -49,6 +49,7 @@ export * from "./is-between";
 export * from "./is-boolean-array";
 export * from "./is-boolean";
 export * from "./is-constructor";
+export * from "./is-date";
 export * from "./is-empty-array";
 export * from "./is-empty-map";
 export * from "./is-empty-object";

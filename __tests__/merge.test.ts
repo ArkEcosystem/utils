@@ -15,4 +15,8 @@ describe("#merge", () => {
             ),
         ).toEqual({ a: [{ b: 2 }, { d: 4 }, { c: 3 }, { e: 5 }] });
     });
+
+    it("should merge the given arrays", () => {
+        expect(merge([1, 2], [3, 4])).toEqual([1, 2, 3, 4]);
+    });
 });

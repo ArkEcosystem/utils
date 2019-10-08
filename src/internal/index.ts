@@ -1,3 +1,4 @@
 export * from "./cast-path";
 export * from "./compound-words";
+export * from "./safe-get";
 export * from "./types";

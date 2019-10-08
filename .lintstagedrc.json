@@ -1,4 +1,4 @@
 {
-    "src/*.ts": ["yarn lint", "jest --bail --coverage --findRelatedTests", "prettier --write", "git add"],
+    "src/*.ts": ["yarn lint", "prettier --write", "git add"],
     "*.{json,md}": ["prettier --write", "git add"]
 }
