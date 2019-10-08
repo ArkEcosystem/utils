@@ -39,7 +39,7 @@ pnpm add @arkecosystem/utils
 ### npm
 
 ```sh
-npm run test:coverage -- --coverage
+npm run test -- --coverage
 ```
 
 ### yarn
@@ -51,7 +51,7 @@ yarn test --coverage
 ### pnpm
 
 ```sh
-pnpm run test:coverage -- --coverage
+pnpm run test -- --coverage
 ```
 
 ## Benchmark
