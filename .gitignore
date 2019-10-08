@@ -44,6 +44,7 @@ docs
 # Optional npm cache directory
 .npm
 package-lock.json
+yarn.lock
 
 # Mac OS X local settings
 .DS_Store

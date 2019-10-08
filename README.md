@@ -16,21 +16,73 @@
 
 ## Installation
 
+### npm
+
+```sh
+npm install @arkecosystem/utils
+```
+
+### yarn
+
 ```sh
 yarn add @arkecosystem/utils
 ```
 
-## Test
+### pnpm
 
 ```sh
-yarn test:coverage
+pnpm add @arkecosystem/utils
+```
+
+## Test
+
+### npm
+
+```sh
+npm run test:coverage -- --coverage
+```
+
+### yarn
+
+```sh
+yarn test --coverage
+```
+
+### pnpm
+
+```sh
+pnpm run test:coverage -- --coverage
 ```
 
 ## Benchmark
 
+### Clone
+
 ```sh
 git clone git@github.com:ArkEcosystem/utils.git
-yarn && yarn bench
+```
+
+### Run
+
+#### npm
+
+```sh
+npm install
+npm run bench
+```
+
+#### yarn
+
+```sh
+yarn install
+yarn bench
+```
+
+#### pnpm
+
+```sh
+pnpm install
+pnpm run bench
 ```
 
 ## Security
