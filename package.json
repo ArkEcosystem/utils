@@ -32,10 +32,10 @@
         "fast-sort": "^1.5.6"
     },
     "devDependencies": {
+        "@arkecosystem/commitlint": "^0.1.0",
         "@babel/core": "^7.6.2",
         "@babel/preset-env": "^7.6.2",
         "@commitlint/cli": "^8.2.0",
-        "@commitlint/config-conventional": "^8.2.0",
         "@faustbrian/benchmarker": "^0.1.2",
         "@sindresorhus/tsconfig": "^0.4.0",
         "@types/benchmark": "^1.0.31",
