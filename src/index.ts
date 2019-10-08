@@ -25,6 +25,7 @@ export * from "./filter-object";
 export * from "./filter";
 export * from "./find-index";
 export * from "./find-key";
+export * from "./find";
 export * from "./first-map-entry";
 export * from "./first-map-key";
 export * from "./first-map-value";
