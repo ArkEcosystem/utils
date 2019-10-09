@@ -19,6 +19,7 @@ export * from "./concat";
 export * from "./constant-case";
 export * from "./dot-case";
 export * from "./every";
+export * from "./expand-tilde";
 export * from "./fill";
 export * from "./filter-array";
 export * from "./filter-object";
