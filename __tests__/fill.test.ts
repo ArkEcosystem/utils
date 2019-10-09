@@ -1,5 +1,3 @@
-import "jest-extended";
-
 import { fill } from "../src";
 
 describe("#fill", () => {

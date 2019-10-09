@@ -1,10 +1,6 @@
 import { castPath } from "./internal";
 import { isEmpty } from "./is-empty";
 
-/**
- * This behaves like lodash.unset with the major difference of
- * not supporting square brackets which nets a 3x performance gain.
- */
 export const unset = (object: object, path: string | string[]): boolean => {
     if (isEmpty(object)) {
         return false;
