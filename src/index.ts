@@ -18,6 +18,7 @@ export * from "./collection";
 export * from "./concat";
 export * from "./constant-case";
 export * from "./dot-case";
+export * from "./dot-env";
 export * from "./every";
 export * from "./expand-tilde";
 export * from "./fill";
