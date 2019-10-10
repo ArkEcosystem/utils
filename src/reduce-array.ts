@@ -1,6 +1,6 @@
 import { FunctionReturning } from "./internal";
 
-export const reduceArray = <T, V>(iterable: T[], iteratee: FunctionReturning, initialValue: V): V => {
+export const reduceArray = <T, V>(iterable: T[], iteratee: FunctionReturning, initialValue: V): V | undefined => {
     let result: V = initialValue;
 
     for (let i = 0; i < iterable.length; i++) {

@@ -1,4 +1,4 @@
-export const fill = <T>(subject, value, start?: number, end?: number): T[] => {
+export const fill = <T, V>(subject: T[], value: V, start?: number, end?: number): (T | V)[] => {
     if (start === undefined) {
         start = 0;
     }
@@ -7,9 +7,11 @@ export const fill = <T>(subject, value, start?: number, end?: number): T[] => {
         end = subject.length;
     }
 
+    const results: (T | V)[] = [...subject];
+
     for (let i = start; i < end; i++) {
-        subject[i] = value;
+        results[i] = value;
     }
 
-    return subject;
+    return results;
 };

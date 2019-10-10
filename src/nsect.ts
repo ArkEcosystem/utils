@@ -1,6 +1,6 @@
 import assert from "assert";
 
-type ProbeCallback = (indexesToProbe: number[]) => Promise<number>;
+type ProbeCallback = (indexesToProbe: number[]) => Promise<number | undefined>;
 
 /**
  * Perform an N-ary (e.g. binary search for N=2) on a given sorted sequence of elements.
@@ -26,13 +26,13 @@ export class NSect {
      * @param {Number} high highest interval boundary (inclusive)
      * @return {Number} the index of the first (lowest) element that satisfies the condition
      */
-    public async find(low: number, high: number): Promise<number> {
-        let highestMatching: number;
+    public async find(low: number, high: number): Promise<number | undefined> {
+        let highestMatching: number | undefined;
 
         for (;;) {
             const indexesToProbe: number[] = this.calcProbes(low, high);
 
-            const temp: number = await this.probe(indexesToProbe);
+            const temp: number | undefined = await this.probe(indexesToProbe);
 
             if (temp === undefined) {
                 break;
@@ -107,6 +107,7 @@ export class NSect {
      */
     private calcProbes(low: number, high: number): number[] {
         assert(low <= high, `${low} <= ${high}`);
+
         const diff: number = high - low;
         const p: Set<number> = new Set<number>();
 

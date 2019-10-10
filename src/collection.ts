@@ -24,7 +24,7 @@ export class Collection<T> {
         return Object.values(this.collection);
     }
 
-    public pull(key: string): T {
+    public pull(key: string): T | undefined {
         const item = get<T>(this.collection, key);
 
         this.forget(key);
@@ -32,7 +32,7 @@ export class Collection<T> {
         return item;
     }
 
-    public get(key: string): T {
+    public get(key: string): T | undefined {
         return get<T>(this.collection, key);
     }
 
@@ -72,7 +72,7 @@ export class Collection<T> {
         return sample(this.values());
     }
 
-    public toJson(): string {
+    public toJson(): string | undefined {
         const collection: Record<string, T> = {};
 
         for (const [key, value] of this.entries()) {

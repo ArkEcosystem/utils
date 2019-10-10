@@ -5,4 +5,12 @@ import { words } from "../words";
 export const compoundWords = (
     value: string,
     transformer: (result: string, word: string, index: number) => string,
-): string => reduceArray<string, string>(mapArray<string, string>(words(value), w => w.toLowerCase()), transformer, "");
+): string | undefined => {
+    const segments: string[] | null = words(value);
+
+    if (segments === null) {
+        return undefined;
+    }
+
+    return reduceArray<string, string>(mapArray<string, string>(segments, w => w.toLowerCase()), transformer, "");
+};

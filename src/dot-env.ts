@@ -8,7 +8,7 @@ export class DotEnv {
         const result: Record<string, Primitive> = {};
 
         for (const line of contents.toString().split("\n")) {
-            const matches: RegExpExecArray = new RegExp(/^([^=:#]+?)[=:](.*)/).exec(line);
+            const matches: RegExpExecArray | null = new RegExp(/^([^=:#]+?)[=:](.*)/).exec(line);
 
             if (!matches) {
                 continue;

@@ -5,7 +5,9 @@ import { keys } from "../src";
 describe("#keys", () => {
     it("should work with an object", () => {
         function Foo() {
+            // @ts-ignore
             this.a = 1;
+            // @ts-ignore
             this.b = 2;
         }
 

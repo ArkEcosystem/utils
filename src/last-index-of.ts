@@ -1,4 +1,4 @@
-export const lastIndexOf = (subject, target, fromIndex?: number): number => {
+export const lastIndexOf = <T>(subject: T[], target: T, fromIndex?: number): number => {
     const length: number = subject.length;
     let i = length - 1;
 

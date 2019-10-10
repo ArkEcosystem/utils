@@ -3,10 +3,12 @@ import "jest-extended";
 import { assign } from "../src";
 
 function Foo() {
+    // @ts-ignore
     this.a = 1;
 }
 
 function Bar() {
+    // @ts-ignore
     this.c = 3;
 }
 

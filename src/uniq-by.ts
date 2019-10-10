@@ -1,6 +1,6 @@
 import { FunctionReturning } from "./internal";
 
-export const uniqBy = <T>(iterable: T[], iteratee?: FunctionReturning): T[] => {
+export const uniqBy = <T>(iterable: T[], iteratee: FunctionReturning): T[] => {
     const result: T[] = [];
 
     const set: Set<T> = new Set<T>();

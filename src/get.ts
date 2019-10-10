@@ -1,7 +1,7 @@
 import { castPath } from "./internal";
 import { isEmpty } from "./is-empty";
 
-export const get = <T>(object: object, path: string | string[], defaultValue?: T): T => {
+export const get = <T>(object: object, path: string | string[], defaultValue?: T): T | undefined => {
     if (isEmpty(object)) {
         return defaultValue;
     }

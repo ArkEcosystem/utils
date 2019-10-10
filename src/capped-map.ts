@@ -1,12 +1,9 @@
 export class CappedMap<K, V> {
     protected store: Map<K, V> = new Map<K, V>();
-    private maxSize: number;
 
-    constructor(maxSize: number) {
-        this.resize(maxSize);
-    }
+    public constructor(private maxSize: number) {}
 
-    public get(key: K): V {
+    public get(key: K): V | undefined {
         return this.store.get(key);
     }
 

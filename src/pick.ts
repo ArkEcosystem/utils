@@ -1,5 +1,5 @@
 export const pick = <T>(iterable: T, keys: string[]): T => {
-    const newValues: unknown = {};
+    const newValues = {};
 
     for (const key of keys) {
         newValues[key] = iterable[key];
