@@ -3,6 +3,10 @@ import "jest-extended";
 import { parseGitUrl } from "../src";
 
 describe("#parseGitUrl", () => {
+    it("should throw if it cannot find a host", () => {
+        expect(() => parseGitUrl("owner/repo.git")).toThrow("Failed to find a host.");
+    });
+
     it("should return the expected fields", () => {
         expect(parseGitUrl("git@github.com:owner/repo.git")).toEqual({
             host: "github.com",

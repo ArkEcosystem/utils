@@ -12,5 +12,9 @@ export const compoundWords = (
         return undefined;
     }
 
-    return reduceArray<string, string>(mapArray<string, string>(segments, w => w.toLowerCase()), transformer, "");
+    return reduceArray<string, string>(
+        mapArray<string, string>(segments, (word: string) => word.toLowerCase()),
+        transformer,
+        "",
+    );
 };
