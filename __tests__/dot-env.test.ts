@@ -1,9 +1,7 @@
 import "jest-extended";
 
-import { DotEnv } from "../src";
+import { dotenv } from "../src";
 import { resolve } from "path";
-
-const dotenv: DotEnv = new DotEnv();
 
 describe("#DotEnv", () => {
     it("should parse the given string", () => {
