@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.9.9] - 2019-10-10
+
+### Added
+
+-   Added `isWeakMap` method
+-   Added `isArguments` method
+-   Added `isDate` method
+-   Added `getType` method
+-   Added `isSyncFunction` methods
+-   Added `isAsyncFunction` methods
+-   Added `DotEnv` class
+-   Added `expandTilde` method
+
+## Changed
+
+-   Improved type checking inside the node.js VM
+
 ## [0.9.1] - 2019-10-08
 
 ### Added
@@ -315,6 +332,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[0.9.9]: https://github.com/ArkEcosystem/utils/compare/0.9.1...0.9.9
 [0.9.1]: https://github.com/ArkEcosystem/utils/compare/0.8.8...0.9.1
 [0.8.8]: https://github.com/ArkEcosystem/utils/compare/0.8.3...0.8.8
 [0.8.3]: https://github.com/ArkEcosystem/utils/compare/0.8.0...0.8.3
