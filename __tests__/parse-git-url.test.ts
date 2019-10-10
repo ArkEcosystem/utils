@@ -7,6 +7,10 @@ describe("#parseGitUrl", () => {
         expect(() => parseGitUrl("owner/repo.git")).toThrow("Failed to find a host.");
     });
 
+    it("should throw if it cannot find a name", () => {
+        expect(() => parseGitUrl("git@github.com")).toThrow("Failed to find a name.");
+    });
+
     it("should return the expected fields", () => {
         expect(parseGitUrl("git@github.com:owner/repo.git")).toEqual({
             host: "github.com",

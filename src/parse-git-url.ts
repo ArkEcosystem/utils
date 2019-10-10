@@ -1,9 +1,6 @@
 import { parse, UrlWithStringQuery } from "url";
 
-import { isUndefined } from "./is-undefined";
 import { last } from "./last";
-
-const getBranch = (hash: string): string => (hash && hash.startsWith("#") ? last(hash.split("#")) : "master");
 
 const getOwner = (value: string): string => {
     const string: number = value.indexOf(":");
@@ -13,7 +10,7 @@ const getOwner = (value: string): string => {
 
 export const parseGitUrl = (
     value: string,
-): { host: string; owner: string; name: string; repo: string; branch: string } => {
+): { host: string; owner: string; name: string; repo: string; branch: string } | undefined => {
     const parsed: UrlWithStringQuery = parse(value);
 
     if (value.startsWith("git@")) {
@@ -24,11 +21,14 @@ export const parseGitUrl = (
         throw new Error("Failed to find a host.");
     }
 
-    if (!parsed.path) {
-        throw new Error("Failed to find a path.");
-    }
-
+    // @ts-ignore - The previous host check will already exit if there are problems
+    // but for some reason the node typings say the path could be undefined.
+    // This doesn't seem to be the case and it always defaults to at least the host.
     const segments: string[] = parsed.path.split("/").filter(Boolean);
+
+    if (segments.length === 1) {
+        throw new Error("Failed to find a name.");
+    }
 
     const owner: string = getOwner(segments[0]);
     const name: string = segments[1].replace(/^\W+|\.git$/g, "");
@@ -37,13 +37,9 @@ export const parseGitUrl = (
         host: parsed.host,
         owner,
         name,
-        branch: segments[2],
+        branch: (parsed.hash ? last(parsed.hash.split("#")) : segments[2]) || "master",
         repo: owner + "/" + name,
     };
-
-    if (isUndefined(result.branch)) {
-        result.branch = parsed.hash ? getBranch(parsed.hash) : "master";
-    }
 
     return result;
 };
