@@ -1,1 +1,3 @@
-export const isRegExp = (value: unknown): value is RegExp => value instanceof RegExp;
+import { getType } from "./get-type";
+
+export const isRegExp = (value: unknown): value is RegExp => getType(value) === "[object RegExp]";

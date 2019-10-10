@@ -1,1 +1,3 @@
-export const isSet = (value: unknown): boolean => value instanceof Set;
+import { getType } from "./get-type";
+
+export const isSet = (value: unknown): boolean => getType(value) === "[object Set]";

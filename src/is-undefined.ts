@@ -1,1 +1,3 @@
-export const isUndefined = (value: unknown): value is undefined => typeof value === "undefined";
+import { getType } from "./get-type";
+
+export const isUndefined = (value: unknown): value is undefined => getType(value) === "[object Undefined]";

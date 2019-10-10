@@ -1,1 +1,3 @@
-export const isSymbol = (value: unknown): value is symbol => typeof value === "symbol";
+import { getType } from "./get-type";
+
+export const isSymbol = (value: unknown): value is symbol => getType(value) === "[object Symbol]";

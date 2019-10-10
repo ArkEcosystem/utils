@@ -1,1 +1,3 @@
-export const isMap = (value: unknown): boolean => value instanceof Map;
+import { getType } from "./get-type";
+
+export const isMap = (value: unknown): boolean => getType(value) === "[object Map]";
