@@ -53,6 +53,7 @@ export * from "./is-async-function";
 export * from "./is-between";
 export * from "./is-boolean-array";
 export * from "./is-boolean";
+export * from "./is-buffer";
 export * from "./is-constructor";
 export * from "./is-date";
 export * from "./is-empty-array";
