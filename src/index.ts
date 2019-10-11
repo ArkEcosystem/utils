@@ -46,6 +46,7 @@ export * from "./head";
 export * from "./header-case";
 export * from "./includes";
 export * from "./index-of";
+export * from "./intersection";
 export * from "./is-arguments";
 export * from "./is-array-of-type";
 export * from "./is-array";
