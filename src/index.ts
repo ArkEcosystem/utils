@@ -24,6 +24,7 @@ export * from "./dot-case";
 export * from "./dot-env";
 export * from "./every";
 export * from "./expand-tilde";
+export * from "./extension";
 export * from "./fill";
 export * from "./filter-array";
 export * from "./filter-object";
