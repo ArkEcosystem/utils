@@ -37,6 +37,8 @@
         "@babel/preset-env": "^7.6.2",
         "@commitlint/cli": "^8.2.0",
         "@faustbrian/benchmarker": "^0.1.2",
+        "@hapi/boom": "^8.0.1",
+        "@hapi/hapi": "^18.4.0",
         "@sindresorhus/tsconfig": "^0.5.0",
         "@types/benchmark": "^1.0.31",
         "@types/jest": "^24.0.18",

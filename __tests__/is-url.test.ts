@@ -1,6 +1,7 @@
 import "jest-extended";
 
 import { isURL } from "../src";
+import { URL } from "url";
 
 describe("#isURL", () => {
     it("should pass", () => {

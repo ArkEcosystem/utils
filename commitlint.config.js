@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ["@arkecosystem/commitlint"]
+    extends: ["@arkecosystem/commitlint"],
 };
