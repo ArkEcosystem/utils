@@ -1,1 +1,1 @@
-export const isBuffer = (value: unknown): boolean => value instanceof Buffer;
+export const isBuffer = (value: unknown): boolean => Buffer.isBuffer(value);
