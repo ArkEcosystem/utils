@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.30] - 2019-10-14
+
+## Added
+
+-   Added `base64.decode` method
+-   Added `base64.encode` method
+-   Added `binary.decode` method
+-   Added `binary.encode` method
+-   Added `chars` method
+-   Added `extension` method
+-   Added `hex.decode` method
+-   Added `hex.encode` method
+-   Added `http.delete` method
+-   Added `http.get` method
+-   Added `http.patch` method
+-   Added `http.post` method
+-   Added `http.put` method
+-   Added `intersection` method
+-   Added `isBigInt` method
+-   Added `isBuffer` method
+-   Added `isError` method
+-   Added `isNegative` method
+-   Added `isNegativeZero` method
+-   Added `isPositive` method
+-   Added `isPositiveZero` method
+-   Added `isPromise` method
+-   Added `isURL` method
+-   Added `isWeakSet` method
+-   Added `semver.isEqual` method
+-   Added `semver.isGreaterThan` method
+-   Added `semver.isGreaterThanOrEqual` method
+-   Added `semver.isLessThan` method
+-   Added `semver.isLessThanOrEqual` method
+-   Added `sleep` method
+
 ## [1.0.0] - 2019-10-10
 
 ## Changed
@@ -223,8 +258,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
--   Extracted `Dato` into its own package (https://github.com/faustbrian/dato)
-
 ## [0.2.7] - 2019-02-27
 
 ### Changed
@@ -338,6 +371,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[1.0.30]: https://github.com/ArkEcosystem/utils/compare/1.0.0...1.0.30
 [1.0.0]: https://github.com/ArkEcosystem/utils/compare/0.9.9...1.0.0
 [0.9.9]: https://github.com/ArkEcosystem/utils/compare/0.9.1...0.9.9
 [0.9.1]: https://github.com/ArkEcosystem/utils/compare/0.8.8...0.9.1
