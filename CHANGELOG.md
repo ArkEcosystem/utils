@@ -258,6 +258,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
+-   Extracted `Dato` into its own package (https://github.com/faustbrian/dato)
+
 ## [0.2.7] - 2019-02-27
 
 ### Changed
