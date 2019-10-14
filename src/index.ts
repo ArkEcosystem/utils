@@ -152,6 +152,7 @@ export * from "./reduce";
 export * from "./reject";
 export * from "./reverse";
 export * from "./sample";
+export * from "./semver";
 export * from "./set";
 export * from "./shuffle";
 export * from "./sleep";
