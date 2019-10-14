@@ -154,6 +154,7 @@ export * from "./reverse";
 export * from "./sample";
 export * from "./set";
 export * from "./shuffle";
+export * from "./sleep";
 export * from "./snake-case";
 export * from "./some";
 export * from "./sort-by-desc";
