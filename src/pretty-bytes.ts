@@ -1,6 +1,6 @@
 const UNITS = ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
 
-export const formatBytes = (bytes: number): string => {
+export const prettyBytes = (bytes: number): string => {
     if (bytes === 0 || bytes < 1) {
         return `${bytes} ${UNITS[0]}`;
     }
