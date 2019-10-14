@@ -1,3 +1,1 @@
-import { getType } from "./get-type";
-
-export const isPromise = (value: unknown): boolean => getType(value) === "[object Promise]";
+export const isPromise = (value: unknown): boolean => value instanceof Promise;

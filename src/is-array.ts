@@ -1,3 +1,1 @@
-import { getType } from "./get-type";
-
-export const isArray = (value: unknown): value is any[] => getType(value) === "[object Array]";
+export const isArray = <T>(value: unknown): value is T[] => Array.isArray(value);

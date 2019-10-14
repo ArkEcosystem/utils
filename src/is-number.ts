@@ -1,3 +1,1 @@
-import { getType } from "./get-type";
-
-export const isNumber = (value: unknown): value is number => getType(value) === "[object Number]";
+export const isNumber = (value: unknown): value is number => typeof value === "number";
