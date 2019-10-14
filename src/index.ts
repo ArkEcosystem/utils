@@ -139,6 +139,7 @@ export * from "./pick-by";
 export * from "./pick";
 export * from "./pluck";
 export * from "./pluralize";
+export * from "./pretty-time";
 export * from "./protocols";
 export * from "./pull-all-by";
 export * from "./pull-all";
