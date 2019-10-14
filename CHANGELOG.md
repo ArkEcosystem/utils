@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2019-10-14
+
+## Breaking Changes
+
+-   Drop VM support
+
+## Added
+
+-   Added `pluralize` method
+-   Added `prettyTime` method
+-   Added `randomBase64` method
+-   Added `randomBits` method
+-   Added `randomHex` method
+-   Added `safeEqual` method
+
+## Changed
+
+-   Renamed `formatBytes` to `prettyBytes`
+-   Renamed `random` to `randomNumber`
+
 ## [1.0.34] - 2019-10-14
 
 ## Changed
@@ -270,7 +290,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
--   Extracted `Dato` into its own package (https://github.com/faustbrian/dato)
+-   Extracted `Dato` into its own package ([faustbrian/dato](https://github.com/faustbrian/dato))
 
 ## [0.2.7] - 2019-02-27
 
@@ -385,6 +405,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[1.1.0]: https://github.com/ArkEcosystem/utils/compare/1.0.34...1.1.0
 [1.0.34]: https://github.com/ArkEcosystem/utils/compare/1.0.31...1.0.34
 [1.0.31]: https://github.com/ArkEcosystem/utils/compare/1.0.30...1.0.31
 [1.0.30]: https://github.com/ArkEcosystem/utils/compare/1.0.0...1.0.30
