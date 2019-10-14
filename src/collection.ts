@@ -25,7 +25,7 @@ export class Collection<T> {
     }
 
     public pull(key: string): T | undefined {
-        const item = get<T>(this.collection, key);
+        const item = get<Record<string, T>, T>(this.collection, key);
 
         this.forget(key);
 
@@ -33,7 +33,7 @@ export class Collection<T> {
     }
 
     public get(key: string): T | undefined {
-        return get<T>(this.collection, key);
+        return get<Record<string, T>, T>(this.collection, key);
     }
 
     public set(key: string, value: T): void {

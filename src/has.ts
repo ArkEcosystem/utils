@@ -1,7 +1,7 @@
 import { castPath } from "./internal";
 import { isEmpty } from "./is-empty";
 
-export const has = (object: object, path: string | string[]): boolean => {
+export const has = <T>(object: T, path: string | string[]): boolean => {
     if (isEmpty(object)) {
         return false;
     }

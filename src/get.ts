@@ -1,7 +1,7 @@
 import { castPath } from "./internal";
 import { isEmpty } from "./is-empty";
 
-export const get = <T>(object: object, path: string | string[], defaultValue?: T): T | undefined => {
+export const get = <T, V>(object: T, path: string | string[], defaultValue?: V): V | undefined => {
     if (isEmpty(object)) {
         return defaultValue;
     }
@@ -15,5 +15,5 @@ export const get = <T>(object: object, path: string | string[], defaultValue?: T
         object = object[fragments[index++]];
     }
 
-    return ((object || defaultValue) as unknown) as T;
+    return (object || defaultValue) as V;
 };
