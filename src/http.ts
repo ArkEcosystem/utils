@@ -4,6 +4,7 @@ import { Primitive } from "type-fest";
 import { parse } from "url";
 
 import { isObject } from "./is-object";
+import { isUndefined } from "./is-undefined";
 
 export type HttpOptions = RequestOptions & { body?: Record<string, Primitive> };
 
@@ -59,6 +60,10 @@ const sendRequest = (method: string, url: string, opts?: HttpOptions): Promise<H
             opts.agent = globalAgent;
         }
 
+        if (isUndefined(opts.timeout)) {
+            opts.timeout = 1500;
+        }
+
         const req: ClientRequest = request(opts, (r: IncomingMessage): void => {
             let accumulator: string = "";
 
@@ -99,6 +104,8 @@ const sendRequest = (method: string, url: string, opts?: HttpOptions): Promise<H
         });
 
         req.on("error", rej);
+
+        req.on("timeout", () => req.abort());
 
         if (opts.body) {
             const body: string = JSON.stringify(opts.body);

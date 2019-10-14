@@ -1,7 +1,7 @@
 import Boom from "@hapi/boom";
 import Hapi from "@hapi/hapi";
 
-import { http } from "../src";
+import { http, sleep } from "../src";
 
 let server: Hapi.Server;
 let serverURL: string;
@@ -17,6 +17,16 @@ beforeAll(async () => {
         path: "/malformed",
         handler: (_, h) => {
             return h.response("success").type("application/json");
+        },
+    });
+
+    server.route({
+        method: "GET",
+        path: "/timeout",
+        handler: async () => {
+            await sleep(2000);
+
+            return {};
         },
     });
 
@@ -99,6 +109,10 @@ describe("HTTP", () => {
             await expect(http.get(`${serverURL}/malformed`)).rejects.toThrow(
                 "Unexpected token s in JSON at position 0",
             );
+        });
+
+        it("should send a request and throw when the request times out", async () => {
+            await expect(http.get(`${serverURL}/timeout`, { timeout: 1000 })).rejects.toThrow("socket hang up");
         });
     });
 
