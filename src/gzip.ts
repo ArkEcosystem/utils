@@ -1,13 +1,13 @@
-import { createReadStream, createWriteStream, PathLike, WriteStream } from "fs";
-import { createBrotliCompress, createBrotliDecompress } from "zlib";
+import { createReadStream, createWriteStream, WriteStream, PathLike } from "fs";
+import { createGzip, createGunzip } from "zlib";
 
-export const brotli = {
+export const gzip = {
     compress: (source: PathLike, dest: PathLike): WriteStream =>
         createReadStream(source)
-            .pipe(createBrotliCompress())
+            .pipe(createGzip())
             .pipe(createWriteStream(dest)),
     decompress: (source: PathLike, dest: PathLike): WriteStream =>
         createReadStream(source)
-            .pipe(createBrotliDecompress())
+            .pipe(createGunzip())
             .pipe(createWriteStream(dest)),
 };
