@@ -1,37 +1,37 @@
-import { sortBy } from "../src";
+import { sortByDesc } from "../../src/immutable";
 
 const dummies = [
-    { name: "John", age: 30 },
-    { name: "Jane", age: 40 },
     { name: "Andrew", age: 18 },
     { name: "Bob", age: 18 },
+    { name: "John", age: 30 },
+    { name: "Jane", age: 40 },
 ];
 
-describe("#sortBy", () => {
+describe("#sortByDesc", () => {
     it("should sort records without iteratees", () => {
-        expect(sortBy([...dummies])).toEqual([
-            { name: "John", age: 30 },
+        expect(sortByDesc(dummies)).toEqual([
             { name: "Jane", age: 40 },
-            { name: "Andrew", age: 18 },
+            { name: "John", age: 30 },
             { name: "Bob", age: 18 },
+            { name: "Andrew", age: 18 },
         ]);
     });
 
     it("should sort records by string", () => {
-        expect(sortBy([...dummies], "age")).toEqual([
+        expect(sortByDesc(dummies, "age")).toEqual([
+            { name: "Jane", age: 40 },
+            { name: "John", age: 30 },
             { name: "Andrew", age: 18 },
             { name: "Bob", age: 18 },
-            { name: "John", age: 30 },
-            { name: "Jane", age: 40 },
         ]);
     });
 
     it("should sort records by array", () => {
-        expect(sortBy([...dummies], ["age"])).toEqual([
+        expect(sortByDesc(dummies, ["age"])).toEqual([
+            { name: "Jane", age: 40 },
+            { name: "John", age: 30 },
             { name: "Andrew", age: 18 },
             { name: "Bob", age: 18 },
-            { name: "John", age: 30 },
-            { name: "Jane", age: 40 },
         ]);
     });
 });

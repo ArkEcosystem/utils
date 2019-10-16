@@ -184,3 +184,8 @@ export * from "./upper-case";
 export * from "./upper-first";
 export * from "./words";
 export * from "./zip-object";
+
+// Public - Namespaces
+import * as immutable from "./immutable";
+
+export { immutable };
