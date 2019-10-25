@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.1.4] - 2019-10-25
+
+## Added
+
+-   Added `sortBy` method
+-   Added `sortByDesc` method
+-   Added `orderBy` method
+
+## Fixed
+
+-   Only treat `undefined` as a missing key for `has` checks
+
 ## [1.1.0] - 2019-10-14
 
 ## Breaking Changes
@@ -20,7 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 -   Added `randomHex` method
 -   Added `safeEqual` method
 
-## Changed
+### Changed
 
 -   Renamed `formatBytes` to `prettyBytes`
 -   Renamed `random` to `randomNumber`
@@ -405,6 +417,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[1.1.4]: https://github.com/ArkEcosystem/utils/compare/1.1.0...1.1.4
 [1.1.0]: https://github.com/ArkEcosystem/utils/compare/1.0.34...1.1.0
 [1.0.34]: https://github.com/ArkEcosystem/utils/compare/1.0.31...1.0.34
 [1.0.31]: https://github.com/ArkEcosystem/utils/compare/1.0.30...1.0.31
