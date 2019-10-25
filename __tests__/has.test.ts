@@ -12,8 +12,7 @@ describe("#has", () => {
 
         expect(has(object, "a")).toBeTrue();
         expect(has(object, "a.b")).toBeTrue();
-        expect(has(object, ["a", "b"])).toBeTrue();
         expect(has(object, "c")).toBeFalse();
-        expect(has({ a: undefined }, "a")).toBeFalse();
+        expect(has({ a: undefined }, "a")).toBeTrue();
     });
 });

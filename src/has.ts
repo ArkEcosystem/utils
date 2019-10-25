@@ -1,20 +1,25 @@
 import { castPath } from "./internal";
-import { isEmpty } from "./is-empty";
-import { isUndefined } from "./is-undefined";
+import { isObject } from "./is-object";
+import { isString } from "./is-string";
 
 export const has = <T>(object: T, path: string | string[]): boolean => {
-    if (isEmpty(object)) {
+    if (!isObject(object) || !isString(path)) {
         return false;
     }
 
-    const fragments: string[] = castPath(path);
+    const pathArray: string[] = castPath(path);
 
-    let index = 0;
-    const length: number = fragments.length;
+    for (let i = 0; i < pathArray.length; i++) {
+        if (!isObject(object)) {
+            return false;
+        }
 
-    while (object !== null && index < length) {
-        object = object[fragments[index++]];
+        if (!(pathArray[i] in object)) {
+            return false;
+        }
+
+        object = object[pathArray[i]];
     }
 
-    return !isUndefined(object);
+    return true;
 };
