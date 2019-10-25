@@ -1,7 +1,7 @@
 {
     "name": "@arkecosystem/utils",
     "description": "Performance oriented implementations of commonly used functions in TypeScript.",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "contributors": [
         "Brian Faust <brian@ark.io>",
         "Joshua Noack <joshua@ark.io>"
