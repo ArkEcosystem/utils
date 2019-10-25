@@ -1,19 +1,29 @@
 import { castPath } from "./internal";
-import { isEmpty } from "./is-empty";
+import { isObject } from "./is-object";
+import { isString } from "./is-string";
 
 export const get = <T, V>(object: T, path: string | string[], defaultValue?: V): V | undefined => {
-    if (isEmpty(object)) {
+    if (!isObject(object) || !isString(path)) {
         return defaultValue;
     }
 
-    const fragments: string[] = castPath(path);
+    const pathArray: string[] = castPath(path);
 
-    let index = 0;
-    const length: number = fragments.length;
+    for (let i = 0; i < pathArray.length; i++) {
+        if (!Object.prototype.propertyIsEnumerable.call(object, pathArray[i])) {
+            return defaultValue;
+        }
 
-    while (object != null && index < length) {
-        object = object[fragments[index++]];
+        object = object[pathArray[i]];
+
+        if (object === undefined || object === null) {
+            if (i !== pathArray.length - 1) {
+                return defaultValue;
+            }
+
+            break;
+        }
     }
 
-    return (object || defaultValue) as V;
+    return (object as unknown) as V;
 };
