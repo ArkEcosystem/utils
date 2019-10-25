@@ -1,5 +1,6 @@
 import { castPath } from "./internal";
 import { isEmpty } from "./is-empty";
+import { isUndefined } from "./is-undefined";
 
 export const has = <T>(object: T, path: string | string[]): boolean => {
     if (isEmpty(object)) {
@@ -11,9 +12,9 @@ export const has = <T>(object: T, path: string | string[]): boolean => {
     let index = 0;
     const length: number = fragments.length;
 
-    while (object != null && index < length) {
+    while (object !== null && index < length) {
         object = object[fragments[index++]];
     }
 
-    return !!object;
+    return !isUndefined(object);
 };
