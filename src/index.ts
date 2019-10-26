@@ -38,6 +38,7 @@ export * from "./first-map-value";
 export * from "./flatten";
 export * from "./format-number";
 export * from "./format-string";
+export * from "./get-path-segments";
 export * from "./get-type";
 export * from "./get";
 export * from "./group-by";
