@@ -1,25 +1,29 @@
-import { castPath } from "./internal";
-import { isEmpty } from "./is-empty";
+import { getPathSegments } from "./get-path-segments";
+import { isObject } from "./is-object";
+import { isString } from "./is-string";
 
 export const unset = <T>(object: T, path: string | string[]): boolean => {
-    if (isEmpty(object)) {
+    if (!isObject(object) || !isString(path)) {
         return false;
     }
 
-    const fragments: string[] = castPath(path);
+    const pathSegments: string[] = getPathSegments(path);
 
-    let index = 0;
-    const length: number = fragments.length;
+    for (let i = 0; i < pathSegments.length; i++) {
+        const pathSegment: string = pathSegments[i];
 
-    while (object != null && index < length) {
-        const key = fragments[index++];
+        if (i === pathSegments.length - 1) {
+            delete object[pathSegment];
 
-        if (index === length) {
-            break;
+            return true;
         }
 
-        object = object[key];
+        object = object[pathSegment];
+
+        if (!isObject(object)) {
+            return false;
+        }
     }
 
-    return object === null || delete object[fragments[index - 1]];
+    return false;
 };

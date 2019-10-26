@@ -68,6 +68,7 @@ export * from "./is-empty-map";
 export * from "./is-empty-object";
 export * from "./is-empty-set";
 export * from "./is-empty";
+export * from "./is-enumerable";
 export * from "./is-equal";
 export * from "./is-error";
 export * from "./is-false";

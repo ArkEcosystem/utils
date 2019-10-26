@@ -1,4 +1,4 @@
-import { castPath } from "./internal";
+import { getPathSegments } from "./get-path-segments";
 import { isObject } from "./is-object";
 import { isString } from "./is-string";
 
@@ -7,18 +7,18 @@ export const has = <T>(object: T, path: string | string[]): boolean => {
         return false;
     }
 
-    const pathArray: string[] = castPath(path);
+    const pathSegments: string[] = getPathSegments(path);
 
-    for (let i = 0; i < pathArray.length; i++) {
+    for (let i = 0; i < pathSegments.length; i++) {
         if (!isObject(object)) {
             return false;
         }
 
-        if (!(pathArray[i] in object)) {
+        if (!(pathSegments[i] in object)) {
             return false;
         }
 
-        object = object[pathArray[i]];
+        object = object[pathSegments[i]];
     }
 
     return true;

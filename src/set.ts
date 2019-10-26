@@ -1,32 +1,27 @@
-import { hasProperty } from "./has-property";
-import { castPath } from "./internal";
+import { getPathSegments } from "./get-path-segments";
 import { isObject } from "./is-object";
+import { isString } from "./is-string";
 
 export const set = <T>(object: T, path: string | string[], value: unknown): boolean => {
-    if (!isObject(object)) {
+    if (!isObject(object) || !isString(path)) {
         return false;
     }
 
-    const fragments: string[] = castPath(path);
+    const pathSegments: string[] = getPathSegments(path);
 
-    let index = 0;
-    const length: number = fragments.length;
+    for (let i = 0; i < pathSegments.length; i++) {
+        const pathSegment: string = pathSegments[i];
 
-    while (object != null && index < length) {
-        const key = fragments[index++];
-
-        if (index === length) {
-            object[key] = value;
-
-            break;
+        if (!isObject(object[pathSegment])) {
+            object[pathSegment] = {};
         }
 
-        if (!hasProperty(object, key)) {
-            object[key] = {};
+        if (i === pathSegments.length - 1) {
+            object[pathSegment] = value;
         }
 
-        object = object[key];
+        object = object[pathSegment];
     }
 
-    return !!object;
+    return true;
 };

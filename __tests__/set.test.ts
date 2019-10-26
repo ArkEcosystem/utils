@@ -3,7 +3,7 @@ import "jest-extended";
 import { set } from "../src";
 
 describe("#set", () => {
-    it("should not do anything if the object is not an object", () => {
+    it("should not do anything if the target is not an object", () => {
         expect(set(undefined, "a.b.c", 4)).toBeFalse();
     });
 
@@ -14,7 +14,7 @@ describe("#set", () => {
 
         expect(object.a.b.c).toBe(4);
 
-        set(object, ["x", "y", "z"], 5);
+        set(object, "x.y.z", 5);
 
         // @ts-ignore
         expect(object.x.y.z).toBe(5);

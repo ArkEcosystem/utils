@@ -13,7 +13,7 @@ describe("#unset", () => {
 
         expect(object).toEqual({ a: { b: {} } });
 
-        unset(object, ["a", "b", "c"]);
+        unset(object, "a.b.c");
 
         expect(object).toEqual({ a: { b: {} } });
     });

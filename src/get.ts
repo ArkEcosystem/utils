@@ -1,4 +1,5 @@
-import { castPath } from "./internal";
+import { getPathSegments } from "./get-path-segments";
+import { isEnumerable } from "./is-enumerable";
 import { isObject } from "./is-object";
 import { isString } from "./is-string";
 
@@ -7,17 +8,17 @@ export const get = <T, V>(object: T, path: string | string[], defaultValue?: V):
         return defaultValue;
     }
 
-    const pathArray: string[] = castPath(path);
+    const pathSegments: string[] = getPathSegments(path);
 
-    for (let i = 0; i < pathArray.length; i++) {
-        if (!Object.prototype.propertyIsEnumerable.call(object, pathArray[i])) {
+    for (let i = 0; i < pathSegments.length; i++) {
+        if (!isEnumerable(object, pathSegments[i])) {
             return defaultValue;
         }
 
-        object = object[pathArray[i]];
+        object = object[pathSegments[i]];
 
         if (object === undefined || object === null) {
-            if (i !== pathArray.length - 1) {
+            if (i !== pathSegments.length - 1) {
                 return defaultValue;
             }
 
