@@ -1,6 +1,6 @@
-import { Binary, timingSafeEqual } from "crypto";
+import { timingSafeEqual } from "crypto";
 
-export const safeEqual = (a: Binary, b: Binary): boolean => {
+export const safeEqual = (a: any, b: any): boolean => {
     try {
         return timingSafeEqual(a, b);
     } catch {
