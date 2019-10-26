@@ -132,6 +132,7 @@ export * from "./omit-by";
 export * from "./order-by";
 export * from "./ordinal";
 export * from "./parse-git-url";
+export * from "./parse-uri";
 export * from "./parse";
 export * from "./partition";
 export * from "./pascal-case";
