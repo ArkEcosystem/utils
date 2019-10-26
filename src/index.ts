@@ -102,6 +102,7 @@ export * from "./is-symbol";
 export * from "./is-sync-function";
 export * from "./is-true";
 export * from "./is-undefined";
+export * from "./is-uri";
 export * from "./is-url";
 export * from "./is-weak-map";
 export * from "./is-weak-set";
