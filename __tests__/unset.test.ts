@@ -2,6 +2,15 @@ import "jest-extended";
 import { unset } from "../src";
 
 describe("#unset", () => {
+    it("should return false if the target is not an object", () => {
+        expect(unset([], "a.b.c")).toBeFalse();
+    });
+
+    it("should return false if the path is not a string", () => {
+        // @ts-ignore
+        expect(unset({}, 123)).toBeFalse();
+    });
+
     it("should not do anything if the object is not an object", () => {
         expect(unset([], "a.b.c")).toBeFalse();
     });
