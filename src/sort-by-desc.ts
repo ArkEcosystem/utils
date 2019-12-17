@@ -1,5 +1,6 @@
-import sort from "fast-sort";
+import sort, { ISortBy, ISortByFunction } from "fast-sort";
 
-import { Iteratee } from "./internal";
-
-export const sortByDesc = <T>(values: T[], iteratees?: Iteratee | Iteratee[]): T[] => sort(values).desc(iteratees);
+export const sortByDesc = <T>(
+    values: T[],
+    iteratees?: ISortByFunction<T> | keyof T | (ISortByFunction<T> | keyof T)[] | ISortBy<T>[] | undefined,
+): T[] => sort(values).desc(iteratees);

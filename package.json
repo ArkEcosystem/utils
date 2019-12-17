@@ -30,7 +30,7 @@
         "deepmerge": "^4.2.2",
         "fast-copy": "^2.0.4",
         "fast-deep-equal": "^3.1.1",
-        "fast-sort": "^1.6.0"
+        "fast-sort": "^2.0.0"
     },
     "devDependencies": {
         "@arkecosystem/commitlint": "^0.1.0",
