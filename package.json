@@ -40,7 +40,7 @@
         "@faustbrian/benchmarker": "^0.1.2",
         "@hapi/boom": "^8.0.1",
         "@hapi/hapi": "^18.4.0",
-        "@sindresorhus/tsconfig": "^0.6.0",
+        "@sindresorhus/tsconfig": "^0.7.0",
         "@types/benchmark": "^1.0.31",
         "@types/jest": "^24.0.23",
         "@types/lodash": "^4.14.149",
