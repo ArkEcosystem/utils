@@ -39,7 +39,7 @@
         "@commitlint/cli": "^8.2.0",
         "@faustbrian/benchmarker": "^0.1.2",
         "@hapi/boom": "^9.0.0",
-        "@hapi/hapi": "^18.4.0",
+        "@hapi/hapi": "^19.0.0",
         "@sindresorhus/tsconfig": "^0.7.0",
         "@types/benchmark": "^1.0.31",
         "@types/jest": "^24.0.23",
