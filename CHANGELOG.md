@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.1.8] - 2020-01-27
+
+## Fixed
+
+-   Add `type-fest` as dependency
+
 ## [1.1.7] - 2019-11-19
 
 ## Fixed
@@ -435,6 +441,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 -   Initial Release
 
+[1.1.8]: https://github.com/ArkEcosystem/utils/compare/1.1.7...1.1.8
 [1.1.7]: https://github.com/ArkEcosystem/utils/compare/1.1.6...1.1.7
 [1.1.6]: https://github.com/ArkEcosystem/utils/compare/1.1.5...1.1.6
 [1.1.5]: https://github.com/ArkEcosystem/utils/compare/1.1.4...1.1.5
