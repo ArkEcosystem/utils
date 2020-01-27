@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.1.8] - 2020-01-27
 
+## Changed
+
+-   Update dependencies
+
 ## Fixed
 
 -   Add `type-fest` as dependency
