@@ -23,7 +23,8 @@
         "lint": "eslint src --ext .ts --fix",
         "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./src/**/*.{ts,js,json,md}\"",
         "bench": "yarn build && node benchmark/index.js",
-        "test": "jest"
+        "test": "jest",
+        "coverage:report": "codecov"
     },
     "dependencies": {
         "@hapi/bourne": "^2.0.0",

@@ -34,7 +34,7 @@ jobs:
               run: yarn test --coverage
 
             - name: Codecov
-              run: codecov --token=${{ secrets.CODECOV_TOKEN }}
+              run: yarn coverage:report --token=${{ secrets.CODECOV_TOKEN }}
 
     benchmark:
         needs: unit
