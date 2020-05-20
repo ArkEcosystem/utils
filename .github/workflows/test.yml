@@ -1,60 +1,60 @@
 name: Test
 
 on:
-    push:
-        branches:
-            - "master"
-            - "develop"
-    pull_request:
-        types: [ready_for_review, synchronize, opened]
+  push:
+    branches:
+      - "master"
+      - "develop"
+  pull_request:
+    types: [ready_for_review, synchronize, opened]
 
 jobs:
-    unit:
-        runs-on: ubuntu-latest
+  unit:
+    runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [12.x]
+    strategy:
+      matrix:
+        node-version: [14.x]
 
-        steps:
-            - uses: actions/checkout@v1
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-            - name: Install
-              run: yarn install --frozen-lockfile
+      - name: Install
+        run: yarn install --immutable --immutable-cache
 
-            - name: Build
-              run: yarn build
+      - name: Build
+        run: yarn build
 
-            - name: Test
-              run: yarn test --coverage
+      - name: Test
+        run: yarn test --coverage
 
-            - name: Codecov
-              run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+      - name: Codecov
+        run: yarn coverage:report --token=${{ secrets.CODECOV_TOKEN }}
 
-    benchmark:
-        needs: unit
+  benchmark:
+    needs: unit
 
-        runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [12.x]
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
 
-        steps:
-            - uses: actions/checkout@v1
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-            - name: Install
-              run: yarn install --frozen-lockfile
+      - name: Install
+        run: yarn install --immutable --immutable-cache
 
-            - name: Benchmark
-              run: yarn bench
+      - name: Benchmark
+        run: yarn bench
