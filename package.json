@@ -32,7 +32,7 @@
         "fast-copy": "^2.0.5",
         "fast-deep-equal": "^3.1.1",
         "fast-sort": "^2.2.0",
-        "type-fest": "^0.13.1"
+        "type-fest": "^0.16.0"
     },
     "devDependencies": {
         "@babel/core": "^7.9.6",
