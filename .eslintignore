@@ -1,3 +1,4 @@
-node_modules
-dist
+.pnp.js
 bin
+dist
+node_modules
