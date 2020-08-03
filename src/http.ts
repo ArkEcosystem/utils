@@ -120,6 +120,7 @@ const sendRequest = (method: string, url: string, opts?: HttpOptions): Promise<H
 
 export const http = {
     get: (url: string, opts?: HttpOptions): Promise<HttpResponse> => sendRequest("GET", url, opts),
+    head: (url: string, opts?: HttpOptions): Promise<HttpResponse> => sendRequest("HEAD", url, opts),
     post: (url: string, opts?: HttpOptions): Promise<HttpResponse> => sendRequest("POST", url, opts),
     put: (url: string, opts?: HttpOptions): Promise<HttpResponse> => sendRequest("PUT", url, opts),
     patch: (url: string, opts?: HttpOptions): Promise<HttpResponse> => sendRequest("PATCH", url, opts),
