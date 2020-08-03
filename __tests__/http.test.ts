@@ -116,6 +116,29 @@ describe("HTTP", () => {
         });
     });
 
+    describe("#head", () => {
+        it("should send a request and receive status code 200", async () => {
+            const { statusCode } = await http.head(`${serverURL}/get?key=value`);
+
+            expect(statusCode).toBe(200);
+        });
+
+        it("should send a request and receive status code 404", async () => {
+            await expect(http.head(`${serverURL}/status/404`)).rejects.toThrow("Not Found");
+        });
+
+        // HTTP GET will throw error because body is malformed
+        it("should send a request and receive status code 200 because malformed JSON is not received in body", async () => {
+            const { statusCode } = await http.head(`${serverURL}/malformed`);
+
+            expect(statusCode).toBe(200);
+        });
+
+        it("should send a request and throw when the request times out", async () => {
+            await expect(http.head(`${serverURL}/timeout`, { timeout: 1000 })).rejects.toThrow("socket hang up");
+        });
+    });
+
     describe("#post", () => {
         it("should send a request and receive status code 200", async () => {
             const { statusCode } = await http.post(`${serverURL}/post`);
