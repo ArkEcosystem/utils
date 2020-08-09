@@ -18,7 +18,7 @@ describe("#DotEnv", () => {
     });
 
     it("should parse the given file", () => {
-        expect(dotenv.parseFile(resolve(__dirname, "./__fixtures__/.env"))).toEqual({
+        expect(dotenv.parseFile(resolve(__dirname, "../test/fixtures/.env"))).toEqual({
             key1: "value",
             key2: 1,
             key3: 1,
