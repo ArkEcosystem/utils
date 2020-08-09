@@ -1,7 +1,8 @@
 import Boom from "@hapi/boom";
 import Hapi from "@hapi/hapi";
 
-import { http, sleep } from "./http";
+import { http } from "./http";
+import { sleep } from "./sleep";
 
 let server: Hapi.Server;
 let serverURL: string;
