@@ -1,6 +1,6 @@
 import "jest-extended";
 
-import { isWeakSet } from "./is-weak-map";
+import { isWeakSet } from "./is-weak-set";
 
 describe("#isWeakSet", () => {
     it("should pass", () => {

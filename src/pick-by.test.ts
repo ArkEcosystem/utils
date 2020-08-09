@@ -1,6 +1,7 @@
 import "jest-extended";
 
-import { isNumber, pickBy } from "./pick-by";
+import { isNumber } from "./is-number";
+import { pickBy } from "./pick-by";
 
 describe("#pickBy", () => {
     it("should work with a function", () => {

@@ -1,4 +1,4 @@
-import { protocols } from "./protocolss";
+import { protocols } from "./protocols";
 
 describe("#protocols", () => {
     it("should return all protocols of the given URL", () => {

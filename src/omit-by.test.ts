@@ -1,6 +1,7 @@
 import "jest-extended";
 
-import { isNumber, omitBy } from "./omit-by";
+import { isNumber } from "./is-number";
+import { omitBy } from "./omit-by";
 
 describe("#omitBy", () => {
     it("should work with a function", () => {
