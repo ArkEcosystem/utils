@@ -51,7 +51,7 @@
         "@yarnpkg/pnpify": "^2.1.0",
         "benchmark": "^2.1.4",
         "big-number": "^2.0.0",
-        "big.js": "^5.2.2",
+        "big.js": "^6.0.0",
         "bignumber.js": "^9.0.0",
         "codecov": "^3.7.2",
         "cross-env": "^7.0.2",
