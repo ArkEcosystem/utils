@@ -87,7 +87,7 @@ const sendRequest = (method: string, url: string, opts?: HttpOptions): Promise<H
                     try {
                         accumulator = JSON.parse(accumulator);
                     } catch (error) {
-                        rej(new HttpError(response, error));
+                        return rej(new HttpError(response, error));
                     }
                 }
 
@@ -96,10 +96,10 @@ const sendRequest = (method: string, url: string, opts?: HttpOptions): Promise<H
                 response.data = accumulator;
 
                 if (r.statusCode && r.statusCode >= 400) {
-                    rej(new HttpError(response));
+                    return rej(new HttpError(response));
                 }
 
-                res(response);
+                return res(response);
             });
         });
 
