@@ -89,6 +89,10 @@ export class BigNumber {
         return this.toFixed();
     }
 
+    public toBigInt(): bigint {
+        return this.value;
+    }
+
     private toBigNumber(value: BigNumberType): bigint {
         if (value instanceof BigNumber) {
             value = value.value;

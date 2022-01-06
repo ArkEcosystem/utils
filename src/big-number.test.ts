@@ -84,4 +84,9 @@ describe("#BigNumber", () => {
     it(".toJSON", () => {
         expect(new BigNumber(1e8).toJSON()).toBe(`${1e8}`);
     });
+
+    it(".toBigInt", () => {
+        expect(new BigNumber(1e8).toBigInt()).toBe(BigInt(1e8));
+        expect(new BigNumber(255).toBigInt()).toBe(BigInt(255));
+    });
 });
